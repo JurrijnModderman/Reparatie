@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kaas</title>
+</head>
+<body>
+	<script>
+		var kaasgeel = "Is de kaas geel?";
+		var gatenkaas = "Zitten er gaten in?";
+		var duur = "Is de kaas belachelijk duur?";
+		var hard = "Is de kaas hard als steen?";
+		var schimmels = "Heeft de kaas blauwe schimmels?";
+		prompt(kaasgeel);
+		if (kaasgeel = "ja"){
+			prompt(gatenkaas);
+			else {
+				prompt(schimmels);
+			if (gatenkaas = "ja"){
+				prompt(duur);
+				else {
+					prompt(hard);
+				}
+				if (hard = "ja"){
+					alert("Het is Pammigiano Reggiano");
+					else {
+						alert("Het is Goudse kaas!");
+						}
+				
+					if (duur = "ja"){
+						alert("Het is Emmentaler!");
+						else {
+							prompt("Het is Leerdammer!");
+					}
+				}
+			}
+		}
+	</script>
+
+</body>
+</html>

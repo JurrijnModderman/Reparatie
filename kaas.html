@@ -10,30 +10,48 @@
 		var duur = "Is de kaas belachelijk duur?";
 		var hard = "Is de kaas hard als steen?";
 		var schimmels = "Heeft de kaas blauwe schimmels?";
+		var welSchimmelsKorst = "Heeft de kaas een korst?"
+		var geenSchimmelsKorst = "Heeft de kaas een korst?"
 		prompt(kaasgeel);
 		if (kaasgeel = "ja"){
 			prompt(gatenkaas);
-			else {
+		}	else {
 				prompt(schimmels);
-			if (gatenkaas = "ja"){
-				prompt(duur);
-				else {
-					prompt(hard);
-				}
-				if (hard = "ja"){
-					alert("Het is Pammigiano Reggiano");
-					else {
-						alert("Het is Goudse kaas!");
-						}
-				
-					if (duur = "ja"){
-						alert("Het is Emmentaler!");
-						else {
-							prompt("Het is Leerdammer!");
-					}
-				}
 			}
-		}
+			if (schimmels = "ja"){
+				prompt(welSchimmelsKorst);
+			}	else {
+				prompt(geenSchimmelsKorst);
+				}
+				if (welSchimmelsKorst = "ja"){
+					alert("Het is Blue de Rochbaron!")
+				}	else {
+					alert("Het is Foume d'Ambert!")
+					}
+					if (geenSchimmelsKorst = "ja"){
+						alert("Het is Camembert!")
+					}	else {
+						alert("Het is Mozzarella!")
+						}
+						if (gatenkaas = "ja"){
+							prompt(duur);
+						}	else {
+								prompt(hard);
+							}
+							if (hard = "ja"){
+								alert("Het is Pammigiano Reggiano");
+							}	else {
+									alert("Het is Goudse kaas!");
+								}
+							
+								if (duur = "ja"){
+									alert("Het is Emmentaler!");
+								}	else {
+										prompt("Het is Leerdammer!");
+									}
+							
+				
+			
 	</script>
 
 </body>

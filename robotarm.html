@@ -8,27 +8,18 @@
             var robotArm = new RobotArm(canvas);
             
             // Het level inladen
-            robotArm.loadLevel("exercise 4");
+            robotArm.loadLevel("exercise 6");
             
             // Jou instructies volgen hier
-            for(i = 0; i < 3; i++){
-            	robotArm.grab();
-            	for(a = 0; a < 2; a++){
+            for(i = 0; i < 8; i++){
+            	for(e = 0; e < 7; e++){
             		robotArm.moveRight();
-            	}
-            	robotArm.drop();
-            	for(s = 0; s < 2; s++){
+            	}	robotArm.grab();
+            		robotArm.moveRight();
+            		robotArm.drop();
+            	for(r = 0; r > 2; r++){
             		robotArm.moveLeft();
-            	}
-            }
-            for(r = 0; r < 2; r++){
-            		robotArm.moveRight();
-            	}
-            for(e = 0; e < 3; e++){
-            	robotArm.grab();
-            	robotArm.moveLeft();
-            	robotArm.drop();
-            	robotArm.moveRight();
+            	}	robotArm.grab();
             }
             
             // De door jou opgegeven instructies uitvoeren
@@ -69,4 +60,24 @@
             	robotArm.moveRight();
             	robotArm.drop();
             	robotArm.moveLeft();
+            } -->
+<!-- level4 -->
+<!-- for(i = 0; i < 3; i++){
+            	robotArm.grab();
+            	for(a = 0; a < 2; a++){
+            		robotArm.moveRight();
+            	}
+            	robotArm.drop();
+            	for(s = 0; s < 2; s++){
+            		robotArm.moveLeft();
+            	}
+            }
+            for(r = 0; r < 2; r++){
+            		robotArm.moveRight();
+            	}
+            for(e = 0; e < 3; e++){
+            	robotArm.grab();
+            	robotArm.moveLeft();
+            	robotArm.drop();
+            	robotArm.moveRight();
             } -->

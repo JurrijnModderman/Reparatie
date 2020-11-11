@@ -5,18 +5,64 @@
 </head>
 <body>
 	<script>
-		var kaasgeel = prompt("Is de kaas geel?");
+		var kaasgeel = prompt("Is de kaas geel?");			
+		if (kaasgeel == "ja"){
+			var gatenkaas = prompt("Zitten er gaten in?");
+		}	else {
+			var schimmels = prompt("Heeft de kaas blauwe schimmels?");
+		}
+		console.log(kaasgeel);
+		console.log(gatenkaas);
+		console.log(schimmels);
+			if (gatenkaas == "ja"){
+			var duur = prompt("Is de kaas belachelijk duur?");
+			}	else {
+			var hard = prompt("Is de kaas hard als steen?");
+			}
+			console.log(duur);
+			console.log(hard);
+				if (schimmels == "ja"){
+			var welSchimmelsKorst = prompt("Heeft de kaas een korst?");
+				}	else {
+			var geenSchimmelsKorst = prompt("Heeft de kaas een korst?");
+				}
+				console.log(welSchimmelsKorst);
+				console.log(geenSchimmelsKorst);
+					if (duur == "ja"){
+						alert("Het is Emmentaler!");
+					}	else {
+						alert("Het is Leerdammer!");
+					}
+						if (hard == "ja"){
+							alert("Het is Pammigiano Reggiano!");
+						}	else {
+							alert("Het is Goudse kaas!");
+						}
+							if (welSchimmelsKorst == "ja"){
+								alert("Het is Blue de Rochbaron!");
+							}	else {
+								alert("Het is Foume d'Ambert!");
+							}
+								if (geenSchimmelsKorst == "ja"){
+									alert("Het is Camembert!");
+								}	else {
+									alert("Het is Mozzarella!");
+								}
+	</script>
+
+</body>
+</html>
+
+<!-- var kaasgeel = prompt("Is de kaas geel?");
 		console.log(kaasgeel);
 		var gatenkaas = prompt("Zitten er gaten in?");
 		console.log(gatenkaas);
 		var schimmels = prompt("Heeft de kaas blauwe schimmels?");
 		console.log(schimmels);
-		kaasgeel = kaasgeel;
 		kaasgeel;
 		if (kaasgeel = "ja"){
 			gatenkaas;
-		}	
-			else {
+		}	else {
 				schimmels;
 			}
 		var welSchimmelsKorst = prompt("Heeft de kaas een korst?");
@@ -58,20 +104,4 @@
 								alert("Het is Pammigiano Reggiano");
 							}	else {
 									alert("Het is Goudse kaas!");
-								}
-		
-		
-			
-				
-					
-						
-							
-							
-								
-							
-				
-			
-	</script>
-
-</body>
-</html>
+								}		 -->

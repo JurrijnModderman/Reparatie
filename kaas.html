@@ -8,46 +8,50 @@
 		var kaasgeel = prompt("Is de kaas geel?");			
 		if (kaasgeel == "ja"){
 			var gatenkaas = prompt("Zitten er gaten in?");
-		}	else {
-			var schimmels = prompt("Heeft de kaas blauwe schimmels?");
-		}
-		console.log(kaasgeel);
-		console.log(gatenkaas);
-		console.log(schimmels);
 			if (gatenkaas == "ja"){
 			var duur = prompt("Is de kaas belachelijk duur?");
 			}	else {
 			var hard = prompt("Is de kaas hard als steen?");
 			}
-			console.log(duur);
-			console.log(hard);
-				if (schimmels == "ja"){
-			var welSchimmelsKorst = prompt("Heeft de kaas een korst?");
-				}	else {
-			var geenSchimmelsKorst = prompt("Heeft de kaas een korst?");
-				}
-				console.log(welSchimmelsKorst);
-				console.log(geenSchimmelsKorst);
-					if (duur == "ja"){
-						alert("Het is Emmentaler!");
-					}	else {
-						alert("Het is Leerdammer!");
-					}
-						if (hard == "ja"){
-							alert("Het is Pammigiano Reggiano!");
+			console.log(kaasgeel);
+			console.log(gatenkaas);
+			console.log(schimmels);
+				if (duur == "ja"){
+							var Emmentaler = alert("Het is Emmentaler!");
 						}	else {
-							alert("Het is Goudse kaas!");
+							var Leerdammer = alert("Het is Leerdammer!");
 						}
-							if (welSchimmelsKorst == "ja"){
-								alert("Het is Blue de Rochbaron!");
+							if (hard == "ja"){
+								var PammigianoReggiano = alert("Het is Pammigiano Reggiano!");
 							}	else {
-								alert("Het is Foume d'Ambert!");
+								var GoudseKaas = alert("Het is Goudse kaas!");
 							}
-								if (geenSchimmelsKorst == "ja"){
-									alert("Het is Camembert!");
-								}	else {
-									alert("Het is Mozzarella!");
-								}
+							console.log(duur);
+							console.log(hard);
+		}	else {
+				var schimmels = prompt("Heeft de kaas blauwe schimmels?");
+					if (schimmels == "ja"){
+						var welSchimmelsKorst = prompt("Het is schimmelkaas maar heeft de kaas een korst?");
+					}	else {
+						var geenSchimmelsKorst = prompt("Het is geen schimmelkaas maar heeft de kaas een korst?");
+						}
+						if (welSchimmelsKorst == "ja"){
+										var BlueDeRochbaron = alert("Het is Blue de Rochbaron!");
+									}	else {
+										var FoumeDAmbert = alert("Het is Foume d'Ambert!");
+									}
+							if (geenSchimmelsKorst == "ja"){
+								var Camebert = alert("Het is Camembert!");
+							}	else {
+								var Mozzarella = alert("Het is Mozzarella!");
+							}
+							console.log(welSchimmelsKorst);
+							console.log(geenSchimmelsKorst);
+		}
+		
+		
+					
+							
 	</script>
 
 </body>

@@ -8,20 +8,21 @@
             var robotArm = new RobotArm(canvas);
             
             // Het level inladen
-            robotArm.loadLevel("exercise 6");
-            
+            robotArm.loadLevel("exercise 7");
+            robotArm.speed = 2000;
             // Jou instructies volgen hier
-            for(i = 0; i < 8; i++){
-            	for(e = 0; e < 7; e++){
-            		robotArm.moveRight();
-            	}	robotArm.grab();
-            		robotArm.moveRight();
-            		robotArm.drop();
-            	for(r = 0; r > 2; r++){
-            		robotArm.moveLeft();
-            	}	robotArm.grab();
+            for (p = 0; p <5; p++){
+                  for (i = 0; i < 6; i++) {
+                        robotArm.moveRight();
+                        robotArm.grab();
+                        robotArm.moveLeft();
+                        robotArm.drop();
+                  }   
+                        for (r = 0; r < 2; r++) {
+                              robotArm.moveRight();
+                        }
             }
-            
+                  
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>
@@ -35,49 +36,65 @@
 <!-- level2  -->
 <!-- robotArm.grab();
             for(i = 0; i < 9; i++){
-            	robotArm.moveRight();
+                  robotArm.moveRight();
             }
             robotArm.drop();
             for(i = 0; i < 5; i++){
-            	robotArm.moveLeft();
+                  robotArm.moveLeft();
             }
             robotArm.grab();
             for(i = 0; i < 5; i++){
-            	robotArm.moveRight();
+                  robotArm.moveRight();
             }
             robotArm.drop();
             for(i = 0; i < 2; i++){
-            	robotArm.moveLeft();
+                  robotArm.moveLeft();
             }
             robotArm.grab();
             for(i = 0; i < 2; i++){
-            	robotArm.moveRight();
+                  robotArm.moveRight();
             }
             robotArm.drop(); -->
 <!-- level3 -->
 <!-- for(i = 0; i < 4; i++){
-            	robotArm.grab();
-            	robotArm.moveRight();
-            	robotArm.drop();
-            	robotArm.moveLeft();
+                  robotArm.grab();
+                  robotArm.moveRight();
+                  robotArm.drop();
+                  robotArm.moveLeft();
             } -->
 <!-- level4 -->
 <!-- for(i = 0; i < 3; i++){
-            	robotArm.grab();
-            	for(a = 0; a < 2; a++){
-            		robotArm.moveRight();
-            	}
-            	robotArm.drop();
-            	for(s = 0; s < 2; s++){
-            		robotArm.moveLeft();
-            	}
+                  robotArm.grab();
+                  for(a = 0; a < 2; a++){
+                        robotArm.moveRight();
+                  }
+                  robotArm.drop();
+                  for(s = 0; s < 2; s++){
+                        robotArm.moveLeft();
+                  }
             }
             for(r = 0; r < 2; r++){
-            		robotArm.moveRight();
-            	}
+                        robotArm.moveRight();
+                  }
             for(e = 0; e < 3; e++){
-            	robotArm.grab();
-            	robotArm.moveLeft();
-            	robotArm.drop();
-            	robotArm.moveRight();
+                  robotArm.grab();
+                  robotArm.moveLeft();
+                  robotArm.drop();
+                  robotArm.moveRight();
             } -->
+<!-- level 6  -->
+<!-- for (i = 0; i < 7; i++) {
+                  robotArm.moveRight();
+            }
+                  robotArm.grab();
+                  robotArm.moveRight();
+                  robotArm.drop();
+            for (r = 0; r < 7; r++) {
+                  for (p = 0; p < 1; p++) {
+                        robotArm.moveLeft();
+                  }
+                  robotArm.moveLeft();
+                  robotArm.grab();
+                  robotArm.moveRight();
+                  robotArm.drop();  
+            }   -->

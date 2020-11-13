@@ -8,20 +8,21 @@
             var robotArm = new RobotArm(canvas);
             
             // Het level inladen
-            robotArm.loadLevel("exercise 7");
+            robotArm.loadLevel("exercise 9");
             robotArm.speed = 2000;
             // Jou instructies volgen hier
-            for (p = 0; p <5; p++){
-                  for (i = 0; i < 6; i++) {
-                        robotArm.moveRight();
-                        robotArm.grab();
-                        robotArm.moveLeft();
+            robotArm.grab();
+            for (j = 0; j < 4; j++) {
+                 for (i = 0; i < 5; i ++) {
+                       robotArm.moveRight();
+                 }
                         robotArm.drop();
-                  }   
-                        for (r = 0; r < 2; r++) {
-                              robotArm.moveRight();
+                        for (r = 0; r <4; r++) {
+                              robotArm.moveLeft();
                         }
+                              robotArm.grab(); 
             }
+            
                   
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
@@ -98,3 +99,28 @@
                   robotArm.moveRight();
                   robotArm.drop();  
             }   -->
+<!-- level 7 bijna af-->
+<!-- for (p = 0; p <5; p++){
+                  for (i = 0; i < 6; i++) {
+                        robotArm.moveRight();
+                        robotArm.grab();
+                        robotArm.moveLeft();
+                        robotArm.drop();
+                  }   
+                        for (r = 0; r < 2; r++) {
+                              robotArm.moveRight();
+                        }
+            } -->
+<!-- level 8 bijna af -->
+<!-- robotArm.moveRight();
+            robotArm.grab();
+            for (a = 0; a < 7; a++) {
+                  for (i = 0; i < 8; i ++) {
+                  robotArm.moveRight();
+                  } 
+                        robotArm.drop();
+                        for (i = 0; i < 8; i ++) {
+                              robotArm.moveLeft();
+                        }
+                              robotArm.grab();
+            } -->

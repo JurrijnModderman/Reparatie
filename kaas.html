@@ -21,38 +21,38 @@
 			} else {
 				var hard = prompt("Is de kaas hard als steen?");
 				console.log(hard);
-					if (hard == "ja") {
-						alert("Het is Pammigiano Reggiano!"); //uitkomst pammigiano reggiano
-					} else {
-						alert("Het is Goudse kaas!"); //uitkomst goudse kaas
-					}
+				if (hard == "ja") {
+					alert("Het is Pammigiano Reggiano!"); //uitkomst pammigiano reggiano
+				} else {
+					alert("Het is Goudse kaas!"); //uitkomst goudse kaas
+				}
 			}			
 		} else {
 			var schimmels = prompt("Heeft de kaas blauwe schimmels?");
 			console.log(schimmels);
-				if (schimmels == "ja") {
-					var welSchimmelsKorst = prompt("Het is schimmelkaas maar heeft de kaas een korst?");
-					console.log(welSchimmelsKorst);
-					if (welSchimmelsKorst == "ja") {
-						var stinkkaas = prompt("Stinkt de kaas?");
-						console.log(stinkkaas);
-						if (stinkkaas == "ja") {
-							alert("Het is Blue de Rochbaron!"); //uitkomst blue de rochbaron
-						} else {
-							alert("Het is geenStinkKaas!"); //uitkomst geenstinkkaas
-						}
+			if (schimmels == "ja") {
+				var welSchimmelsKorst = prompt("Het is schimmelkaas maar heeft de kaas een korst?");
+				console.log(welSchimmelsKorst);
+				if (welSchimmelsKorst == "ja") {
+					var stinkkaas = prompt("Stinkt de kaas?");
+					console.log(stinkkaas);
+					if (stinkkaas == "ja") {
+						alert("Het is Blue de Rochbaron!"); //uitkomst blue de rochbaron
 					} else {
-						alert("Het is Foume d'Ambert!"); //uitkomst foume dambert
+						alert("Het is geenStinkKaas!"); //uitkomst geenstinkkaas
 					}
 				} else {
-					var geenSchimmelsKorst = prompt("Het is geen schimmelkaas maar heeft de kaas een korst?");
-					console.log(geenSchimmelsKorst);
-						if (geenSchimmelsKorst == "ja") {
-							alert("Het is Camembert!"); //uitkomst camebert
-						} else {
-							alert("Het is Mozzarella!"); //uitkomst mozzarella
-						}
-				}	
+					alert("Het is Foume d'Ambert!"); //uitkomst foume dambert
+				}
+			} else {
+				var geenSchimmelsKorst = prompt("Het is geen schimmelkaas maar heeft de kaas een korst?");
+				console.log(geenSchimmelsKorst);
+					if (geenSchimmelsKorst == "ja") {
+						alert("Het is Camembert!"); //uitkomst camebert
+					} else {
+						alert("Het is Mozzarella!"); //uitkomst mozzarella
+					}
+			}	
 		}
 		
 	</script>

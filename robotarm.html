@@ -8,25 +8,19 @@
             var robotArm = new RobotArm(canvas);
             
             // Het level inladen
-            robotArm.loadLevel("exercise 9");
+            robotArm.loadLevel("exercise 10");
             robotArm.speed = 2000;
             // Jou instructies volgen hier
+            for (e = 0; e < 5; e--) {
             robotArm.grab();
-            for(a = 0; a < 5; a++) {
+            for (a = 0; a < 9; a++) {
                   robotArm.moveRight();
             }
-            for(r = 0; r < 2; r++) {
-               robotArm.drop();
-            for(i = 0; i < 4; i++) {
+            robotArm.drop();
+            for (i = 0; i < 8; i++) {
                   robotArm.moveLeft();
             }
-            robotArm.grab();
-            for(i = 0; i < 5; i++) {
-                  robotArm.moveRight();
-            }  
             }
-            robotArm.drop(); 
-            
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>
@@ -170,3 +164,17 @@
                   }
                   robotArm.grab(); 
                   } -->
+<!-- level 9 goed -->
+<!-- for (a = 1; a < 5; a++) {
+            for (i = 0; i < a; i++) {
+                  robotArm.grab();
+                  for (r = 0; r < 5; r++) {
+                        robotArm.moveRight();
+                  }
+                  robotArm.drop();
+                  for (j = 0; j < 5; j++) {
+                        robotArm.moveLeft();
+                  }
+            }
+            robotArm.moveRight();
+            } -->

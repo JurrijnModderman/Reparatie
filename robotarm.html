@@ -8,18 +8,17 @@
             var robotArm = new RobotArm(canvas);
             
             // Het level inladen
-            robotArm.loadLevel("exercise 10");
+            robotArm.loadLevel("exercise 12");
             robotArm.speed = 2000;
             // Jou instructies volgen hier
-            for (e = 0; e < 5; e--) {
-            robotArm.grab();
-            for (a = 0; a < 9; a++) {
-                  robotArm.moveRight();
-            }
-            robotArm.drop();
-            for (i = 0; i < 8; i++) {
-                  robotArm.moveLeft();
-            }
+            for (i = 0; i < 10; i++) {
+                  robotArm.grab();
+                  for (a = 0; a < 10; a++) {
+                        robotArm.moveRight();
+                  }
+                  if (robotArm.scan() == "red") {
+                        robotArm.moveRight();
+                  }
             }
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
@@ -177,4 +176,30 @@
                   }
             }
             robotArm.moveRight();
+            } -->
+<!-- level 10 -->
+<!-- for (i = 9; i > 0; i--) {
+                  robotArm.grab();
+                  for (a = 0; a < i; a++) {
+                        robotArm.moveRight();
+                  }
+                  robotArm.drop();
+                  i = i-1;
+                  for (e = 0; e < i; e++) {
+                        robotArm.moveLeft();
+                  }
+            } -->
+<!-- level 11 -->
+<!-- for (i = 0; i < 9; i++) {
+                  robotArm.moveRight();
+            for (a = 0; a < 9; a++) {
+                  robotArm.grab();
+            }
+            if (robotArm.scan() == "white") {
+                  robotArm.moveRight();
+                  robotArm.drop();
+                  robotArm.moveLeft();
+            }     else {
+                  robotArm.drop();
+            }
             } -->

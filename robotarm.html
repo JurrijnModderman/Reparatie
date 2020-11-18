@@ -13,11 +13,13 @@
             // Jou instructies volgen hier
             for (i = 0; i < 10; i++) {
                   robotArm.grab();
+                  robotArm.scan();
                   for (a = 0; a < 10; a++) {
                         robotArm.moveRight();
                   }
                   if (robotArm.scan() == "red") {
                         robotArm.moveRight();
+                        robotArm.drop();
                   }
             }
             // De door jou opgegeven instructies uitvoeren

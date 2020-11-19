@@ -16,13 +16,14 @@
                 for (blok = 1; blok <= 9; blok++) {
                     robotArm.grab();
                 }
+            }
                 if (robotArm.scan() == "red") {
                     robotArm.moveRight();
                     robotArm.drop();
                 }   else {
                     robotArm.drop();
                 }
-            } 
+             
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>

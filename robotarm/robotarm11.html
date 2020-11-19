@@ -11,7 +11,18 @@
             robotArm.loadLevel("exercise 11");
             robotArm.speed = 2000;
             // Jou instructies volgen hier
-             
+            for (blok = 1; blok <= 9; blok++) {
+                robotArm.moveRight();
+                for (positie = 1; positie <= 9; positie++) {
+                    robotArm.grab();
+                }
+                    if (robotArm.scan() == "white") {
+                        robotArm.moveRight();
+                        robotArm.drop();
+                    }   else {
+                        robotArm.drop();
+                    }
+            }
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>

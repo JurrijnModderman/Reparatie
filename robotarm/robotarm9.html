@@ -11,11 +11,16 @@
             robotArm.loadLevel("exercise 9");
             robotArm.speed = 2000;
             // Jou instructies volgen hier
-            robotArm.grab();
-            for (blauweBlok = 1; blauweBlok <= 6; blauweBlok++) {
-                robotArm.moveRight();
-            }
-            robotArm.drop();
+            for (herhaling = 1; herhaling <= 4; herhaling++) {
+                robotArm.grab();
+                for (blauweBlok = 1; blauweBlok <= 6; blauweBlok++) {
+                    robotArm.moveRight();
+                }
+                robotArm.drop();
+                    for (positie = 1; positie <= 5; positie++) {
+                        robotArm.moveLeft();
+                    }
+            }        
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>

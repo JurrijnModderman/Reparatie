@@ -11,13 +11,14 @@
             robotArm.loadLevel("exercise 10");
             robotArm.speed = 2000;
             // Jou instructies volgen hier
-            for (herhaling = 0; herhaling <= 5; herhaling++) {
+            for (herhaling = 9; herhaling < 0; herhaling--) {
                 robotArm.grab();
-                for (stapel = 1; stapel <= 9; stapel++) {
+                for (stapel = 0; stapel < herhaling; stapel++) {
                     robotArm.moveRight();
                 }
                 robotArm.drop();
-                    for (positie = 1; positie <= 8; positie++) {
+                herhaling = herhaling -1;
+                    for (positie = 0; positie < herhaling; positie++) {
                         robotArm.moveLeft();
                     }
             }

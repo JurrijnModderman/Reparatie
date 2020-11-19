@@ -11,16 +11,19 @@
             robotArm.loadLevel("exercise 9");
             robotArm.speed = 2000;
             // Jou instructies volgen hier
-            for (stapel = 1; stapel <= 4; stapel++) {
-                robotArm.grab();
-                for (blok = 1; blok <= 6; blok++) {
-                    robotArm.moveRight();
-                }
-                robotArm.drop();
-                    for (positie = 1; positie <= 5; positie++) {
+            for (herhaling = 1; herhaling < 5; herhaling++) {
+            for (stapel = 0; stapel < herhaling; stapel++) {
+                  robotArm.grab();
+                  for (blok = 0; blok < 5; blok++) {
+                        robotArm.moveRight();
+                  }
+                  robotArm.drop();
+                  for (positie = 0; positie < 5; positie++) {
                         robotArm.moveLeft();
-                    }
-            }        
+                  }
+            }
+            robotArm.moveRight();
+            }       
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>

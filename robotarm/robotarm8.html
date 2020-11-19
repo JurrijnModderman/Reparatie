@@ -12,11 +12,16 @@
             robotArm.speed = 2000;
             // Jou instructies volgen hier
             robotArm.moveRight();
-            robotArm.grab();
-            for (blok = 1; blok <= 8; blok++) {
-                robotArm.moveRight();
-            }
-                robotArm.drop();
+            for (stapel = 1; stapel <= 7; stapel++) {
+                robotArm.grab();
+                for (blok = 1; blok <= 8; blok++) {
+                    robotArm.moveRight();
+                }
+                    robotArm.drop();
+                   for (robotarmTerug = 1; robotarmTerug <= 8; robotarmTerug++) {
+                    robotArm.moveLeft();
+                   }
+            } 
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>

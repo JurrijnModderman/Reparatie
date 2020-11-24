@@ -18,9 +18,16 @@
                     for (blok = 1; blok <= 9; blok++) {
                     robotArm.moveRight();
                     }
+                    robotArm.drop();
+                    for (blok = 9; blok >= 1; blok--) {
+                    robotArm.moveLeft();
+                    }
+                }   else {
+                    robotArm.drop();
+                    robotArm.moveRight();
                 }
             }
-                
+            
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>

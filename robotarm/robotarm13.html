@@ -13,9 +13,16 @@
             // Jou instructies volgen hier
             for (blok = 9; blok >= 0; blok--) {
                 robotArm.grab();
-            }
             if (robotArm.scan() == null) {
                 break;
+            }
+            for (stapel = 0; stapel < blok; stapel++) {
+                robotArm.moveRight();
+            }
+            robotArm.drop();
+            for (herhaling = 0; herhaling < blok; herhaling++) {
+                robotArm.moveLeft();
+            }
             }
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();

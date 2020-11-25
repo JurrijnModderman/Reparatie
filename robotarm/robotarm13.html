@@ -8,9 +8,15 @@
             var robotArm = new RobotArm(canvas);
             
             // Het level inladen
-            robotArm.loadLevel("exercise 13");
+            robotArm.randomLevel( 1, 8);
             robotArm.speed = 2000;
             // Jou instructies volgen hier
+            for (blok = 9; blok >= 0; blok--) {
+                robotArm.grab();
+            }
+            if (robotArm.scan() == null) {
+                break;
+            }
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>

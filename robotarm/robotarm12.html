@@ -11,22 +11,23 @@
             robotArm.loadLevel("exercise 12");
             robotArm.speed = 2000;
             // Jou instructies volgen hier
-            for (herhaling = 1; herhaling <= 9; herhaling++) {
+            for (herhaling = 9; herhaling > 0; herhaling--) {
                 robotArm.grab();
-                robotArm.scan();
-                if (robotArm.scan() == "red") {
-                    for (blok = 1; blok <= 9; blok++) {
+                var color = robotArm.scan();
+                if (color == "red") {
+                    for (blok = 1; blok <= herhaling; blok++) {
                     robotArm.moveRight();
                     }
                     robotArm.drop();
-                    for (blok = 9; blok >= 1; blok--) {
+                    for (stapel = 1; stapel <= herhaling-1; stapel++) {
                     robotArm.moveLeft();
                     }
-                }   else {
+                    }   
+                    if (color != "red") {
                     robotArm.drop();
                     robotArm.moveRight();
-                }
-            }
+                    }
+                    }
             
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();

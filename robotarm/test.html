@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <script src="./robot-arm.js"></script>
+        <script>
+            // Robotarm bibliotheek inladen
+            var canvas = document.getElementById("canvas");
+            var robotArm = new RobotArm(canvas);
+            
+            // Het level inladen
+            robotArm.randomLevel( 1, 8);
+            robotArm.speed = 2000;
+            // Jou instructies volgen hier
+            //dit:
+                //robotarm blok pakken
+                //kijken of je iets hebt
+                 //heb je niks, stop
+                //als je een waarde hebt, druk 9 keer naar rechts
+                //blok neerzetten
+                //druk 9 keer naar links
+            //herhaal dit tot je geen waarde hebt
+            
+
+            // De door jou opgegeven instructies uitvoeren
+            robotArm.run();
+        </script>
+    </body>
+</html>

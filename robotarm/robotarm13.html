@@ -11,19 +11,28 @@
             robotArm.randomLevel( 1, 8);
             robotArm.speed = 2000;
             // Jou instructies volgen hier
-            for (blok = 9; blok >= 0; blok--) {
+            //for (blok = 9; blok >= 0; blok--) {
+            do {
                 robotArm.grab();
-            if (robotArm.scan() == null) {
-                break;
+                var color = robotArm.scan();
             }
-            for (stapel = 0; stapel < blok; stapel++) {
-                robotArm.moveRight();
+            while (color != null) {
+                var blok = 9;
+                for (stapel = 0; stapel < blok; stapel++) {
+                    robotArm.moveRight();
+                }
+                robotArm.drop();
+                for (herhaling = 0; herhaling < blok; herhaling++) {
+                    robotArm.moveLeft();
+                }
+                if (blok >= 0) {
+                    blok-1;
+                }
+                // in while
             }
-            robotArm.drop();
-            for (herhaling = 0; herhaling < blok; herhaling++) {
-                robotArm.moveLeft();
-            }
-            }
+                  
+                
+            //}
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>

@@ -16,18 +16,17 @@
                 var color = robotArm.scan();
                 if (color == "red") {
                     for (blok = 1; blok <= herhaling; blok++) {
-                    robotArm.moveRight();
+                        robotArm.moveRight();
                     }
                     robotArm.drop();
                     for (stapel = 1; stapel <= herhaling-1; stapel++) {
-                    robotArm.moveLeft();
+                        robotArm.moveLeft();
                     }
-                    }   
-                    if (color != "red") {
-                    robotArm.drop();
-                    robotArm.moveRight();
+                }   else {
+                        robotArm.drop();
+                        robotArm.moveRight();
                     }
-                    }
+            }
             
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();

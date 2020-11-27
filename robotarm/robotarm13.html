@@ -11,8 +11,21 @@
             robotArm.randomLevel( 1, 8);
             robotArm.speed = 2000;
             // Jou instructies volgen hier
-            //for (blok = 9; blok >= 0; blok--) {
-            var color = [];
+            robotArm.grab();
+            var color = robotArm.scan();
+            var blok = 9;
+            console.log(color);
+            while (color == "red") {
+                robotArm.moveRight();
+            }
+
+
+            // De door jou opgegeven instructies uitvoeren
+            robotArm.run();
+        </script>
+    </body>
+</html>
+<!-- var color;
             do {
                 robotArm.grab();
                 color = robotArm.scan();
@@ -30,12 +43,4 @@
                     blok-1;
                 }
                 // in while
-            }
-                  
-                
-            //}
-            // De door jou opgegeven instructies uitvoeren
-            robotArm.run();
-        </script>
-    </body>
-</html>
+            } -->

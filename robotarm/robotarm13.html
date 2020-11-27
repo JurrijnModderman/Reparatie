@@ -13,9 +13,7 @@
             // Jou instructies volgen hier
             robotArm.grab();
             var color = robotArm.scan();
-            var blok = 9;
-            console.log(color);
-            while (color == "red") {
+            while (color != "") {
                 robotArm.moveRight();
             }
 

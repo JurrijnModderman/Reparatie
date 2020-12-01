@@ -14,8 +14,17 @@
             do {
                 robotArm.grab();
                 var color = robotArm.scan();
-            }
-            
+                //move block to end and come back
+                var blok = 1;
+                for (stapel = 10; stapel > blok; stapel--) {
+                    robotArm.moveRight();
+                }
+                robotArm.drop();
+                for (herhaling = 10; herhaling > blok; herhaling--) {
+                    robotArm.moveLeft();
+                }
+                console.log(stapel);
+            } while (color != null)
             
 
 

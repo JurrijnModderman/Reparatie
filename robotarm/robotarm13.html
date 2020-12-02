@@ -9,23 +9,29 @@
             
             // Het level inladen
             robotArm.randomLevel( 1, 8);
-            robotArm.speed = 2000;
+            robotArm.speed = 1000;
             // Jou instructies volgen hier
+            var blok = 1;
             do {
-                robotArm.grab();
-                var color = robotArm.scan();
+                //for (blok = 1; blok < 10; blok++) {
+                robotArm.grab();//pakken
+                var color = robotArm.scan();//scannen en in var color zetten
                 //move block to end and come back
-                var blok = 1;
-                for (stapel = 10; stapel > blok; stapel--) {
-                    robotArm.moveRight();
+                if (color != null) {
+                    for (stapel = 10; stapel > blok; stapel--) {
+                        robotArm.moveRight();
+                    }
+                    robotArm.drop();
+                    for (herhaling = 10; herhaling > blok; herhaling--) {
+                        robotArm.moveLeft();
+                    }
                 }
-                robotArm.drop();
-                for (herhaling = 10; herhaling > blok; herhaling--) {
-                    robotArm.moveLeft();
-                }
-                console.log(stapel);
-            } while (color != null)
-            
+                blok++;
+            } while(color != null)
+                
+                
+                //
+             //als dit waar(true) is gaat de code in do nog een keer uitgevoerd worden
 
 
             // De door jou opgegeven instructies uitvoeren

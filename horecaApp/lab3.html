@@ -8,10 +8,10 @@
 		function persoon(naam, leeftijd) {
 			do {
 				naam = prompt("Wat is je naam?");
-				leeftijd = prompt("Hoe oud ben je?");
 				if (naam == "stop") {
 					break;
 				} else {
+					leeftijd = prompt("Hoe oud ben je?");
 					return document.write("Hallo " + naam + " je leeftijd is " + leeftijd + "!");
 				}
 			} while(naam != null);

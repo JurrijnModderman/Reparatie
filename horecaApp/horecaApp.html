@@ -5,20 +5,31 @@
 </head>
 <body>
 	<script>
+		function prijzen() {
+			var fris = 2.50;
+			var bier = 3;
+			var wijn = 4.50;
+			return prijzen;
+		}
+
 		function rekening() {
+			document.write(welkDrankje + drankje + " = " + prijzen());
 			return rekening;
 		}
 
 		function bestelling(drankje, welkDrankje) {
-			drankje = prompt("Welke bestelling wilt u toevoegen?(fris, bier of wijn)");
-			welkDrankje = prompt("Hoeveel " + drankje + " wilt u toevoegen aan uw bestelling?");
+			do {
+				drankje = prompt("Welke bestelling wilt u toevoegen?(fris, bier of wijn)");
+				if (drankje == "stop") {
+					rekening();
+				}
+				welkDrankje = prompt("Hoeveel " + drankje + " wilt u toevoegen aan uw bestelling?");
+			}while(welkDrankje != null)
 			return bestelling;
 		}
 		bestelling();
 
-		function prijzen() {
-			return prijzen;
-		}
+		
 	</script>
 </body>
 </html>

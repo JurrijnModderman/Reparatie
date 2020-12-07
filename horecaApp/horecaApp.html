@@ -9,9 +9,12 @@
 			return rekening;
 		}
 
-		function bestelling() {
+		function bestelling(drankje, welkDrankje) {
+			drankje = prompt("Welke bestelling wilt u toevoegen?(fris, bier of wijn)");
+			welkDrankje = prompt("Hoeveel " + drankje + " wilt u toevoegen aan uw bestelling?");
 			return bestelling;
 		}
+		bestelling();
 
 		function prijzen() {
 			return prijzen;

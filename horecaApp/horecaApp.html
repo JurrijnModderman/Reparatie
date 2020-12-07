@@ -17,13 +17,18 @@
 			return rekening;
 		}
 
-		function bestelling(drankje, welkDrankje) {
+		function bestelling() {
 			do {
-				drankje = prompt("Welke bestelling wilt u toevoegen?(fris, bier of wijn)");
+				var drankje = prompt("Welke bestelling wilt u toevoegen?(fris, bier of wijn)");
+				var drinken = ["fris", "bier", "wijn", "stop"]
+				if (drankje != ["fris", "bier", "wijn", "stop"]) {
+					alert("u heeft een ongeldige invoer gedaan. Uw bestelling kan niet worden toegevoegd!");
+				} else {
+					var welkDrankje = prompt("Hoeveel " + drankje + " wilt u toevoegen aan uw bestelling?");
+				}
 				if (drankje == "stop") {
 					rekening();
-				}
-				welkDrankje = prompt("Hoeveel " + drankje + " wilt u toevoegen aan uw bestelling?");
+				}	
 			}while(welkDrankje != null)
 			return bestelling;
 		}

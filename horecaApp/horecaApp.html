@@ -4,10 +4,22 @@
 	<title>Cafe JLM</title>
 </head>
 <body>
+	<div id = 'rekening'></div>
 	<script>
-		
-
-		
+		var drankje;
+		var welkDrankje;
+		function bestelling() {
+			do {
+				drankje = prompt('Welke bestelling wilt u toevoegen?(fris, bier of wijn)');
+				if (drankje == 'stop') {
+					drankje = '';
+					document.getElementById('rekening').innerHTML = drankje;//de rekening
+				} else {
+					welkDrankje = prompt('Hoeveel ' + drankje + ' wilt u toevoegen aan uw bestelling?');
+				}
+			} while (drankje != 'stop')		
+		}
+		bestelling();
 	</script>
 </body>
 </html>

@@ -5,32 +5,46 @@
 </head>
 <body>
 	<script>
-		function prijzen() {
-			var fris = 2.50;
-			var bier = 3;
-			var wijn = 4.50;
+		var drankje;
+		var welkDrankje;
+		var totalePrijs;
+		function prijzen(totalePrijs) {
+			const fris = 2.50;
+			const bier = 3;
+			const wijn = 4.50;
+			if (drankje == 'fris') {
+				totalePrijs = welkDrankje * fris;
+			} else if (drankje == 'bier') {
+				totalePrijs = welkDrankje * bier;
+			} else if (drankje == 'wijn') {
+				totalePrijs = welkDrankje * wijn;
+			} else {
+				totalePrijs = [];
+			}
+			document.write(welkDrankje + drankje + ' = ' + totalePrijs);
 			return prijzen;
 		}
 
 		function rekening() {
-			document.write(welkDrankje + drankje + " = " + prijzen());
+			prijzen();
 			return rekening;
 		}
 
 		function bestelling() {
 			do {
-				var drankje = prompt("Welke bestelling wilt u toevoegen?(fris, bier of wijn)");//Je krijgt de vraag 'Welke bestelling wilt u toevoegen?'Je kunt nu opgeven welk drankje je wilt bestellen. Je kunt intypen 'fris', 'bier' of 'wijn'
-				var drinken = ["fris", "bier", "wijn", "stop"]
-				if (drankje != drinken) {
-					alert("u heeft een ongeldige invoer gedaan. Uw bestelling kan niet worden toegevoegd!");
+				drankje = prompt('Welke bestelling wilt u toevoegen?(fris, bier of wijn)');//Je krijgt de vraag 'Welke bestelling wilt u toevoegen?'Je kunt nu opgeven welk drankje je wilt bestellen. Je kunt intypen 'fris', 'bier' of 'wijn'
+				//var drinken = ["fris", "bier", "wijn", "stop"]
+				if (drankje != 'fris' && drankje != 'bier' && drankje != 'wijn' && drankje != 'stop') {
+					alert('u heeft een ongeldige invoer gedaan. Uw bestelling kan niet worden toegevoegd!');
 				} else {
-					var welkDrankje = prompt("Hoeveel " + drankje + " wilt u toevoegen aan uw bestelling?");//Daarna krijg je de vraag 'Hoeveel naam-drankje wilt u toevoegen aan uw bestelling. Als je bijvoorbeeld 'fris' heb ingevuld dan wordt de vraag 'Hoeveel fris wilt u toevoegen aan uw bestelling'. Dus waar naam-drankje staat toon je welk drankje je gaat bestellen
+					welkDrankje = prompt('Hoeveel ' + drankje + ' wilt u toevoegen aan uw bestelling?');//Daarna krijg je de vraag 'Hoeveel naam-drankje wilt u toevoegen aan uw bestelling. Als je bijvoorbeeld 'fris' heb ingevuld dan wordt de vraag 'Hoeveel fris wilt u toevoegen aan uw bestelling'. Dus waar naam-drankje staat toon je welk drankje je gaat bestellen
 				}
-				if (drankje == "stop") {
+				if (drankje == 'stop') {
 					rekening();
-				}	
+				}
+				
 				//Daarna ga je automatisch weer terug naar stap 1. Kortom je kunt dan weer een nieuwe bestelling invoeren.
-			}while(welkDrankje != null)
+			}while(drankje != 'stop')
 			return bestelling;
 		}
 		bestelling();

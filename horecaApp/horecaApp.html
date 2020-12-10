@@ -7,32 +7,33 @@
 	<div id = 'rekening'></div>
 	<script>
 		var drankje;
-		var welkDrankje;
-		const fris = 2.50;
-		const bier = 3;
-		const wijn = 4.50;
-		function rekening() {
-			if (drankje == 'fris') {
-				drankje = fris;
-				return document.GetElementById('rekening').innerHTML = welkDrankje * drankje;
-			} else if (drankje == 'bier') {
-				drankje = bier;
-				return document.GetElementById('rekening').innerHTML = welkDrankje * drankje;
-			} else if (drankje == 'wijn') {
-				drankje = wijn;
-				return document.GetElementById('rekening').innerHTML = welkDrankje * drankje;
-			}
-		}
+		var aantalDrankje;
+		const prijsFris = 2.50;
+		const prijsBier = 3;
+		const prijsWijn = 4.50;
+		var counterFris;
+		var counterBier;
+		var counterWijn;
 		function bestelling() {
 			do {
 				drankje = prompt('Welke bestelling wilt u toevoegen?(fris, bier of wijn. Type stop als u klaar bent!)');
 				if (drankje != 'stop') {
-					welkDrankje = prompt('Hoeveel ' + drankje + ' wilt u toevoegen aan uw bestelling?');
-				} else {
-					rekening();
+					aantalDrankje = prompt('Hoeveel ' + drankje + ' wilt u toevoegen aan uw bestelling?');
 				}
-			} while (drankje != 'stop')		
-				
+				counterFris = prijsFris * aantalDrankje;
+			} while (drankje != 'stop')	
+			rekening();
+		}
+		function rekening() {
+			if (drankje == 'fris') {
+				return document.getElementById('rekening').innerHTML = counterFris;
+			} else if (drankje == 'bier') {
+				drankje = prijsBier;
+				return document.getElementById('rekening').innerHTML = aantalDrankje * prijsBier;
+			} else if (drankje == 'wijn') {
+				drankje = prijsWijn;
+				return document.getElementById('rekening').innerHTML = aantalDrankje * prijsWijn;
+			}
 		}
 		bestelling();
 	</script>

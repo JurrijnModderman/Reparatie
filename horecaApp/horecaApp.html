@@ -8,15 +8,31 @@
 	<script>
 		var drankje;
 		var welkDrankje;
+		const fris = 2.50;
+		const bier = 3;
+		const wijn = 4.50;
+		function rekening() {
+			if (drankje == 'fris') {
+				drankje = fris;
+				return document.GetElementById('rekening').innerHTML = welkDrankje * drankje;
+			} else if (drankje == 'bier') {
+				drankje = bier;
+				return document.GetElementById('rekening').innerHTML = welkDrankje * drankje;
+			} else if (drankje == 'wijn') {
+				drankje = wijn;
+				return document.GetElementById('rekening').innerHTML = welkDrankje * drankje;
+			}
+		}
 		function bestelling() {
 			do {
-				drankje = prompt('Welke bestelling wilt u toevoegen?(fris, bier of wijn)');
-				if (drankje == 'stop') {
-					document.getElementById('rekening').innerHTML = drankje;//de rekening
-				} else {
+				drankje = prompt('Welke bestelling wilt u toevoegen?(fris, bier of wijn. Type stop als u klaar bent!)');
+				if (drankje != 'stop') {
 					welkDrankje = prompt('Hoeveel ' + drankje + ' wilt u toevoegen aan uw bestelling?');
+				} else {
+					rekening();
 				}
 			} while (drankje != 'stop')		
+				
 		}
 		bestelling();
 	</script>

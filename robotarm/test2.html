@@ -4,21 +4,11 @@
 	<title>test</title>
 </head>
 <body>
+	<div id = 'hoi'></div>
 	<script>
-		var a = prompt("getal 1");
-		var b = prompt("getal 2");
-		function difference(a, b) {
-			if (a > b) {
-				var c = a - b;
-				return c;
-			}	else {
-				var c = b - a;
-				return c;
-			}
-		}
-		var c = difference(a, b);
-		console.log(c);
-
+		var a = 'hoi allemaal';
+		document.getElementById('hoi').innerHTML = a; 
+		
 	</script>
 	<!-- if (a > b) {
 			var c = a - b;

@@ -14,26 +14,26 @@
 		var counterFris;
 		var counterBier;
 		var counterWijn;
+		var Totaal;
 		function bestelling() {
 			do {
 				drankje = prompt('Welke bestelling wilt u toevoegen?(fris, bier of wijn. Type stop als u klaar bent!)');
 				if (drankje != 'stop') {
 					aantalDrankje = prompt('Hoeveel ' + drankje + ' wilt u toevoegen aan uw bestelling?');
 				}
-				counterFris = prijsFris * aantalDrankje;
+				if (drankje == 'fris') {
+					counterFris = prijsFris * aantalDrankje;
+				} else if (drankje == 'bier') {
+					counterBier = prijsBier * aantalDrankje;
+				} else if (drankje == 'wijn') {
+					counterWijn = prijsWijn * aantalDrankje;
+				}
+				Totaal = counterFris + counterBier + counterWijn;
 			} while (drankje != 'stop')	
 			rekening();
 		}
 		function rekening() {
-			if (drankje == 'fris') {
-				return document.getElementById('rekening').innerHTML = counterFris;
-			} else if (drankje == 'bier') {
-				drankje = prijsBier;
-				return document.getElementById('rekening').innerHTML = aantalDrankje * prijsBier;
-			} else if (drankje == 'wijn') {
-				drankje = prijsWijn;
-				return document.getElementById('rekening').innerHTML = aantalDrankje * prijsWijn;
-			}
+			return document.getElementById('rekening').innerHTML = 'Totaal fris = ' + counterFris + '<br>' + 'Totaal bier = ' + counterBier + '<br>' + 'Totaal wijn = ' + counterWijn + '<br>' + 'Het totale bedrag = ' + Totaal;
 		}
 		bestelling();
 	</script>

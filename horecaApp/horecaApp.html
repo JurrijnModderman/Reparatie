@@ -18,7 +18,9 @@
 		function bestelling() {
 			do {
 				drankje = prompt('Welke bestelling wilt u toevoegen?(fris, bier of wijn. Type stop als u klaar bent!)');
-				if (drankje != 'stop') {
+				if (drankje != 'fris' && drankje != 'bier' && drankje != 'wijn' && drankje != 'stop') {
+					alert('u heeft een ongeldige invoer gedaan. Uw bestelling kan niet worden toegevoegd!');
+				} else if (drankje != 'stop') {
 					aantalDrankje = prompt('Hoeveel ' + drankje + ' wilt u toevoegen aan uw bestelling?');
 				}
 				if (drankje == 'fris') {

@@ -6,36 +6,38 @@
 <body>
 	<div id = 'rekening'></div>
 	<script>
-		var drankje;
-		var aantalDrankje;
-		const prijsFris = 2.50;
-		const prijsBier = 3;
-		const prijsWijn = 4.50;
+		var drink;
+		var amountDrink;
+		const priceFris = 2.50;
+		const priceBier = 3;
+		const priceWijn = 4.50;
 		var counterFris;
 		var counterBier;
 		var counterWijn;
 		var Totaal;
+		// var namen duidelijker
+		// taal aanhouden(eng)
 		function bestelling() {
 			do {
-				drankje = prompt('Welke bestelling wilt u toevoegen?(fris, bier of wijn. Type stop als u klaar bent!)');
-				if (drankje != 'fris' && drankje != 'bier' && drankje != 'wijn' && drankje != 'stop') {
+				drink = prompt('Welke bestelling wilt u toevoegen?(fris, bier of wijn. Type stop als u klaar bent!)');
+				if (drink != 'fris' && drink != 'bier' && drink != 'wijn' && drink != 'stop') {
 					alert('u heeft een ongeldige invoer gedaan. Uw bestelling kan niet worden toegevoegd!');
-				} else if (drankje != 'stop') {
-					aantalDrankje = prompt('Hoeveel ' + drankje + ' wilt u toevoegen aan uw bestelling?');
+				} else if (drink != 'stop') {
+					amountDrink = prompt('Hoeveel ' + drankje + ' wilt u toevoegen aan uw bestelling?');
 				}
-				if (drankje == 'fris') {
-					counterFris = prijsFris * aantalDrankje;
-				} else if (drankje == 'bier') {
-					counterBier = prijsBier * aantalDrankje;
-				} else if (drankje == 'wijn') {
-					counterWijn = prijsWijn * aantalDrankje;
+				if (drink == 'fris') {
+					counterFris = priceFris * amountDrink;//
+				} else if (drink == 'bier') {
+					counterBier = priceBier * amountDrink;
+				} else if (drink == 'wijn') {
+					counterWijn = priceWijn * amountDrink;
 				}
 				Totaal = counterFris + counterBier + counterWijn;
-			} while (drankje != 'stop')	
-			rekening();
+			} while (drink != 'stop')	
+			rekening('rekening');
 		}
-		function rekening() {
-			return document.getElementById('rekening').innerHTML = 'Totaal fris = ' + counterFris + '<br>' + 'Totaal bier = ' + counterBier + '<br>' + 'Totaal wijn = ' + counterWijn + '<br>' + 'Het totale bedrag = ' + Totaal;
+		function rekening(rekeningID) {
+			document.getElementById(rekeningID).innerHTML = 'Totaal fris = ' + counterFris + '<br>' + 'Totaal bier = ' + counterBier + '<br>' + 'Totaal wijn = ' + counterWijn + '<br>' + 'Het totale bedrag = ' + Totaal;
 		}
 		bestelling();
 	</script>

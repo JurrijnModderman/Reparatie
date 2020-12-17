@@ -28,7 +28,11 @@
 				drink = prompt('Welke bestelling wilt u toevoegen?(fris, bier, wijn of snack. Type stop als u klaar bent!)');
 				if (drink == 'snack') {
 					snack = prompt('Hoeveel bitterballen wilt u toevoegen(8 of 16)?');
-					amountSnack = prompt('Hoeveel bitterbalschalen van ' + snack + ' stuks wilt u bestellen?')
+					if (snack != 8 && snack != 16) {
+						alert('U kunt alleen een keuze maken tussen 8 en 16. De snacks zijn niet toegevoegd aan de bestelling.')
+					} else if (snack != 'stop') {
+						amountSnack = prompt('Hoeveel bitterbalschalen van ' + snack + ' stuks wilt u bestellen?')
+					}
 				}
 				if (drink != 'fris' && drink != 'bier' && drink != 'wijn' && drink != 'snack' && drink != 'stop') {
 					alert('u heeft een ongeldige invoer gedaan. Uw bestelling kan niet worden toegevoegd!');

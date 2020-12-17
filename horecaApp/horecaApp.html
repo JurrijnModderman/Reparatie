@@ -8,23 +8,34 @@
 	<script>
 		var drink;
 		var amountDrink;
+		var snack;
+		var amountSnack;
 		const priceFris = 2.50;
 		const priceBier = 3;
 		const priceWijn = 4.50;
+		const priceSnackAmount8 = 4;
+		const priceSnackAmount16 = 7.50;
 		var amountFris;
 		var amountBier;
 		var amountWijn;
+		var amountSnack8;
+		var amountSnack16;
 		var Totaal;
 		// var namen duidelijker
 		// taal aanhouden(eng)
 		function bestelling() {
 			do {
-				drink = prompt('Welke bestelling wilt u toevoegen?(fris, bier of wijn. Type stop als u klaar bent!)');
-				if (drink != 'fris' && drink != 'bier' && drink != 'wijn' && drink != 'stop') {
+				drink = prompt('Welke bestelling wilt u toevoegen?(fris, bier, wijn of snack. Type stop als u klaar bent!)');
+				if (drink == 'snack') {
+					snack = prompt('Hoeveel bitterballen wilt u toevoegen(8 of 16)?');
+					amountSnack = prompt('Hoeveel bitterbalschalen van ' + snack + ' stuks wilt u bestellen?')
+				}
+				if (drink != 'fris' && drink != 'bier' && drink != 'wijn' && drink != 'snack' && drink != 'stop') {
 					alert('u heeft een ongeldige invoer gedaan. Uw bestelling kan niet worden toegevoegd!');
-				} else if (drink != 'stop') {
+				} else if (drink == 'fris' || drink == 'bier' || drink == 'wijn') {
 					amountDrink = prompt('Hoeveel ' + drink + ' wilt u toevoegen aan uw bestelling?');
 				}
+				
 				/*if (amountDrink != Number.isInteger()) {
 					alert('U heeft een ongeldige invoer gedaan. Uw bestelling kan niet worden toegevoegd!')
 				}*/
@@ -34,6 +45,10 @@
 					amountBier = amountDrink;
 				} else if (drink == 'wijn') {
 					amountWijn = amountDrink;
+				} else if (drink == 'snack' && snack == 8) {
+					 amountSnack8 = amountSnack;
+				} else if (drink == 'snack' && snack == 16) {
+					amountSnack16 = amountSnack;
 				}
 			} while (drink != 'stop')	
 			rekening('rekening');
@@ -42,8 +57,10 @@
 			amountFris *= priceFris;
 			amountBier *= priceBier;
 			amountWijn *= priceWijn;
-			Totaal = amountFris + amountBier + amountWijn;
-			document.getElementById(rekeningID).innerHTML = 'Totaal fris = ' + amountFris + '<br>' + 'Totaal bier = ' + amountBier + '<br>' + 'Totaal wijn = ' + amountWijn + '<br>' + 'Het totale bedrag = ' + Totaal;
+			amountSnack8 *= priceSnackAmount8;
+			amountSnack16 *= priceSnackAmount16;
+			Totaal = amountFris + amountBier + amountWijn + amountSnack8 + amountSnack16;
+			document.getElementById(rekeningID).innerHTML = 'Totaal fris = ' + amountFris + '<br>' + 'Totaal bier = ' + amountBier + '<br>' + 'Totaal wijn = ' + amountWijn + '<br>' + 'Totaal bitterballen8 = ' + amountSnack8 + '<br>' + 'Totaal bitterballen16 = ' + amountSnack16 + '<br>' + 'Het totale bedrag = ' + Totaal;
 		}
 		bestelling();
 	</script>

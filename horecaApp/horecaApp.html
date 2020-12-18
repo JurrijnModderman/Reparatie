@@ -39,7 +39,9 @@
 				} else if (drink == 'fris' || drink == 'bier' || drink == 'wijn') {
 					amountDrink = prompt('Hoeveel ' + drink + ' wilt u toevoegen aan uw bestelling?');
 				}
-				
+				if (typeof(amountDrink) != Number) {
+					alert('U heeft een ongeldige invoer gedaan. Uw bestelling kan niet worden toegevoegd!')
+				}
 				/*if (amountDrink != Number.isInteger()) {
 					alert('U heeft een ongeldige invoer gedaan. Uw bestelling kan niet worden toegevoegd!')
 				}*/

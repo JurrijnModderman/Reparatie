@@ -7,7 +7,7 @@ var text6 = '';
 var text7 = '';
 prompt(text1);
 if (text1 == 'naar binnen'){
-	prompt(text2)
+	prompt(text2);
 } else {
 	prompt(text3);
 }
@@ -17,14 +17,14 @@ if (text1 == 'naar binnen'){
 		prompt(text5);
 				}
 		if (text4 = "1"){
-			alert("to be continued")
+			alert("to be continued");
 		}	else {
-			alert("to be continued")
+			alert("to be continued");
 			}
 			if (text5 = "1"){
-				alert("to be continued")
+				alert("to be continued");
 			}	else {
-				alert("to be continued")
+				alert("to be continued");
 				}
 				if (text2 = "1"){
 					prompt(text6);

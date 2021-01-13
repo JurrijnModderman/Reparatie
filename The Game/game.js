@@ -8,37 +8,39 @@ do {
 			var text2 = prompt(text[1]);
 			if (text2 == "rood"){
 				var text6 = prompt(text[5]);
-			}	else {
+				if (text6 == "luciferdoosje"){
+					alert("Je hebt gekozen voor het luciferdoosje daarmee heb je geprobeerd de deur open te branden, helaas is het hele huis en de schat verbrandt. Geen schat voor jou!");
+				} else {
+					alert("Je hebt gekozen voor de hamer en het is je gelukt de deur open te breken, achter de deur ligt de schat. Om die te openen had je alleen nog een sleutel nodig, gelukkig had je die nog op zak. Het is je gelukt, Gefeliciteerd!");
+					}
+			} else {
 				var text7 = prompt(text[6]);
-				}
 				if (text7 == "luciferdoosje"){
 					alert("Je hebt gekozen voor het luciferdoosje daarmee heb je geprobeerd de deur open te branden, helaas is het hele huis en de schat verbrandt. Geen schat voor jou!");
-				}	else {
+				} else {
 					alert("Je hebt gekozen voor de hamer en het is je gelukt de deur open te breken, achter de deur ligt de schat. Om die te openen had je alleen nog een sleutel nodig, en die heb je niet gevonden. Jammer!");
-					}					
-					if (text6 == "luciferdoosje"){
-						alert("Je hebt gekozen voor het luciferdoosje daarmee heb je geprobeerd de deur open te branden, helaas is het hele huis en de schat verbrandt. Geen schat voor jou!");
-					}	else {
-						alert("Je hebt gekozen voor de hamer en het is je gelukt de deur open te breken, achter de deur ligt de schat. Om die te openen had je alleen nog een sleutel nodig, gelukkig had je die nog op zak. Het is je gelukt, Gefeliciteerd!");
-							}
+				}
+			}					
 		} else {
 			var text3 = prompt(text[2]);
-		}
 			if (text3 == "rood"){
 				var text4 = prompt(text[3]);
-			}	else {
-				var text5 = prompt(text[4]);
-				}
 				if (text4 == "luciferdoosje"){
 					alert("Je hebt gekozen voor het luciferdoosje daarmee heb je geprobeerd de deur open te branden, helaas is het hele huis en de schat verbrandt. Geen schat voor jou!");
-				}	else {
+				} else {
 					alert("Je hebt gekozen voor de hamer en het is je gelukt de deur open te breken, achter de deur ligt de schat. Om die te openen had je alleen nog een sleutel nodig, gelukkig had je die nog op zak. Ook had je nog een tweede sleutel gevonden, dat is voor iets in de schat. Het is je gelukt, Gefeliciteerd!");
-					}
-					if (text5 == "luciferdoosje"){
-						alert("Je hebt gekozen voor het luciferdoosje daarmee heb je geprobeerd de deur open te branden, helaas is het hele huis en de schat verbrandt. Geen schat voor jou!");
-					}	else {
-						alert("Je hebt gekozen voor de hamer en het is je gelukt de deur open te breken, achter de deur ligt de schat. Om die te openen had je alleen nog een sleutel nodig, gelukkig had je die nog op zak. Het is je gelukt, Gefeliciteerd!");
-							}
+				}
+		    } else {
+				var text5 = prompt(text[4]);
+				if (text5 == "luciferdoosje"){
+					alert("Je hebt gekozen voor het luciferdoosje daarmee heb je geprobeerd de deur open te branden, helaas is het hele huis en de schat verbrandt. Geen schat voor jou!");
+				} else {
+					alert("Je hebt gekozen voor de hamer en het is je gelukt de deur open te breken, achter de deur ligt de schat. Om die te openen had je alleen nog een sleutel nodig, gelukkig had je die nog op zak. Het is je gelukt, Gefeliciteerd!");
+				}
+			}
+		}
+	} else {
+		alert('Uw invoer was verkeerd, probeer het opnieuw. Typ in schilderij of bloempot!');
 	}
 } while (text1 != 'schilderij' && text1 != 'bloempot');
 

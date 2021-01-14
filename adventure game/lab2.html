@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lab2 arrays</title>
+</head>
+<body>
+	<div id = 'array'></div>
+	<script>
+		var names = [prompt('Hoeveel namen wilt u in de array stoppen? (minimaal 3.)')];
+		document.getElementById('array').innerHTML = '<h2>' + 'De ingevoerde namen in de array zijn: ' + '<br>' + names + '<br>' + 'De ingevoerde namen in de array in omgekeerde volgorde zijn: ' + names[2] + names[1] + names[0] + '</h2>';
+	</script>
+</body>
+</html>

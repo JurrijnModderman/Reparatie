@@ -6,8 +6,19 @@
 <body>
 	<div id = 'array'></div>
 	<script>
-		var names = [prompt('Hoeveel namen wilt u in de array stoppen? (minimaal 3.)')];
-		document.getElementById('array').innerHTML = '<h2>' + 'De ingevoerde namen in de array zijn: ' + '<br>' + names + '<br>' + 'De ingevoerde namen in de array in omgekeerde volgorde zijn: ' + names[2] + names[1] + names[0] + '</h2>';
+		var amountNames = prompt('Hoeveel namen wilt u in de array stoppen? (minimaal 3.)');
+		if (amountNames == 3) {
+			var names = [prompt('Wat is naam 1'), prompt('Wat is naam 2'), prompt('wat is naam 3')];
+		} else if (amountNames >3) {
+			for (naam = 3; naam < amountNames; naam++) {
+				prompt('wat is naam ' + naam);
+			}
+		}
+		document.getElementById('array').innerHTML
+		var result = '<h2>' + 'De ingevoerde namen in de array zijn: ' + '<br>' + names + '<br>' + 'De ingevoerde namen in de array in omgekeerde volgorde zijn: ';
+		//foreach
+		result += names[2] + names[1] + names[0]; 
+		result += '</h2>';
 	</script>
 </body>
 </html>

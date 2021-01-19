@@ -8,47 +8,46 @@
 	<script>
 		var arrayEen = [1,2,3,4,5,6,7,8,9,10];
 		var arrayTwee = [2,4,6,8,10,12,14,16,18,20];
-		var result = "";
+		var resultAddition = "";
+		var resultSubstraction = "";
+		var resultMultiplication = "";
+		var resultDivision = "";
 
-		function optellen() {
+		function addition() {
 			for (a = 0; a < 10; a++) {
-				result = arrayEen[a] + arrayTwee[a];
-				console.log(result);
-				document.getElementById('array').innerHTML = result;
+				resultAddition = arrayEen[a] + arrayTwee[a];
+				document.getElementById('array').innerHTML = resultAddition;
 			}
-			return result;
+			return resultAddition;
 		}
-		optellen();
+		addition();
 
-		function aftrekken() {
+		function substraction() {
 			for (a = 0; a < 10; a++) {
-				result = arrayTwee[a] - arrayEen[a];
-				console.log(result);
-				document.getElementById('array').innerHTML = result;
+				resultSubstraction = arrayTwee[a] - arrayEen[a];
+				document.getElementById('array').innerHTML = resultSubstraction;
 			}
-			return result;
+			return resultSubstraction;
 		}
-		aftrekken();
+		substraction();
 
-		function vermenigvuldigen() {
+		function multiplication() {
 			for (a = 0; a < 10; a++) {
-				result = arrayEen[a] * arrayTwee[a];
-				console.log(result);
-				document.getElementById('array').innerHTML = result;
+				resultMultiplication = arrayEen[a] * arrayTwee[a];
+				document.getElementById('array').innerHTML = resultMultiplication;
 			}
-			return result;
+			return resultMultiplication;
 		}
-		vermenigvuldigen();
+		multiplication();
 
-		function delen() {
+		function division() {
 			for (a = 0; a < 10; a++) {
-				result = arrayTwee[a] / arrayEen[a];
-				console.log(result);
-				document.getElementById('array').innerHTML = result;
+				resultDivision = arrayTwee[a] / arrayEen[a];
+				document.getElementById('array').innerHTML = resultDivision;
 			}
-			return result;
+			return resultDivision;
 		}
-		delen();
+		division();
 	</script>
 </body>
 </html>

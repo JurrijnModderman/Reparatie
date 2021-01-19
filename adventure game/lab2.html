@@ -15,10 +15,12 @@
 			}
 		}
 		function test() {
-			var result = document.getElementById('array').innerHTML = '<h2>' + 'De ingevoerde namen in de array zijn: ' + '<br>' + names + '<br>' + 'De ingevoerde namen in de array in omgekeerde volgorde zijn: ' + names + '</h2>';
+			var result = document.getElementById('array').innerHTML = '<h2>' + 'De ingevoerde namen in de array zijn: ' + '<br>' + names + '<br>' + 'De ingevoerde namen in de array in omgekeerde volgorde zijn: ' + names.reverse() + '</h2>';
 		}
-		names.forEach(test);
-		console.log(test);
+		test();
+		//names.forEach(test);
+		//console.log(test);
+		//names.slice().reverse().forEach(x => console.log(x));
 	</script>
 </body>
 </html>

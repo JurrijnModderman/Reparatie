@@ -17,7 +17,7 @@
 			for (a = 0; a < 10; a++) {
 				resultAddition = arrayEen[a] + arrayTwee[a];
 				console.log(resultAddition);
-				document.getElementById('array').innerHTML += resultAddition + "\n";
+				document.getElementById('array').innerHTML += '<br>' + resultAddition + "\n";
 			}
 			return resultAddition;
 		}
@@ -27,7 +27,7 @@
 			for (a = 0; a < 10; a++) {
 				resultSubstraction = arrayTwee[a] - arrayEen[a];
 				console.log(resultSubstraction);
-				document.getElementById('array').innerHTML += resultSubstraction + "\n";
+				document.getElementById('array').innerHTML += '<br>' + resultSubstraction + "\n";
 			}
 			return resultSubstraction;
 		}
@@ -37,7 +37,7 @@
 			for (a = 0; a < 10; a++) {
 				resultMultiplication = arrayEen[a] * arrayTwee[a];
 				console.log(resultMultiplication);
-				document.getElementById('array').innerHTML += resultMultiplication + "\n";
+				document.getElementById('array').innerHTML += '<br>' + resultMultiplication + "\n";
 			}
 			return resultMultiplication;
 		}
@@ -47,7 +47,7 @@
 			for (a = 0; a < 10; a++) {
 				resultDivision = arrayTwee[a] / arrayEen[a];
 				console.log(resultDivision);
-				document.getElementById('array').innerHTML += resultDivision + "\n";
+				document.getElementById('array').innerHTML += '<br>' + resultDivision + "\n";
 			}
 			return resultDivision;
 		}

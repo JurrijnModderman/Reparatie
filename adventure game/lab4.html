@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lab4 arrays</title>
+</head>
+<body>
+	<div id='array'></div>
+	<script>
+		var tafels = [2,4,6,8];
+		var result1 = '';
+		var result2 = '';
+		var result3 = '';
+		var result4 = '';
+		function answer1() {
+			for (a = 0; a <= 10; a++) {
+			result1 = tafels[0] * a;
+			document.getElementById('array').innerHTML += '<br>' + result1 + "\n";
+			}
+		}
+		answer1();
+
+		function answer2() {
+			for (a = 0; a <= 10; a++) {
+			result2 = tafels[1] * a;
+			document.getElementById('array').innerHTML += '<br>' + result2 + "\n";
+			}
+		}
+		answer2();
+
+		function answer3() {
+			for (a = 0; a <= 10; a++) {
+			result3 = tafels[2] * a;
+			document.getElementById('array').innerHTML += '<br>' + result3 + "\n";
+			}
+		}
+		answer3();
+
+		function answer4() {
+			for (a = 0; a <= 10; a++) {
+			result4 = tafels[3] * a;
+			document.getElementById('array').innerHTML += '<br>' + result4 + "\n";
+			}
+		}
+		answer4();
+	</script>
+</body>
+</html>

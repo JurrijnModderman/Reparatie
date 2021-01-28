@@ -1,10 +1,5 @@
-div {
-	display: flex;
-	justify-content: center;
-}
-
-button {
-	padding: 10px 20px;
-	margin: 5px;
-	background-color: white;
+.w3-container {
+	width: 600px;
+	height: 600px;
+	background-image: url(images/0.jpg);
 }

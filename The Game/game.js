@@ -42,11 +42,11 @@ if (text1 == 'schilderij'){
 			}
 		} while (text6 != 'luciferdoosje' && text6 != 'hamer')
 			//if (text6 == 'luciferdoosje' || text6 == 'hamer') {
-				if (text6 == "luciferdoosje"){
-					alert(message[0]);
-				} else {
-					alert(message[1]);
-				}
+		if (text6 == "luciferdoosje"){
+			alert(message[0]);
+		} else {
+			alert(message[1]);
+		}
 			/*} else {
 				alert('Uw invoer was verkeerd, probeer het opnieuw. Typ in luciferdoosje of hamer!');
 			}*/
@@ -59,11 +59,11 @@ if (text1 == 'schilderij'){
 			}
 		} while (text7 != 'luciferdoosje' && text7 != 'hamer')
 			//if (text7 == 'luciferdoosje' || text7 == 'hamer') {
-				if (text7 == "luciferdoosje"){
-					alert(message[2]);
-				} else {
-					alert(message[3]);
-				}
+		if (text7 == "luciferdoosje"){
+			alert(message[2]);
+		} else {
+			alert(message[3]);
+		}
 			/*} else {
 				alert('Uw invoer was verkeerd, probeer het opnieuw. Typ in luciferdoosje of hamer!');
 			}*/
@@ -89,11 +89,11 @@ if (text1 == 'schilderij'){
 			}
 		} while (text4 != 'luciferdoosje' && text4 != 'hamer')
 			//if (text4 == 'luciferdoosje' || text4 == 'hamer') {
-				if (text4 == "luciferdoosje"){
-					alert(message[4]);
-				} else {
-					alert(message[5]);
-				}
+		if (text4 == "luciferdoosje"){
+			alert(message[4]);
+		} else {
+			alert(message[5]);
+		}
 			/*} else {
 				alert('Uw invoer was verkeerd, probeer het opnieuw. Typ in luciferdoosje of hamer!');
 			}*/
@@ -106,11 +106,11 @@ if (text1 == 'schilderij'){
 			}
 		} while (text5 != 'luciferdoosje' && text5 != 'hamer')
 			//if (text5 == 'luciferdoosje' || text5 == 'hamer') {
-				if (text5 == "luciferdoosje"){
-					alert(message[6]);
-				} else {
-					alert(message[7]);
-				}
+		if (text5 == "luciferdoosje"){
+			alert(message[6]);
+		} else {
+			alert(message[7]);
+		}
 			/*} else {
 				alert('Uw invoer was verkeerd, probeer het opnieuw. Typ in luciferdoosje of hamer!');
 			}*/

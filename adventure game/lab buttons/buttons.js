@@ -22,6 +22,7 @@ var button3 = 0;
 
 function changeBG() {
 	document.body.style.backgroundImage = "url('images/1.jpg')";
+	document.body.style.backgroundColor = '#ff0000';
 	button1++;
 	console.log('value button 1 = ' + button1);
 }

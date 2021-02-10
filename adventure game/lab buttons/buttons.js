@@ -24,6 +24,9 @@ var button3 = 0;
 function changeBG() {
 	document.body.style.backgroundImage = "url('images/1.jpg')";
 	//button.disabled = true;
+	document.getElementById("button1").style.backgroundColor = 'Red';
+	document.getElementById("button2").style.backgroundColor = 'Green';
+	document.getElementById("button3").style.backgroundColor = 'Green';
 	//document.body.style.backgroundColor = '#ff0000';
 	document.getElementById("button1").disabled = true;
 	document.getElementById("button2").disabled = false;
@@ -43,6 +46,9 @@ function changeBG() {
 
 function changeBG2() {
 	document.body.style.backgroundImage = "url('images/2.jpg')";
+	document.getElementById("button1").style.backgroundColor = 'Green';
+	document.getElementById("button2").style.backgroundColor = 'Red';
+	document.getElementById("button3").style.backgroundColor = 'Green';
 	document.getElementById("button1").disabled = false;
 	document.getElementById("button2").disabled = true;
 	document.getElementById("button3").disabled = false;
@@ -57,6 +63,9 @@ function changeBG2() {
 
 function changeBG3() {
 	document.body.style.backgroundImage = "url('images/3.jpg')";
+	document.getElementById("button1").style.backgroundColor = 'Green';
+	document.getElementById("button2").style.backgroundColor = 'Green';
+	document.getElementById("button3").style.backgroundColor = 'Red';
 	document.getElementById("button1").disabled = false;
 	document.getElementById("button2").disabled = false;
 	document.getElementById("button3").disabled = true;

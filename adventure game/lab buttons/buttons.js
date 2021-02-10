@@ -16,23 +16,26 @@ function button3() {
     document.getElementById('3').style.backgroundImage = 'url(images/3.jpg)';
 }*/
 //body.style.backgroundimage = src="";
-var button1 = 0;
-var button2 = 0;
-var button3 = 0;
+var amountButton1 = 0;
+var amountButton2 = 0;
+var amountButton3 = 0;
 //const button = document.querySelector('button1');
+const button1 = document.getElementById("button1");
+const button2 = document.getElementById("button2");
+const button3 = document.getElementById("button3");
 
 function changeBG() {
 	document.body.style.backgroundImage = "url('images/1.jpg')";
 	//button.disabled = true;
-	document.getElementById("button1").style.backgroundColor = 'Red';
-	document.getElementById("button2").style.backgroundColor = 'Green';
-	document.getElementById("button3").style.backgroundColor = 'Green';
+	button1.style.backgroundColor = 'Red';
+	button2.style.backgroundColor = 'Green';
+	button3.style.backgroundColor = 'Green';
 	//document.body.style.backgroundColor = '#ff0000';
-	document.getElementById("button1").disabled = true;
-	document.getElementById("button2").disabled = false;
-	document.getElementById("button3").disabled = false;
-	button1++;
-	console.log('value button 1 = ' + button1);
+	button1.disabled = true;
+	button2.disabled = false;
+	button3.disabled = false;
+	amountButton1++;
+	console.log('value button 1 = ' + amountButton1);
 }
 
 /*if (document.getElementById('button1').onclick == true) {
@@ -46,14 +49,14 @@ function changeBG() {
 
 function changeBG2() {
 	document.body.style.backgroundImage = "url('images/2.jpg')";
-	document.getElementById("button1").style.backgroundColor = 'Green';
-	document.getElementById("button2").style.backgroundColor = 'Red';
-	document.getElementById("button3").style.backgroundColor = 'Green';
-	document.getElementById("button1").disabled = false;
-	document.getElementById("button2").disabled = true;
-	document.getElementById("button3").disabled = false;
-	button2++;
-	console.log('value button 2 = ' + button2);
+	button1.style.backgroundColor = 'Green';
+	button2.style.backgroundColor = 'Red';
+	button3.style.backgroundColor = 'Green';
+	button1.disabled = false;
+	button2.disabled = true;
+	button3.disabled = false;
+	amountButton2++;
+	console.log('value button 2 = ' + amountButton2);
 }
 
 /*document.getElementById('button2').onclick = function() {
@@ -63,14 +66,14 @@ function changeBG2() {
 
 function changeBG3() {
 	document.body.style.backgroundImage = "url('images/3.jpg')";
-	document.getElementById("button1").style.backgroundColor = 'Green';
-	document.getElementById("button2").style.backgroundColor = 'Green';
-	document.getElementById("button3").style.backgroundColor = 'Red';
-	document.getElementById("button1").disabled = false;
-	document.getElementById("button2").disabled = false;
-	document.getElementById("button3").disabled = true;
-	button3++;
-	console.log('value button 3 = ' + button3);
+	button1.style.backgroundColor = 'Green';
+	button2.style.backgroundColor = 'Green';
+	button3.style.backgroundColor = 'Red';
+	button1.disabled = false;
+	button2.disabled = false;
+	button3.disabled = true;
+	amountButton3++;
+	console.log('value button 3 = ' + amountButton3);
 }
 
 /*document.getElementById('button3').onclick = function() {

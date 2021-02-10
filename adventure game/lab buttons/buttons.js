@@ -19,10 +19,15 @@ function button3() {
 var button1 = 0;
 var button2 = 0;
 var button3 = 0;
+//const button = document.querySelector('button1');
 
 function changeBG() {
 	document.body.style.backgroundImage = "url('images/1.jpg')";
-	document.body.style.backgroundColor = '#ff0000';
+	//button.disabled = true;
+	//document.body.style.backgroundColor = '#ff0000';
+	document.getElementById("button1").disabled = true;
+	document.getElementById("button2").disabled = false;
+	document.getElementById("button3").disabled = false;
 	button1++;
 	console.log('value button 1 = ' + button1);
 }
@@ -38,6 +43,9 @@ function changeBG() {
 
 function changeBG2() {
 	document.body.style.backgroundImage = "url('images/2.jpg')";
+	document.getElementById("button1").disabled = false;
+	document.getElementById("button2").disabled = true;
+	document.getElementById("button3").disabled = false;
 	button2++;
 	console.log('value button 2 = ' + button2);
 }
@@ -49,6 +57,9 @@ function changeBG2() {
 
 function changeBG3() {
 	document.body.style.backgroundImage = "url('images/3.jpg')";
+	document.getElementById("button1").disabled = false;
+	document.getElementById("button2").disabled = false;
+	document.getElementById("button3").disabled = true;
 	button3++;
 	console.log('value button 3 = ' + button3);
 }

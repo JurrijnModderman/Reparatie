@@ -1,0 +1,25 @@
+#game-container {
+	height: 100%;
+	width: 70%;
+	background-repeat: no-repeat;
+	text-align: center;
+	/*background-size: cover;
+	background-attachment: fixed;
+	overflow: hidden;*/
+	position: relative;
+	margin: auto;
+	background-size: 100%;
+}
+
+#game-buttons {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	text-align: center;
+}

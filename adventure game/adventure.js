@@ -29,6 +29,89 @@ function level1() {
 	container.style.backgroundImage = "url('Images/Koeman.jpg')";
 	button1.innerHTML = 'ja';
 	button2.innerHTML = 'nee';
+	button1.onclick = level2;
+	// button2.onclick = Start;
+	// button2.innerHTML = 'Start';
+}
+
+function level2() {
+	title.innerHTML = 'Vraag 2';
+	description.innerHTML = 'Is dit Frank Rijkaard?';
+	container.style.backgroundImage = "url('Images/Frank-Rijkaard.jpg')"
+	button1.onclick = level3;
+}
+
+function level3() {
+	title.innerHTML = 'Vraag 3';
+	description.innerHTML = 'Is dit Edwin van der Sar?';
+	container.style.backgroundImage = "url('Images/Frank-de-Boer.jpg')"
+	button1.onclick = Start;
+	button2.onclick = level4;
+}
+
+function level4() {
+	title.innerHTML = 'Vraag 4';
+	description.innerHTML = 'Is dit Edgar-Davids';
+	container.style.backgroundImage = "url('Images/Edgar-Davids.jpg')";
+	button1.onclick = level5;
+	button2.onclick = Start;
+}
+
+function level5() {
+	title.innerHTML = 'Vraag 5';
+	description.innerHTML = 'Is dit Clarence Seedorf?';
+	container.style.backgroundImage = "url('Images/Patrick-Kluivert.jpg')";
+	button1.onclick = Start;
+	button2.onclick = level6;
+}
+
+function level6() {
+	title.innerHTML = 'Vraag 6';
+	description.innerHTML = 'Is dit Dennis Bergkamp?';
+	container.style.backgroundImage = "url('Images/Dennis-Bergkamp.jpg')";
+	button1.onclick = level7;
+	button2.onclick = Start;
+}
+
+function level7() {
+	title.innerHTML = 'Vraag 7';
+	description.innerHTML = 'Is dit Johan Cruijff?';
+	container.style.backgroundImage = "url('Images/Johan-Cruijff.jpg')";
+	button1.onclick = level8;
+	button2.onclick = Start;
+}
+
+function level8() {
+	title.innerHTML = 'Vraag 8';
+	description.innerHTML = 'Is dit Marc Overmars?';
+	container.style.backgroundImage = "url('Images/Edwin-van-der-Sar.jpg')";
+	button1.onclick = Start;
+	button2.onclick = level9;
+}
+
+function level9() {
+	title.innerHTML = 'Vraag 9';
+	description.innerHTML = 'Is dit Ruud van Nistelrooy?';
+	container.style.backgroundImage = "url('Images/Marco-van-Basten.jpg')";
+	button1.onclick = Start;
+	button2.onclick = level10;
+}
+
+function level10() {
+	title.innerHTML = 'Vraag 10';
+	description.innerHTML = 'Is dit Ruud Gullit?';
+	container.style.backgroundImage = "url('Images/Ruud-Gullit.jpg')";
+	button1.onclick = einde;
+	button2.onclick = Start;
+}
+
+function einde() {
+	title.innerHTML = 'Einde';
+	description.innerHTML = 'Je hebt gewonnen!!!';
+	container.style.backgroundImage = "url('Images/Gewonnen.jpg')";
+	button1.innerHTML = 'Start';
+	button2.style.display = 'none';
+	button1.onclick = Start;
 }
 // const button = document.getElementById('button');
 // const button1 = document.getElementById('button1');

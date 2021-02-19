@@ -55,7 +55,7 @@ function Choice(choice) {
 		console.log("incorrect");
 		sceneIndex = 0;
 	}
-	if (sceneIndex == 9) {
+	if (sceneIndex == 10) {
 		einde();
 	}
 	loadScene();
@@ -74,10 +74,9 @@ function einde() {
 	title.innerHTML = scenes[11].title;
 	description.innerHTML = scenes[11].description;
 	container.style.backgroundImage = scenes[11].image;
-	button1.style.display = 'block';
 	button2.style.display = 'none';
 	button3.style.display = 'none';
-	button1.innerHTML = 'Start';
+	button1.style.display = 'block';
 	button1.onclick = start;
 }
 

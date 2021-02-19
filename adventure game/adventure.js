@@ -1,7 +1,7 @@
-// const buttons = document.getElementsByClassName('button');
-const button1 = document.getElementById('button1');
-const button2 = document.getElementById('button2');
-const button3 = document.getElementById('button3');
+const buttons = document.getElementsByClassName('button');
+// const button1 = document.getElementById('button1');
+// const button2 = document.getElementById('button2');
+// const button3 = document.getElementById('button3');
 const container = document.getElementById('game-container');
 const title = document.getElementById('title');
 const description = document.getElementById('description');
@@ -30,110 +30,113 @@ const titleDescription = [
 
 Start();
 console.log(titleDescription);
-function Start() {
-	title.innerHTML = titleDescription[0].title;
-	description.innerHTML = titleDescription[0].description;
-	button1.innerHTML = 'Start';
-	button2.style.display = 'none';
-	button3.style.display = 'none';
+function Start(index) {
+	title.innerHTML = index.title;
+	description.innerHTML = index.description;
+	button[0].innerHTML = 'Start';
+	button[1].style.display = 'none';
+	button[2].style.display = 'none';
 	// container.style.backgroundImage = "url('Images/Wie_moet_ik_hebben.jpg')";
-	container.style.backgroundImage = titleDescription[0].image;
+	container.style.backgroundImage = index.image;
 	//'url(' + imageMap + images[0] + ')';
 	//Staged level 1, zodat die pas wordt uitgevoerd als je op de button klikt
-	button1.onclick = level1;
+	button[index].onclick = Start;
 }
 
-function level1() {
-	title.innerHTML = titleDescription[1].title;
-	description.innerHTML = titleDescription[1].description;
-	button1.style.display = 'block';
-	button2.style.display = 'block';
-	// button3.style.display = 'none';
-	container.style.backgroundImage = titleDescription[1].image;
-	button1.innerHTML = 'ja';
-	button2.innerHTML = 'nee';
-	button1.onclick = level2;
-}
+// function level1() {
+// 	title.innerHTML = titleDescription[1].title;
+// 	description.innerHTML = titleDescription[1].description;
+// 	button1.style.display = 'block';
+// 	button2.style.display = 'block';
+// 	// button3.style.display = 'none';
+// 	container.style.backgroundImage = titleDescription[1].image;
+// 	button1.innerHTML = 'ja';
+// 	button2.innerHTML = 'nee';
+// 	button1.onclick = level2;
+// }
 
-function level2() {
-	title.innerHTML = titleDescription[2].title;
-	description.innerHTML = titleDescription[2].description;
-	container.style.backgroundImage = titleDescription[2].image;
-	button1.onclick = level3;
-}
+// function level2() {
+// 	title.innerHTML = titleDescription[2].title;
+// 	description.innerHTML = titleDescription[2].description;
+// 	container.style.backgroundImage = titleDescription[2].image;
+// 	button1.onclick = level3;
+// }
 
-function level3() {
-	title.innerHTML = titleDescription[3].title;
-	description.innerHTML = titleDescription[3].description;
-	container.style.backgroundImage = titleDescription[3].image;
-	button1.onclick = Start;
-	button2.onclick = level4;
-}
+// function level3() {
+// 	title.innerHTML = titleDescription[3].title;
+// 	description.innerHTML = titleDescription[3].description;
+// 	container.style.backgroundImage = titleDescription[3].image;
+// 	button1.onclick = Start;
+// 	button2.onclick = level4;
+// }
 
-function level4() {
-	title.innerHTML = titleDescription[4].title;
-	description.innerHTML = titleDescription[4].description;
-	container.style.backgroundImage = titleDescription[4].image;
-	button1.onclick = level5;
-	button2.onclick = Start;
-}
+// function level4() {
+// 	title.innerHTML = titleDescription[4].title;
+// 	description.innerHTML = titleDescription[4].description;
+// 	container.style.backgroundImage = titleDescription[4].image;
+// 	button1.onclick = level5;
+// 	button2.onclick = Start;
+// }
 
-function level5() {
-	title.innerHTML = titleDescription[5].title;
-	description.innerHTML = titleDescription[5].description;
-	container.style.backgroundImage = titleDescription[5].image;
-	button1.onclick = Start;
-	button2.onclick = level6;
-}
+// function level5() {
+// 	title.innerHTML = titleDescription[5].title;
+// 	description.innerHTML = titleDescription[5].description;
+// 	container.style.backgroundImage = titleDescription[5].image;
+// 	button1.onclick = Start;
+// 	button2.onclick = level6;
+// }
 
-function level6() {
-	title.innerHTML = titleDescription[6].title;
-	description.innerHTML = titleDescription[6].description;
-	container.style.backgroundImage = titleDescription[6].image;
-	button1.onclick = level7;
-	button2.onclick = Start;
-}
+// function level6() {
+// 	title.innerHTML = titleDescription[6].title;
+// 	description.innerHTML = titleDescription[6].description;
+// 	container.style.backgroundImage = titleDescription[6].image;
+// 	button1.onclick = level7;
+// 	button2.onclick = Start;
+// }
 
-function level7() {
-	title.innerHTML = titleDescription[7].title;
-	description.innerHTML = titleDescription[7].description;
-	container.style.backgroundImage = titleDescription[7].image;
-	button1.onclick = level8;
-	button2.onclick = Start;
-}
+// function level7() {
+// 	title.innerHTML = titleDescription[7].title;
+// 	description.innerHTML = titleDescription[7].description;
+// 	container.style.backgroundImage = titleDescription[7].image;
+// 	button1.onclick = level8;
+// 	button2.onclick = Start;
+// }
 
-function level8() {
-	title.innerHTML = titleDescription[8].title;
-	description.innerHTML = titleDescription[8].description;
-	container.style.backgroundImage = titleDescription[8].image;
-	button1.onclick = Start;
-	button2.onclick = level9;
-}
+// function level8() {
+// 	title.innerHTML = titleDescription[8].title;
+// 	description.innerHTML = titleDescription[8].description;
+// 	container.style.backgroundImage = titleDescription[8].image;
+// 	button1.onclick = Start;
+// 	button2.onclick = level9;
+// }
 
-function level9() {
-	title.innerHTML = titleDescription[9].title;
-	description.innerHTML = titleDescription[9].description;
-	container.style.backgroundImage = titleDescription[9].image;
-	button1.onclick = Start;
-	button2.onclick = level10;
-}
+// function level9() {
+// 	title.innerHTML = titleDescription[9].title;
+// 	description.innerHTML = titleDescription[9].description;
+// 	container.style.backgroundImage = titleDescription[9].image;
+// 	button1.onclick = Start;
+// 	button2.onclick = level10;
+// }
 
-function level10() {
-	title.innerHTML = titleDescription[10].title;
-	description.innerHTML = titleDescription[10].description;
-	container.style.backgroundImage = titleDescription[10].image;
-	button1.onclick = einde;
-	button2.onclick = Start;
-}
+// function level10() {
+// 	title.innerHTML = titleDescription[10].title;
+// 	description.innerHTML = titleDescription[10].description;
+// 	container.style.backgroundImage = titleDescription[10].image;
+// 	button1.onclick = einde;
+// 	button2.onclick = Start;
+// }
 
-function einde() {
-	title.innerHTML = titleDescription[11].title;
-	description.innerHTML = titleDescription[11].description;
-	container.style.backgroundImage = titleDescription[11].image;
-	button1.innerHTML = 'Start';
-	button2.style.display = 'none';
-	button1.onclick = Start;
-}
+// function einde() {
+// 	title.innerHTML = titleDescription[11].title;
+// 	description.innerHTML = titleDescription[11].description;
+// 	container.style.backgroundImage = titleDescription[11].image;
+// 	button1.innerHTML = 'Start';
+// 	button2.style.display = 'none';
+// 	button1.onclick = Start;
+// }
+
+
+
 // const button = document.getElementById('button');
 // const button1 = document.getElementById('button1');
 // const button2 = document.getElementById('button2');

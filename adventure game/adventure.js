@@ -7,8 +7,8 @@ const title = document.getElementById('title');
 const description = document.getElementById('description');
 const imageMap = 'url(' + 'Images' + '/';
 const scenes = [
-	//{title: "Wie is het", description: "Wie is het? Je krijgt een afbeelding te zien en dan moet je raden wie het is!", image: imageMap + 'Wie_moet_ik_hebben.jpg)'}
-	{title: "Vraag 1", description: "Is dit Ronald Koeman?", image: imageMap + 'Koeman.jpg)', answer: 'ja'}
+	{title: "Wie is het", description: "Wie is het? Je krijgt een afbeelding te zien en dan moet je raden wie het is!", image: imageMap + 'Wie_moet_ik_hebben.jpg)'}
+	,{title: "Vraag 1", description: "Is dit Ronald Koeman?", image: imageMap + 'Koeman.jpg)', answer: 'ja'}
 	,{title: "Vraag 2", description: "Is dit Frank Rijkaard?", image: imageMap + 'Frank-Rijkaard.jpg)', answer: 'ja'}
 	,{title: "Vraag 3", description: "Is dit Edwin van der Sar?", image: imageMap + 'Frank-de-Boer.jpg)', answer: 'nee'}
 	,{title: "Vraag 4", description: "Is dit Edgar-Davids?", image: imageMap + 'Edgar-Davids.jpg)', answer: 'ja'}
@@ -18,52 +18,46 @@ const scenes = [
 	,{title: "Vraag 8", description: "Is dit Marc Overmars?", image: imageMap + 'Edwin-van-der-Sar.jpg)', answer: 'nee'}
 	,{title: "Vraag 9", description: "Is dit Ruud van Nistelrooy?", image: imageMap + 'Marco-van-Basten.jpg)', answer: 'nee'}
 	,{title: "Vraag 10", description: "Is dit Ruud Gullit?", image: imageMap + 'Ruud-Gullit.jpg)', answer: 'ja'}
-	//,{title: "Einde", description: "Je hebt gewonnen!!!" + '<br>' + 'Wil je nog een keer spelen? Klik dan op Start!', image: imageMap + 'Gewonnen.jpg)'}
-];
-const beginEnd = [
-	{title: "Wie is het", description: "Wie is het? Je krijgt een afbeelding te zien en dan moet je raden wie het is!", image: imageMap + 'Wie_moet_ik_hebben.jpg)'}
 	,{title: "Einde", description: "Je hebt gewonnen!!!" + '<br>' + 'Wil je nog een keer spelen? Klik dan op Start!', image: imageMap + 'Gewonnen.jpg)'}
 ];
 var sceneIndex = 0;
 start();
-console.log(scenes);
-
+// console.log(scenes);
+//door code lopen bij probleem
 function start() {
-	title.innerHTML = beginEnd[0].title;
-	description.innerHTML = beginEnd[0].description;
-	container.style.backgroundImage = beginEnd[0].image;
+	console.log("start werkt");
+	title.innerHTML = scenes[0].title;
+	description.innerHTML = scenes[0].description;
+	container.style.backgroundImage = scenes[0].image;
+	button1.style.display = 'block';
 	button1.innerHTML = 'Start';
 	button2.style.display = 'none';
 	button3.style.display = 'none';
-	sceneIndex = 0;
-	button1.onclick = loadScene;
+	sceneIndex = 1;
 	// container.style.backgroundImage = "url('Images/Wie_moet_ik_hebben.jpg')";
 	//'url(' + imageMap + images[0] + ')';
 	//Staged level 1, zodat die pas wordt uitgevoerd als je op de button klikt
 }
 
 function Choice(choice) {
+	console.log(sceneIndex);
 	if (choice == scenes[sceneIndex].answer) {
-		console.log("correct");
-		console.log(sceneIndex);
-		if (scenes[9].answer == 'ja') {
-			console.log(sceneIndex);
-			einde;
-		}
-		// if (scenes[10].answer == 'ja') {
-		// 	button2.style.display = 'none';
-		// 	button3.style.display = 'none';
-		// 	button3.style.display = 'block';
-		// } 
+		// console.log("correct");
+		// console.log(sceneIndex);
 		sceneIndex++;
-		console.log(sceneIndex);
+		loadScene();
+		if (sceneIndex == 11) {
+			// console.log(sceneIndex);
+			einde();
+			sceneIndex = 1;
+		}
+		// console.log(sceneIndex);
 	} else {
-		console.log("incorrect");
-		console.log(sceneIndex);
-		sceneIndex = 0;
+		// console.log("incorrect");
+		// console.log(sceneIndex);
+		start();
 		console.log(sceneIndex);
 	}
-	loadScene();
 }
 
 function loadScene() {
@@ -76,13 +70,13 @@ function loadScene() {
 }
 
 function einde() {
-	title.innerHTML = beginEnd[1].title;
-	description.innerHTML = beginEnd[1].description;
-	container.style.backgroundImage = beginEnd[1].image;
+	console.log("einde werkt");
+	title.innerHTML = scenes[11].title;
+	description.innerHTML = scenes[11].description;
+	container.style.backgroundImage = scenes[11].image;
 	button1.style.display = 'block';
 	button2.style.display = 'none';
 	button3.style.display = 'none';
-	button1.innerHTML = start;
 }
 
 // function level1() {

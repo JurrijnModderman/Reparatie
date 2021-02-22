@@ -6,11 +6,6 @@ const container = document.getElementById('game-container');
 const title = document.getElementById('title');
 const description = document.getElementById('description');
 const imageMap = 'url(' + 'Images' + '/';
-
-const beginEnd = [
-	{title: "Wie is het", description: "Wie is het? Je krijgt een afbeelding te zien en dan moet je raden wie het is!", image: imageMap + 'Wie_moet_ik_hebben.jpg)'}
-	,{title: "Einde", description: "Je hebt gewonnen!!!" + '<br>' + 'Wil je nog een keer spelen? Klik dan op Start!', image: imageMap + 'Gewonnen.jpg)'}
-];
 const scenes = [
 	//{title: "Wie is het", description: "Wie is het? Je krijgt een afbeelding te zien en dan moet je raden wie het is!", image: imageMap + 'Wie_moet_ik_hebben.jpg)'}
 	{title: "Vraag 1", description: "Is dit Ronald Koeman?", image: imageMap + 'Koeman.jpg)', answer: 'ja'}
@@ -25,18 +20,13 @@ const scenes = [
 	,{title: "Vraag 10", description: "Is dit Ruud Gullit?", image: imageMap + 'Ruud-Gullit.jpg)', answer: 'ja'}
 	//,{title: "Einde", description: "Je hebt gewonnen!!!" + '<br>' + 'Wil je nog een keer spelen? Klik dan op Start!', image: imageMap + 'Gewonnen.jpg)'}
 ];
-
-
-// buttons[1].style.display = 'none';
-// buttons[2].style.display = 'none';
-// tekst uit array ophalen
-//meegekregen paramter van function
-// var map images, array
-
+const beginEnd = [
+	{title: "Wie is het", description: "Wie is het? Je krijgt een afbeelding te zien en dan moet je raden wie het is!", image: imageMap + 'Wie_moet_ik_hebben.jpg)'}
+	,{title: "Einde", description: "Je hebt gewonnen!!!" + '<br>' + 'Wil je nog een keer spelen? Klik dan op Start!', image: imageMap + 'Gewonnen.jpg)'}
+];
 var sceneIndex = 0;
 start();
 console.log(scenes);
-console.log(beginEnd);
 
 function start() {
 	title.innerHTML = beginEnd[0].title;
@@ -45,7 +35,7 @@ function start() {
 	button1.innerHTML = 'Start';
 	button2.style.display = 'none';
 	button3.style.display = 'none';
-	// sceneIndex = 1;
+	sceneIndex = 0;
 	button1.onclick = loadScene;
 	// container.style.backgroundImage = "url('Images/Wie_moet_ik_hebben.jpg')";
 	//'url(' + imageMap + images[0] + ')';
@@ -56,20 +46,24 @@ function Choice(choice) {
 	if (choice == scenes[sceneIndex].answer) {
 		console.log("correct");
 		console.log(sceneIndex);
+		if (scenes[9].answer == 'ja') {
+			console.log(sceneIndex);
+			einde;
+		}
+		// if (scenes[10].answer == 'ja') {
+		// 	button2.style.display = 'none';
+		// 	button3.style.display = 'none';
+		// 	button3.style.display = 'block';
+		// } 
 		sceneIndex++;
 		console.log(sceneIndex);
-		if (sceneIndex == 10) {
-		console.log(sceneIndex);
-		einde();
-		}
-		loadScene();
 	} else {
 		console.log("incorrect");
 		console.log(sceneIndex);
-		start;
 		sceneIndex = 0;
 		console.log(sceneIndex);
 	}
+	loadScene();
 }
 
 function loadScene() {
@@ -85,11 +79,10 @@ function einde() {
 	title.innerHTML = beginEnd[1].title;
 	description.innerHTML = beginEnd[1].description;
 	container.style.backgroundImage = beginEnd[1].image;
+	button1.style.display = 'block';
 	button2.style.display = 'none';
 	button3.style.display = 'none';
-	button1.style.display = 'block';
-	button1.innerHTML = 'Start';
-	button1.onclick = start;
+	button1.innerHTML = start;
 }
 
 // function level1() {

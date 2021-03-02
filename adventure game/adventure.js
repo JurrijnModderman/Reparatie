@@ -54,7 +54,7 @@ function Choice(choice) {
 		console.log(sceneIndex);
 	}
 }
-//loadscene functie om de levels te creeeren doormiddel van de index
+//loadscene functie om de levels te creeeren met styling doormiddel van de index
 function loadScene() {
 	console.log('loadScene werkt');
 	button1.style.display = 'none';

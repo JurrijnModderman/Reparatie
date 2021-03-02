@@ -27,7 +27,8 @@ const titleDescription = [
 //meegekregen paramter van function
 // var map images, array
 
-
+// console.log("correct");
+// console.log(sceneIndex);
 Start();
 console.log(titleDescription);
 function Start() {

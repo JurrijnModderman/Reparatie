@@ -1,5 +1,13 @@
+.bgc {
+	background-color: grey;
+}
+
 #container {
-	margin-right: auto;
+	width: 745px;
+	height: 150px;
+	background-color: white;
 	margin-left: auto;
-	width: 6em;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
 }

@@ -1,7 +1,7 @@
 var container = document.getElementById("container");
 
-for (i = 1; i <= 30; i++) {
+for (nummer = 1; nummer <= 30; nummer++) {
 	var buttons = document.createElement("BUTTON");
-	buttons.innerHTML = i;
+	buttons.innerHTML = nummer;
 	container.appendChild(buttons);
 }

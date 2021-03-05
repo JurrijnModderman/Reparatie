@@ -16,19 +16,19 @@ function colors(index) {
 	console.log(clickIndex);
 	console.log(index);
 	console.log(buttons);
-	if (clickIndex = 1) {
+	if (clickIndex == 1) {
 		buttons[index].style.backgroundColor = 'red';	}
-	if (clickIndex = 2) {
+	if (clickIndex == 2) {
 		buttons[index].style.backgroundColor = 'purple';
 	}
-	if (clickIndex = 3) {
+	if (clickIndex == 3) {
 		buttons[index].style.backgroundColor = 'blue';
 	}
-	if (clickIndex = 4) {
+	if (clickIndex == 4) {
 		buttons[index].style.backgroundColor = 'black';
 	}
-	clickIndex++;
-	if (clickIndex = 5) {
+	if (clickIndex == 5) {
 		container.removeChild(buttons[index]);
 	}
+	clickIndex++;
 }

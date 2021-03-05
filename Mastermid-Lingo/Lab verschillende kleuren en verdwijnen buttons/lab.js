@@ -30,5 +30,5 @@ function colors(index) {
 	if (clickIndex == 5) {
 		container.removeChild(buttons[index]);
 	}
-	clickIndex++;
+	buttons[index].clickIndex++;
 }

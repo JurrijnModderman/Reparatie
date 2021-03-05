@@ -30,5 +30,9 @@ function colors(index) {
 	if (clickIndex == 5) {
 		container.removeChild(buttons[index]);
 	}
+<<<<<<< HEAD
 	buttons[index].clickIndex++;
+=======
+	clickIndex++;
+>>>>>>> main
 }

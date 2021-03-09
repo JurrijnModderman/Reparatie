@@ -22,16 +22,11 @@ function colors(index) {
 	if (clickAmount[index] == 1) {
 		buttons[index].style.backgroundColor = 'red';	
 	}
+	
 	if (clickAmount[index] == 2) {
-		buttons[index].style.backgroundColor = 'purple';
-	}
-	if (clickAmount[index] == 3) {
-		buttons[index].style.backgroundColor = 'blue';
-	}
-	if (clickAmount[index] == 4) {
 		buttons[index].style.backgroundColor = 'black';
 	}
-	if (clickAmount[index] == 5) {
+	if (clickAmount[index] == 3) {
 		container.removeChild(buttons[index]);
 	}
 }

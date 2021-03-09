@@ -1,18 +1,32 @@
 .grid-container {
-	display: grid;
-	grid-template-columns: auto auto auto auto auto; 
-	background-color: #2196F3;
-	padding: 10px;
-	grid-row-gap: 10px;
-	grid-column-gap: 10px;
-	height: 500px;
+	
 }
 
-.grid-item {
-	background-color: rgba(255, 255, 255, 0.8);
-  	border: 1px solid rgba(0, 0, 0, 0.8);
-  	padding: 20px;
-  	font-size: 30px;
-  	text-align: center;
+.yellow {
+	margin: auto;
+	background-color: yellow;
+	width: 750px;
+	height: 450px;
+}
 
+.white {
+	margin: auto;
+	background-color: white;
+	width: 750px;
+	height: 250px;
+}
+
+form {
+	width: 50%;
+	height: 50%;/*
+	justify-content: center;
+	align-items: center;
+	display: flex;*/
+	margin: auto;
+	position: relative;
+	top: 0;
+}
+
+body {
+	background-color: grey;
 }

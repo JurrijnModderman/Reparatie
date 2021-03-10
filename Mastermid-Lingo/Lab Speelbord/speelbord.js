@@ -1,9 +1,8 @@
 const word = document.getElementById("Word");
 const letter = document.getElementById("Letter");
 const item = document.getElementsByClassName("grid-item");
-
+const form = document.getElementById("myForm");
+console.log(check);
 function check() {
-	if (letter < word) {
-		item[0].innerHTML = "2";
-	}
+	form.submit();
 }

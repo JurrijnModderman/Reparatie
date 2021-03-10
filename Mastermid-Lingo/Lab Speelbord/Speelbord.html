@@ -10,9 +10,9 @@
 		<div class="yellow">
 	  		<form id="myForm">
 		  		<label>Word</label>
-		  		<input type="text" id="Word"><br>
+		  		<input type="text" id="Word" required minlength="5" required maxlength="5"><br>
 		  		<label>Check letter</label>
-		  		<input type="text" id="Letter"><br><br>
+		  		<input type="text" id="Letter" required minlength="1" required maxlength="1"><br><br>
 		  		<input type="submit" onclick="check()" value="Check">
 			</form>
 		</div>
@@ -25,4 +25,5 @@
 		</div>
 	</div>
 </body>
+<script src="speelbord.js"></script>
 </html>

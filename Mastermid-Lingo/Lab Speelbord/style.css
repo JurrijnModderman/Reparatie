@@ -3,26 +3,23 @@
 }
 
 .grid-item {
- 	margin: auto;
-	width: 25px;
-	height: 25px;
-	border: 1px solid;
-	padding: 5px;
+ 	margin: 100px 20px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid;
+    padding: 5px;
+    text-align: center;
 }
 
 .yellow {
 	margin: auto;
-	background-color: yellow;
+	background-color: #ffdb4d;
 	width: 750px;
 	height: 350px;
 }
 
 .white {
 	display: flex;
-	height: 450px;
-}
-
-.white {
 	margin: auto;
 	background-color: white;
 	width: 750px;
@@ -32,21 +29,11 @@
 
 form {
 	width: 177px;
-	margin: auto auto;/*
+	margin: auto auto;
+	padding-top: 14%;/*
 	justify-content: center;
 	align-items: center;
 	display: flex;*/
-}
-
-form {
-	width: 50%;
-	height: 50%;/*
-	justify-content: center;
-	align-items: center;
-	display: flex;*/
-	margin: auto;
-	position: relative;
-	top: 0;
 }
 
 body {

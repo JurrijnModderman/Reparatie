@@ -10,8 +10,8 @@ function check() {
 	//if in functie check length of input
 	console.log(letterInput);
 	console.log(wordInput);
-	var word = wordInput.value;
-	var letter = letterInput.value;
+	var word = wordInput.value.toLowerCase();
+	var letter = letterInput.value.toLowerCase();
 	console.log(letter);
 	if (word.includes(letter) == true) {
 		if (word.charAt(0) == letter){

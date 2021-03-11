@@ -13,7 +13,18 @@ function check() {
 	var letter = letterInput.value;
 	console.log(letter);
 	if (word.includes(letter) == true) {
-		item[0].innerHTML = letter;
+		if (word.charAt(0) == letter){
+			item[0].innerHTML = letter;
+		} else if (word.charAt(1) == letter) {
+			item[1].innerHTML = letter;
+		} else if (word.charAt(2) == letter) {
+			item[2].innerHTML = letter;
+		} else if (word.charAt(3) == letter) {
+			item[3].innerHTML = letter;
+		} else if (word.charAt(4) == letter) {
+			item[4].innerHTML = letter;
+		}
+		// item[0].innerHTML = letter;
 	} else {
 		alert('This letter is not included in your chosen word!');
 	}

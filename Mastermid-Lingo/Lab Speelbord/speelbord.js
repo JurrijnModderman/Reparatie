@@ -6,6 +6,8 @@ const item = document.getElementsByClassName("grid-item");
 
 /*checken op welke positie de ingevoerde letter van het woord staat en dan die positie in de innerhtml veranderen(charAt)
 en dan die onthouden zodat je de volgende letter ook kan invoeren*/
+
+//plan om check functie dynamischer te maken;
 function check() {
 	//if in functie check length of input
 	console.log(letterInput);

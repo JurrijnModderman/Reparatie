@@ -18,9 +18,16 @@ function check() {
 	if (word.length == 5) {
 		for (index = 0; index <= 4; index++) {
 			item[index].innerHTML = letter.charAt(index);
-			if (word.charAt(index) == letter.charAt(index)) {
-		 		item[index].style.backgroundColor = 'green';
-		 	}
+			//for loop om de letters van het ingevoerde woord te vergelijken met het te raden woord
+			for (letterIndex = 0; letterIndex <= 4; letterIndex++) {
+				if (letter.charAt(index) == word.charAt(letterIndex)) {
+					if (word.charAt(index) == letter.charAt(index)) {
+		 				item[index].style.backgroundColor = 'green';
+		 			} else {
+		 				item[index].style.backgroundColor = 'yellow';
+		 			}
+				}
+			}
 		}
 		// if (word.charAt(0) == letter.charAt(0)) {
 		// 	item[0].innerHTML = letter.charAt(0);

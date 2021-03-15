@@ -16,26 +16,32 @@ function check() {
 	var letter = letterInput.value.toLowerCase();
 	console.log(letter);
 	if (word.length == 5) {
-		if (word.charAt(0) == letter.charAt(0)) {
-			item[0].innerHTML = letter.charAt(0);
-			item[0].style.backgroundColor = 'green';
+		for (index = 0; index <= 4; index++) {
+			item[index].innerHTML = letter.charAt(index);
+			if (word.charAt(index) == letter.charAt(index)) {
+		 		item[index].style.backgroundColor = 'green';
+		 	}
 		}
-		if (word.charAt(1) == letter.charAt(1)) {
-			item[1].innerHTML = letter.charAt(1);
-			item[1].style.backgroundColor = 'green';
-		}
-		if (word.charAt(2) == letter.charAt(2)) {
-			item[2].innerHTML = letter.charAt(2);
-			item[2].style.backgroundColor = 'green';
-		}
-		if (word.charAt(3) == letter.charAt(3)) {
-			item[3].innerHTML = letter.charAt(3);
-			item[3].style.backgroundColor = 'green';
-		}
-		if (word.charAt(4) == letter.charAt(4)) {
-			item[4].innerHTML = letter.charAt(4);
-			item[4].style.backgroundColor = 'green';
-		}
+		// if (word.charAt(0) == letter.charAt(0)) {
+		// 	item[0].innerHTML = letter.charAt(0);
+		// 	item[0].style.backgroundColor = 'green';
+		// }
+		// if (word.charAt(1) == letter.charAt(1)) {
+		// 	item[1].innerHTML = letter.charAt(1);
+		// 	item[1].style.backgroundColor = 'green';
+		// }
+		// if (word.charAt(2) == letter.charAt(2)) {
+		// 	item[2].innerHTML = letter.charAt(2);
+		// 	item[2].style.backgroundColor = 'green';
+		// }
+		// if (word.charAt(3) == letter.charAt(3)) {
+		// 	item[3].innerHTML = letter.charAt(3);
+		// 	item[3].style.backgroundColor = 'green';
+		// }
+		// if (word.charAt(4) == letter.charAt(4)) {
+		// 	item[4].innerHTML = letter.charAt(4);
+		// 	item[4].style.backgroundColor = 'green';
+		// }
 	} else {
 		alert('Input need to be a 5 letter word!');
 	}

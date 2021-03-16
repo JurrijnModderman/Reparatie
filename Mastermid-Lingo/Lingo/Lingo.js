@@ -1,9 +1,11 @@
 const wordInput = document.getElementById("Word");
 const letterInput = document.getElementById("Letter");
 const item = document.getElementsByClassName("grid-item");
-const randomWord = document.getElementById("randomWord");
+const randomWordId = document.getElementById("randomWord");
+const randomWord = words[Math.floor(Math.random() * words.length)];
 
-randomWord.innerHTML = words[5];
+console.log(randomWord);
+randomWordId.innerHTML = randomWord.charAt(0);
 
 function check() {
 	var word = wordInput.value.toLowerCase();

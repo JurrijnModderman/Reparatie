@@ -3,14 +3,15 @@
 <head>
 	<title>Lingo</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="lingo-nl.js"></script>
 </head>
 <body>
 	<h1>Lingo</h1>
 	<div class="grid-container">
 		<div class="yellow">
 	  		<div class="input">
-		  		<label>Lingo Woord</label>
-		  		<input type="text" id="Word" required minlength="5" required maxlength="5"><br>
+		  		<label>Guess word</label>
+		  		<div id="randomWord"></div><br>
 		  		<label>User input</label>
 		  		<input type="text" id="Letter" required minlength="5" required maxlength="5"><br><br>
 		  		<input type="submit" onclick="check()" value="Check">
@@ -26,5 +27,4 @@
 	</div>
 </body>
 <script src="Lingo.js"></script>
-<script src="lingo-nl.js"></script>
 </html>

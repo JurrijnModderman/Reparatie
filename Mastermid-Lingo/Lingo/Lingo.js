@@ -1,6 +1,7 @@
 const wordInput = document.getElementById("Letter");
 const item = document.getElementsByClassName("grid-item");
 const randomWordId = document.getElementById("randomWord");
+const guessesId = document.getElementById("guesses");
 const randomWord = words[Math.floor(Math.random() * words.length)];
 var guesses = 5;
 
@@ -8,8 +9,9 @@ console.log(randomWord);
 randomWordId.innerHTML = randomWord.charAt(0);
 
 function check() {
-	console.log(guesses);
 	guesses--;
+	guessesId.innerHTML = 'Guesses over: ' + guesses;
+	console.log(guesses);
 	if (guesses == 0) {
 		alert('Your guesses are over!')
 	}

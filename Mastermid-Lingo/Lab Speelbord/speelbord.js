@@ -29,6 +29,10 @@ function check() {
 				}
 			}
 		}
+	} else {
+		alert('Input need to be a 5 letter word!');
+	}
+}
 		// if (word.charAt(0) == letter.charAt(0)) {
 		// 	item[0].innerHTML = letter.charAt(0);
 		// 	item[0].style.backgroundColor = 'green';
@@ -49,10 +53,7 @@ function check() {
 		// 	item[4].innerHTML = letter.charAt(4);
 		// 	item[4].style.backgroundColor = 'green';
 		// }
-	} else {
-		alert('Input need to be a 5 letter word!');
-	}
-}
+
 //lab speelbord(opdracht 2);
 // if (word.includes(letter) == true) {
 		// 	if (word.charAt(0) == letter){

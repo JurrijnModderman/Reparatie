@@ -2,7 +2,9 @@ const wordInput = document.getElementById("Letter");
 const item = document.getElementsByClassName("grid-item");
 const randomWordId = document.getElementById("randomWord");
 const guessesId = document.getElementById("guesses");
-const randomWord = words[Math.floor(Math.random() * words.length)];
+//
+const randomWordIndex = Math.floor(Math.random() * words.length);
+const randomWord = words[randomWordIndex];
 var guesses = 5;
 
 console.log(randomWord);
@@ -25,9 +27,13 @@ function check() {
 				if (word.charAt(index) == randomWord.charAt(letterIndex)) {
 					if (randomWord.charAt(index) == word.charAt(index)) {
 		 				item[index].style.backgroundColor = 'green';
+		 				break;
 		 			} else {
 		 				item[index].style.backgroundColor = 'yellow';
+		 				break;
 		 			}
+				} else {
+					item[index].style.backgroundColor = 'white';
 				}
 			}
 		}

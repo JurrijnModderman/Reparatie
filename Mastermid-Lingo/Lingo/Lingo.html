@@ -2,8 +2,29 @@
 <html>
 <head>
 	<title>Lingo</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+	<h1>Lingo</h1>
+	<div class="grid-container">
+		<div class="yellow">
+	  		<div class="input">
+		  		<label>Lingo Woord</label>
+		  		<input type="text" id="Word" required minlength="5" required maxlength="5"><br>
+		  		<label>User input</label>
+		  		<input type="text" id="Letter" required minlength="5" required maxlength="5"><br><br>
+		  		<input type="submit" onclick="check()" value="Check">
+			</div>
+		</div>
+		<div class="white">
+			<div class="grid-item">1</div>
+			<div class="grid-item">2</div>
+			<div class="grid-item">3</div>
+			<div class="grid-item">4</div>
+			<div class="grid-item">5</div>
+		</div>
+	</div>
 </body>
+<script src="Lingo.js"></script>
+<script src="lingo-nl.js"></script>
 </html>

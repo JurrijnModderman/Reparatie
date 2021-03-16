@@ -1,0 +1,37 @@
+.grid-item {
+ 	margin: 100px 20px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid;
+    padding: 5px;
+    text-align: center;
+}
+
+.yellow {
+	margin: auto;
+	background-color: #ffdb4d;
+	width: 750px;
+	height: 350px;
+}
+
+.white {
+	display: flex;
+	margin: auto;
+	background-color: white;
+	width: 750px;
+	height: 250px;
+	justify-content: center;
+}
+
+.input {
+	width: 177px;
+	margin: auto auto;
+	padding-top: 14%;/*
+	justify-content: center;
+	align-items: center;
+	display: flex;*/
+}
+
+body {
+	background-color: grey;
+}

@@ -14,15 +14,17 @@ var guesses = '';
 start();
 function start() {
 	empty();
-	beginText.innerHTML = 'Welcome to Lingo!' + '<br>' + 'You get the first letter of a 5 letter word that u need to guess!';
+	beginText.innerHTML = 'Welcome to Lingo!' + '<br>' + 'You get the first letter of a 5 letter word that you need to guess! You have 5 guesses. If your answer is right, you will get another word! Else, you come back on this page!' + '<br>' + 'Good Luck!!!';
 	letter.style.display = 'none';
 	grid.style.display = 'none';
-	
 	button.value = 'Start';
 	button.onclick = loadScene;
 }
 
-function empty() {for (gridItem = 0; gridItem <=4; gridItem++) {
+function empty() {
+	for (gridItem = 0; gridItem <=4; gridItem++) {
+		console.log(gridItem);
+		console.log(item/*.value*/);
 		item[gridItem].innerHTML = gridItem+1;
 		item[gridItem].style.backgroundColor = 'white';
 	}
@@ -40,8 +42,8 @@ function loadScene() {
 	console.log(randomWord);
 	letter.style.display = 'block';
 	grid.style.display = 'inherit';
-	beginText.innerHTML = 'First letter of the 5 letter word u need to guess:';
-	randomWordId.innerHTML = randomWord.charAt(0);
+	beginText.innerHTML = 'First letter of the 5 letter word you need to guess:';
+	randomWordId.innerHTML = randomWord.charAt(0).toUpperCase();
 	yourGuess.innerHTML = 'Your guess:';
 	button.value = 'Check';
 	button.onclick = check;
@@ -61,9 +63,6 @@ function check() {
 				if (word.charAt(index) == randomWord.charAt(letterIndex)) {
 					if (randomWord.charAt(index) == word.charAt(index)) {
 		 				item[index].style.backgroundColor = 'green';
-		 				if (word == randomWord) {
-		 					loadScene();
-		 				}
 		 				break;
 		 			} else {
 		 				item[index].style.backgroundColor = 'yellow';
@@ -80,5 +79,16 @@ function check() {
 	if (guesses <= 0) {
 		alert('Your guesses are over!');
 		start();
+	}
+	if (word == randomWord) {
+		//alert("Correct!")
+		item[0].innerHTML = 'G';
+		item[1].innerHTML = 'O';
+		item[2].innerHTML = 'O';
+		item[3].innerHTML = 'D';
+		item[4].innerHTML = '!';
+		button.value = 'Next';
+		button.onclick = loadScene;
+ 		//loadScene();
 	}
 }

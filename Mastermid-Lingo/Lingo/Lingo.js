@@ -82,11 +82,15 @@ function check() {
 	}
 	if (word == randomWord) {
 		//alert("Correct!")
-		item[0].innerHTML = 'G';
-		item[1].innerHTML = 'O';
-		item[2].innerHTML = 'O';
-		item[3].innerHTML = 'D';
-		item[4].innerHTML = '!';
+		const good = ['G', 'O', 'O', 'D', '!'];
+		for (i = 0; i <=4; i++) {
+			item[i].innerHTML = good[i];
+		}
+		// item[0].innerHTML = 'G';
+		// item[1].innerHTML = 'O';
+		// item[2].innerHTML = 'O';
+		// item[3].innerHTML = 'D';
+		// item[4].innerHTML = '!';
 		button.value = 'Next';
 		button.onclick = loadScene;
  		//loadScene();

@@ -2,21 +2,45 @@ const wordInput = document.getElementById("Letter");
 const item = document.getElementsByClassName("grid-item");
 const randomWordId = document.getElementById("randomWord");
 const guessesId = document.getElementById("guesses");
+const beginText = document.getElementById("beginText");
+const button = document.getElementById("button");
+const yourGuess = document.getElementById("yourGuess");
+const letter = document.getElementById("Letter");
+const grid = document.getElementById("grid");
 //
-const randomWordIndex = Math.floor(Math.random() * words.length);
-const randomWord = words[randomWordIndex];
-var guesses = 5;
+var randomWordIndex = '';
+var randomWord = '';
+var guesses = '';
+start();
+function start() {
+	guessesId.innerHTML = '';
+	beginText.innerHTML = 'Welcome to Lingo!' + '<br>' + 'You get the first letter of a 5 letter word that u need to guess!';
+	randomWordId.innerHTML = '';
+	yourGuess.innerHTML = '';
+	guesses = 5;
+	letter.style.display = 'none';
+	grid.style.display = 'none';
+	button.value = 'Start';
+	button.onclick = loadScene;
+}
 
-console.log(randomWord);
-randomWordId.innerHTML = randomWord.charAt(0);
+function loadScene() {
+	randomWordIndex = Math.floor(Math.random() * words.length);
+	randomWord = words[randomWordIndex];
+	console.log(randomWord);
+	letter.style.display = 'block';
+	grid.style.display = 'inherit';
+	beginText.innerHTML = 'First letter of the 5 letter word u need to guess:'
+	randomWordId.innerHTML = randomWord.charAt(0);
+	yourGuess.innerHTML = 'Your guess:';
+	button.value = 'Check';
+	button.onclick = check;
+}
 
 function check() {
 	guesses--;
 	guessesId.innerHTML = 'Guesses over: ' + guesses;
 	console.log(guesses);
-	if (guesses == 0) {
-		alert('Your guesses are over!')
-	}
 	var word = wordInput.value.toLowerCase();
 	console.log(word);
 	if (randomWord.length == 5) {
@@ -39,5 +63,9 @@ function check() {
 		}
 	} else {
 		alert('Input need to be a 5 letter word!');
+	}
+	if (guesses == 0) {
+		alert('Your guesses are over!');
+		start();
 	}
 }

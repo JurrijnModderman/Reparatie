@@ -1,5 +1,5 @@
 const wordInput = document.getElementById("Letter");
-const item = document.getElementsByClassName("grid-item");
+var item = document.getElementsByClassName("grid-item");
 const randomWordId = document.getElementById("randomWord");
 const guessesId = document.getElementById("guesses");
 const beginText = document.getElementById("beginText");
@@ -13,24 +13,34 @@ var randomWord = '';
 var guesses = '';
 start();
 function start() {
-	guessesId.innerHTML = '';
+	empty();
 	beginText.innerHTML = 'Welcome to Lingo!' + '<br>' + 'You get the first letter of a 5 letter word that u need to guess!';
-	randomWordId.innerHTML = '';
-	yourGuess.innerHTML = '';
-	guesses = 5;
 	letter.style.display = 'none';
 	grid.style.display = 'none';
+	
 	button.value = 'Start';
 	button.onclick = loadScene;
 }
 
+function empty() {for (gridItem = 0; gridItem <=4; gridItem++) {
+		item[gridItem].innerHTML = gridItem+1;
+		item[gridItem].style.backgroundColor = 'white';
+	}
+	guesses = 5;
+	guessesId.innerHTML = '';
+	randomWordId.innerHTML = '';
+	yourGuess.innerHTML = '';
+	letter.value = '';
+}
+
 function loadScene() {
+	empty();
 	randomWordIndex = Math.floor(Math.random() * words.length);
 	randomWord = words[randomWordIndex];
 	console.log(randomWord);
 	letter.style.display = 'block';
 	grid.style.display = 'inherit';
-	beginText.innerHTML = 'First letter of the 5 letter word u need to guess:'
+	beginText.innerHTML = 'First letter of the 5 letter word u need to guess:';
 	randomWordId.innerHTML = randomWord.charAt(0);
 	yourGuess.innerHTML = 'Your guess:';
 	button.value = 'Check';
@@ -51,6 +61,9 @@ function check() {
 				if (word.charAt(index) == randomWord.charAt(letterIndex)) {
 					if (randomWord.charAt(index) == word.charAt(index)) {
 		 				item[index].style.backgroundColor = 'green';
+		 				if (word == randomWord) {
+		 					loadScene();
+		 				}
 		 				break;
 		 			} else {
 		 				item[index].style.backgroundColor = 'yellow';
@@ -64,7 +77,7 @@ function check() {
 	} else {
 		alert('Input need to be a 5 letter word!');
 	}
-	if (guesses == 0) {
+	if (guesses <= 0) {
 		alert('Your guesses are over!');
 		start();
 	}

@@ -1,3 +1,4 @@
+//aanmaak constanten en variable
 const wordInput = document.getElementById("Letter");
 var item = document.getElementsByClassName("grid-item");
 const randomWordId = document.getElementById("randomWord");
@@ -7,21 +8,21 @@ const button = document.getElementById("button");
 const yourGuess = document.getElementById("yourGuess");
 const letter = document.getElementById("Letter");
 const grid = document.getElementById("grid");
-//
-var randomWordIndex = '';
 var randomWord = '';
 var guesses = '';
-start();
-function start() {
-	empty();
+//start functie aanroep, die wordt aangeroepen als de pagina geopend wordt
+Start();
+//start functie om de hoofdpagina te creeeren
+function Start() {
+	Empty();
 	beginText.innerHTML = 'Welcome to Lingo!' + '<br>' + 'You get the first letter of a 5 letter word that you need to guess! You have 5 guesses. If your answer is right, you will get another word! Else, you come back on this page!' + '<br>' + 'Good Luck!!!';
 	letter.style.display = 'none';
 	grid.style.display = 'none';
 	button.value = 'Start';
-	button.onclick = loadScene;
+	button.onclick = LoadScene;
 }
-
-function empty() {
+//empty functie om alle 'gebruikte' elementen weer leeg te gooien
+function Empty() {
 	for (gridItem = 0; gridItem <=4; gridItem++) {
 		console.log(gridItem);
 		console.log(item/*.value*/);
@@ -34,10 +35,10 @@ function empty() {
 	yourGuess.innerHTML = '';
 	letter.value = '';
 }
-
-function loadScene() {
-	empty();
-	randomWordIndex = Math.floor(Math.random() * words.length);
+//loadScene functie om een randomword te genereren en daarvan de eerste letter te tonen op het scherm en de rest van die pagina te creeeren
+function LoadScene() {
+	Empty();
+	var randomWordIndex = Math.floor(Math.random() * words.length);
 	randomWord = words[randomWordIndex];
 	console.log(randomWord);
 	letter.style.display = 'block';
@@ -46,10 +47,10 @@ function loadScene() {
 	randomWordId.innerHTML = randomWord.charAt(0).toUpperCase();
 	yourGuess.innerHTML = 'Your guess:';
 	button.value = 'Check';
-	button.onclick = check;
+	button.onclick = Check;
 }
-
-function check() {
+//check functie om het ingvoerde woord te vergelijken met het te raden woord
+function Check() {
 	guesses--;
 	guessesId.innerHTML = 'Guesses over: ' + guesses;
 	console.log(guesses);
@@ -78,21 +79,14 @@ function check() {
 	}
 	if (guesses <= 0) {
 		alert('Your guesses are over!');
-		start();
+		Start();
 	}
 	if (word == randomWord) {
-		//alert("Correct!")
 		const good = ['G', 'O', 'O', 'D', '!'];
 		for (i = 0; i <=4; i++) {
 			item[i].innerHTML = good[i];
 		}
-		// item[0].innerHTML = 'G';
-		// item[1].innerHTML = 'O';
-		// item[2].innerHTML = 'O';
-		// item[3].innerHTML = 'D';
-		// item[4].innerHTML = '!';
 		button.value = 'Next';
-		button.onclick = loadScene;
- 		//loadScene();
+		button.onclick = LoadScene;
 	}
 }

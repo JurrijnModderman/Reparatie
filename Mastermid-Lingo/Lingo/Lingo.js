@@ -17,9 +17,6 @@ start();
 function start() {
 	empty(1);
 	beginText.innerHTML = 'Welcome to Lingo!' + '<br>' + 'You get the first letter of a 5 letter word that you need to guess! You have 5 guesses. If your answer is right, you will get another word! Else, you come back on this page!' + '<br>' + 'Good Luck!!!';
-	console.log('gridStyle');
-	//letter.style.display = 'none';
-	//grid.style.display = 'none';
 	button.value = 'Start';
 	button.onclick = loadScene;
 }

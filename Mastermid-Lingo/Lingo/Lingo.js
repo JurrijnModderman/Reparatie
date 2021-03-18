@@ -77,7 +77,7 @@ function Check() {
 	} else {
 		alert('Input need to be a 5 letter word!');
 	}
-	if (guesses <= 0) {
+	if (guesses < 0) {
 		alert('Your guesses are over!');
 		Start();
 	}

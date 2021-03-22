@@ -4,6 +4,7 @@ const title = document.getElementById("title");
 const titleDescription = document.getElementById("title-description");
 const description = document.getElementById("description");
 const buttonStart = document.getElementById("button");
+const stemwijzerIMG = document.getElementById("stemwijzerIMG");
 var buttons = [];
 start();
 
@@ -21,6 +22,9 @@ function choice() {
 }
 
 function loadScene() {
+	stemwijzer.classList.add('stemwijzerScene');
+	stemwijzerIMG.classList.add('logo');
+	buttonStart.classList.add('startButton');
 	titleDescription.innerHTML = subjects[sceneIndex].title;
 	description.innerHTML = subjects[sceneIndex].statement;
 	stemwijzer.classList.add('scenePagina');
@@ -28,5 +32,8 @@ function loadScene() {
 		var button = document.createElement("BUTTON");
 		buttons.push(button);
 		stemwijzer.appendChild(button);
+		button.classList.add('button' + index);
+		buttonText = ['Eens', 'Geen van beide', 'Oneens'];
+		button.innerHTML = buttonText[index];
 	}
 }

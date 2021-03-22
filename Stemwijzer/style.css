@@ -52,3 +52,52 @@ body {
 #scenePagina {
 	background-color: white;
 }
+
+.startButton {
+	display: none;
+}
+
+.logo {
+	display: none;
+}
+
+.stemwijzerScene {
+	width: 1000px;
+	height: 1000px;
+}
+
+.button0 {
+	margin-top: 280px;		
+	width: 125px;
+	height: 69px;
+	border-radius: 13%;
+	background-color: green;
+	color: white;
+	font-size: 25px;
+	border: 3px solid transparent;
+	font-weight: 700;
+}
+
+.button1 {
+	margin-top: 280px;	
+	width: 250px;
+	height: 69px;
+	border-radius: 13%;
+	background-color: grey;
+	color: white;
+	font-size: 25px;
+	border: 3px solid transparent;
+	font-weight: 700;
+}
+
+.button2 {
+	margin-top: 280px;
+	width: 125px;
+	height: 69px;
+	border-radius: 13%;
+	background-color: red;
+	color: white;
+	font-size: 25px;
+	border: 3px solid transparent;
+	font-weight: 700;
+}

@@ -32,7 +32,7 @@ function loadScene() {
 	titleDescription.innerHTML = subjects[sceneIndex].title;
 	description.innerHTML = subjects[sceneIndex].statement;
 	if (sceneIndex == 0) {
-	stemwijzer.classList.add('scenePagina');
+		stemwijzer.classList.add('scenePagina');
 		for (index = 0; index <=2; index++) {
 			var button = document.createElement("BUTTON");
 			buttons.push(button);

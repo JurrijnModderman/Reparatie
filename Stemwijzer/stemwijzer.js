@@ -17,23 +17,30 @@ function start() {
 	buttonStart.onclick = loadScene;
 }
 
-function choice() {
+function choice(answer) {
+	console.log(answer);
+	sceneIndex++;
+	loadScene();
 
 }
 
 function loadScene() {
+	console.log(sceneIndex);
 	stemwijzer.classList.add('stemwijzerScene');
 	stemwijzerIMG.classList.add('logo');
 	buttonStart.classList.add('startButton');
 	titleDescription.innerHTML = subjects[sceneIndex].title;
 	description.innerHTML = subjects[sceneIndex].statement;
+	if (sceneIndex == 0) {
 	stemwijzer.classList.add('scenePagina');
-	for (index = 0; index <=2; index++) {
-		var button = document.createElement("BUTTON");
-		buttons.push(button);
-		stemwijzer.appendChild(button);
-		button.classList.add('button' + index);
-		buttonText = ['Eens', 'Geen van beide', 'Oneens'];
-		button.innerHTML = buttonText[index];
+		for (index = 0; index <=2; index++) {
+			var button = document.createElement("BUTTON");
+			buttons.push(button);
+			stemwijzer.appendChild(button);
+			button.classList.add('button' + index);
+			buttonText = ['Eens', 'Geen van beide', 'Oneens'];
+			button.innerHTML = buttonText[index];
+			button.onclick = function() {choice(buttonText[index])};
+		}
 	}
 }

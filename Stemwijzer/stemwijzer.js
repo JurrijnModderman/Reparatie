@@ -33,8 +33,13 @@ function choice(answer) {
 
 }
 
-function prepaireScene () {
-	for (let index = 0; index <=2; index++) {
+function prepaireScene() {
+	const buttonText = ['Eens', 'Geen van beide', 'Oneens'];
+	const buttonAnswers = ['Pro', 'None', 'Contra'];
+	for (index = 0; index <=2; index++) {
+		button.innerHTML = buttonText[index];
+	var answerButton = buttonAnswers[index];
+	button.onclick = function() {choice(answerButton)};
 		var button = document.createElement("BUTTON");
 		buttons.push(button);
 		stemwijzer.appendChild(button);
@@ -51,14 +56,8 @@ function loadScene() {
 	buttonStart.classList.add('startButton');
 	titleDescription.innerHTML = subjects[sceneIndex].title;
 	description.innerHTML = subjects[sceneIndex].statement;
+	stemwijzer.classList.add('scenePagina');
 	if (sceneIndex == 0) {
 		prepaireScene();
-	} else {
-		stemwijzer.classList.add('scenePagina');
-		const buttonText = ['Eens', 'Geen van beide', 'Oneens'];
-		const buttonAnswers = ['Pro', 'None', 'Contra'];
-		button.innerHTML = buttonText[index];
-		var answerButton = buttonAnswers[index];
-		button.onclick = function() {choice(answerButton)};
 	}
 }

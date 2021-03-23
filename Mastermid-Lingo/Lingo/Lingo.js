@@ -74,8 +74,8 @@ function check() {
 			if (word.charAt(index) != randomWord.charAt(letterIndex)) {
 				item[index].style.backgroundColor = 'white';
 			} else if (randomWord.charAt(index) == word.charAt(index)) {
-	 				item[index].style.backgroundColor = 'green';
-	 				break;
+	 			item[index].style.backgroundColor = 'green';
+	 			break;
 	 		} else {
 	 			item[index].style.backgroundColor = 'yellow';
 	 			break;

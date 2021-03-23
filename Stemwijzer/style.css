@@ -50,7 +50,15 @@ body {
 }
 
 #scenePagina {
-	background-color: white;
+	background-color: black;
+	width: 700px;
+	height: 500px;
+}
+
+.stemwijzerScene {
+	background-color: black;
+	width: 700px;
+	height: 500px;
 }
 
 .startButton {
@@ -80,6 +88,7 @@ body {
 
 .button1 {
 	margin-top: 280px;	
+	margin-left: 20px;
 	width: 250px;
 	height: 69px;
 	border-radius: 13%;
@@ -92,6 +101,7 @@ body {
 
 .button2 {
 	margin-top: 280px;
+	margin-left: 20px;
 	width: 125px;
 	height: 69px;
 	border-radius: 13%;
@@ -100,6 +110,10 @@ body {
 	font-size: 25px;
 	border: 3px solid transparent;
 	font-weight: 700;
+}
+
+.button3 {
+	margin-left: 20px;
 }
 
 .partyLogo {

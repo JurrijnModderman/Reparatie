@@ -6,6 +6,7 @@ const description = document.getElementById("description");
 const buttonStart = document.getElementById("button");
 const stemwijzerIMG = document.getElementById("stemwijzerIMG");
 var buttons = [];
+var buttonsPartijen = [];
 start();
 
 var sceneIndex = 0;
@@ -15,6 +16,14 @@ function start() {
 	description.innerHTML = 'Test je politieke voorkeur aan de hand van 30 stellingen';
 	buttonStart.innerHTML = 'Start';
 	buttonStart.onclick = loadScene;
+	for (amount = 0; amount <=29; amount++) {
+		var buttonPartijen = document.createElement("LI");
+		buttonsPartijen.push(buttonPartijen);
+		partijen.appendChild(buttonPartijen);
+		// console.log(buttonPartijen);
+	}
+	partijen.classList.add('partyLogo');
+
 }
 
 function choice(answer) {
@@ -22,6 +31,17 @@ function choice(answer) {
 	sceneIndex++;
 	loadScene();
 
+}
+
+function prepaireScene () {
+	for (let index = 0; index <=2; index++) {
+		var button = document.createElement("BUTTON");
+		buttons.push(button);
+		stemwijzer.appendChild(button);
+		button.classList.add('button' + index);
+	}
+	sceneIndex++;
+	loadScene();
 }
 
 function loadScene() {
@@ -32,15 +52,13 @@ function loadScene() {
 	titleDescription.innerHTML = subjects[sceneIndex].title;
 	description.innerHTML = subjects[sceneIndex].statement;
 	if (sceneIndex == 0) {
+		prepaireScene();
+	} else {
 		stemwijzer.classList.add('scenePagina');
-		for (index = 0; index <=2; index++) {
-			var button = document.createElement("BUTTON");
-			buttons.push(button);
-			stemwijzer.appendChild(button);
-			button.classList.add('button' + index);
-			buttonText = ['Eens', 'Geen van beide', 'Oneens'];
-			button.innerHTML = buttonText[index];
-			button.onclick = function() {choice(buttonText[index])};
-		}
+		const buttonText = ['Eens', 'Geen van beide', 'Oneens'];
+		const buttonAnswers = ['Pro', 'None', 'Contra'];
+		button.innerHTML = buttonText[index];
+		var answerButton = buttonAnswers[index];
+		button.onclick = function() {choice(answerButton)};
 	}
 }

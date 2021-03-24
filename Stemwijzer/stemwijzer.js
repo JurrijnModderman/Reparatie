@@ -33,23 +33,40 @@ function choice(answer) {
 	console.log(answer);
 	answerQuestion.push(answer);
 	console.log(answerQuestion);
-	sceneIndex++;
+	// sceneIndex++;
+	if (answer != 4) {
+		sceneIndex++;
+	} else {
+		// answerQuestion[sceneIndex] = '';
+		sceneIndex--;
+		answerQuestion.splice(answerQuestion.indexOf(sceneIndex));
+	}
 	loadScene();
 
 }
 
 function calculateAnswers() {
+	for (index = 0; index <=subjects.length; index++) {
+		if (answerQuestion[index] == subjects[index].position) {
+			stemwijzer.innerHTML = subjects[index].name;
+		}
+	}
 	
 }
 
 function prepareScene() {
 	loadScene();
 	const buttonText = ['Eens', 'Geen van beide', 'Oneens', 'Overslaan'];
-	const buttonAnswers = ['Pro', 'None', 'Contra', 0];
+	const buttonAnswers = ['Pro', 'None', 'Contra', ''];
 	stemwijzer.classList.remove('stemwijzer');
 	stemwijzer.classList.add('scenePagina');
+	const buttonBack = document.createElement("BUTTON");
+	stemwijzer.appendChild(buttonBack);
+	buttonBack.innerHTML = 'Back';
+	buttonBack.classList.add('buttonBack');
+	buttonBack.onclick = function() {choice(4)};
 	for (let index = 0; index <=3; index++) {
-		var button = document.createElement("BUTTON");
+		const button = document.createElement("BUTTON");
 		buttons.push(button);
 		stemwijzer.appendChild(button);
 		button.classList.add('button' + index);
@@ -62,7 +79,7 @@ function prepareScene() {
 
 function loadScene() {
 	console.log(sceneIndex);
-	if (sceneIndex == 30) {
+	if (sceneIndex == subjects.length) {
 		//berekenen antwoorden
 		calculateAnswers();
 	}

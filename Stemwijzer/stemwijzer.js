@@ -34,11 +34,12 @@ function choice(answer) {
 	answerQuestion.push(answer);
 	console.log(answerQuestion);
 	sceneIndex++;
-	if (sceneIndex == 30) {
-		//berekenen antwoorden
-	}
 	loadScene();
 
+}
+
+function calculateAnswers() {
+	
 }
 
 function prepareScene() {
@@ -61,6 +62,10 @@ function prepareScene() {
 
 function loadScene() {
 	console.log(sceneIndex);
+	if (sceneIndex == 30) {
+		//berekenen antwoorden
+		calculateAnswers();
+	}
 	stemwijzer.classList.add('stemwijzerScene');
 	stemwijzerIMG.classList.add('logo');
 	buttonStart.classList.add('startButton');

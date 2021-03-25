@@ -9,6 +9,9 @@ const scenePagina = document.getElementById("scenePagina");
 const sceneTitle = document.getElementById('sceneTitle');
 const sceneDescriptionTitle = document.getElementById('sceneDescriptionTitle');
 const sceneDescription = document.getElementById('sceneDescription');
+const answerButtons = document.getElementById("answer-buttons");
+const buttonText = ['Eens', 'Geen van beide', 'Oneens', 'Overslaan'];
+const buttonAnswers = ['Pro', 'None', 'Contra', ''];
 var buttons = [];
 var buttonsPartijen = [];
 var answerQuestion = [];
@@ -18,19 +21,21 @@ start();
 var sceneIndex = 0;
 //alles in html genereren
 function start() {
-    titleDescription.innerHTML = 'Tweede kamer verkiezingen 2021';
-    description.innerHTML = 'Test je politieke voorkeur aan de hand van 30 stellingen';
-    buttonStart.innerHTML = 'Start';
+    // titleDescription.innerHTML = 'Tweede kamer verkiezingen 2021';
+    // description.innerHTML = 'Test je politieke voorkeur aan de hand van 30 stellingen';
+    // buttonStart.innerHTML = 'Start';
+    answerButtons.classList.remove('buttonsblock');
+    answerButtons.classList.add('buttonshidden');
     stemwijzer.classList.add('stemwijzer');
     stemwijzer.classList.remove('scenePagina');
     buttonStart.onclick = prepareScene;
-    for (amount = 0; amount <= 29; amount++) {
-        var buttonPartijen = document.createElement("LI");
-        buttonsPartijen.push(buttonPartijen);
-        partijen.appendChild(buttonPartijen);
-        // console.log(buttonPartijen);
-    }
-    partijen.classList.add('partyLogo');
+    // for (amount = 0; amount <= 29; amount++) {
+    //     var buttonPartijen = document.createElement("LI");
+    //     buttonsPartijen.push(buttonPartijen);
+    //     partijen.appendChild(buttonPartijen);
+    //     // console.log(buttonPartijen);
+    // }
+    // partijen.classList.add('partyLogo');
 
 }
 
@@ -73,13 +78,15 @@ function calculateAnswers() {
 
 function prepareScene() {
     loadScene();
-    const buttonText = ['Eens', 'Geen van beide', 'Oneens', 'Overslaan'];
-    const buttonAnswers = ['Pro', 'None', 'Contra', ''];
-    stemwijzer.style.display = 'none';
-    scenePagina.style.display = 'block';
-    partijen.style.display = 'none';
-    stemwijzerIMG.style.display = 'none';
-    scenePagina.style.backgroundColor = 'white';
+    // const buttonText = ['Eens', 'Geen van beide', 'Oneens', 'Overslaan'];
+    // const buttonAnswers = ['Pro', 'None', 'Contra', ''];
+    // stemwijzer.style.display = 'none';
+    // scenePagina.style.display = 'block';
+    // partijen.style.display = 'none';
+    // stemwijzerIMG.style.display = 'none';
+    // scenePagina.style.backgroundColor = 'white';
+    answerButtons.classList.remove('buttonshidden');
+    answerButtons.classList.add('buttonsblock');
     stemwijzer.classList.remove('stemwijzer');
     scenePagina.classList.add('scenePagina');
 }

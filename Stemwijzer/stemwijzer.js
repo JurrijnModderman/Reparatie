@@ -31,21 +31,23 @@ function start() {
 
 function choice(answer) {
 	console.log(answer);
-	answerQuestion.push(answer);
+	answerQuestion[sceneIndex] = answer;
 	console.log(answerQuestion);
-	// sceneIndex++;
-	if (answer != 4) {
-		sceneIndex++;
-	} else {
-		// answerQuestion[sceneIndex] = '';
-		sceneIndex--;
-		answerQuestion.splice(answerQuestion.indexOf(sceneIndex));
-	}
+	//answerQuestion.splice(answerQuestion.indexOf(sceneIndex));
+	sceneIndex++;
 	loadScene();
+}
 
+function goBack() {
+	// if (sceneIndex <0) {
+	// 	start();
+	// }
+	sceneIndex--;
+	loadScene();
 }
 
 function calculateAnswers() {
+	console.log(subjects);
 	for (index = 0; index <=subjects.length; index++) {
 		if (answerQuestion[index] == subjects[index].position) {
 			stemwijzer.innerHTML = subjects[index].name;
@@ -64,7 +66,14 @@ function prepareScene() {
 	stemwijzer.appendChild(buttonBack);
 	buttonBack.innerHTML = 'Back';
 	buttonBack.classList.add('buttonBack');
-	buttonBack.onclick = function() {choice(4)};
+	buttonBack.onclick = goBack;
+	// if (sceneIndex == 0) {
+	// 	buttonBack.classList.add('buttonBackHidden');
+	// 	buttonBack.classList.remove('buttonBackVisible');
+	// } else {
+	// 	buttonBack.classList.remove('buttonBackHidden');
+	// 	buttonBack.classList.add('buttonBackVisible');
+	// }
 	for (let index = 0; index <=3; index++) {
 		const button = document.createElement("BUTTON");
 		buttons.push(button);

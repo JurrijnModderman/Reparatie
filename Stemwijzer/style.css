@@ -136,3 +136,11 @@ li {
     box-sizing: content-box;
     background-image: url("Images/parties.png") 20%;
 }
+
+/*.buttonBackHidden {
+	display: none;
+}
+
+.buttonBackVisible {
+	display: block;
+}*/

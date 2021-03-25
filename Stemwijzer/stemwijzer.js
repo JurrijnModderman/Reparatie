@@ -5,9 +5,11 @@ const titleDescription = document.getElementById("title-description");
 const description = document.getElementById("description");
 const buttonStart = document.getElementById("button");
 const stemwijzerIMG = document.getElementById("stemwijzerIMG");
+const scenePagina = document.getElementById("scenePagina");
 var buttons = [];
 var buttonsPartijen = [];
 var answerQuestion = [];
+var points = 0;
 start();
 
 var sceneIndex = 0;
@@ -49,9 +51,14 @@ function goBack() {
 function calculateAnswers() {
 	console.log(subjects);
 	for (index = 0; index <=subjects.length; index++) {
-		if (answerQuestion[index] == subjects[index].position) {
-			stemwijzer.innerHTML = subjects[index].name;
+		for (partiesIndex = 0; partiesIndex <subjects.length; partiesIndex++) {
+
 		}
+		// if (answerQuestion[index] == subjects.parties[partiesIndex].position) {
+		// 	points++;
+		// 	console.log(points);
+		// 	// stemwijzer.innerHTML = subjects[index].name;
+		// }
 	}
 	
 }
@@ -61,7 +68,7 @@ function prepareScene() {
 	const buttonText = ['Eens', 'Geen van beide', 'Oneens', 'Overslaan'];
 	const buttonAnswers = ['Pro', 'None', 'Contra', ''];
 	stemwijzer.classList.remove('stemwijzer');
-	stemwijzer.classList.add('scenePagina');
+	scenePagina.classList.add('scenePagina');
 	const buttonBack = document.createElement("BUTTON");
 	stemwijzer.appendChild(buttonBack);
 	buttonBack.innerHTML = 'Back';

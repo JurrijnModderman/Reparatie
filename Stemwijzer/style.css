@@ -52,7 +52,7 @@ body {
 .scenePagina {
 	background-color: black;
 	width: 700px;
-	height: 500px;
+	height: 500px !import;
 }
 
 .stemwijzerScene {

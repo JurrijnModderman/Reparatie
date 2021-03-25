@@ -10,8 +10,7 @@ const sceneTitle = document.getElementById('sceneTitle');
 const sceneDescriptionTitle = document.getElementById('sceneDescriptionTitle');
 const sceneDescription = document.getElementById('sceneDescription');
 const answerButtons = document.getElementById("answer-buttons");
-const buttonText = ['Eens', 'Geen van beide', 'Oneens', 'Overslaan'];
-const buttonAnswers = ['Pro', 'None', 'Contra', ''];
+const answerSection = document.getElementsByClassName("answerSection");
 var buttons = [];
 var buttonsPartijen = [];
 var answerQuestion = [];
@@ -19,6 +18,15 @@ var points = 0;
 start();
 
 var sceneIndex = 0;
+buttonStart.onclick = prepareScene;
+for (const answerButtons of answerSection) {
+	answerButtons.onclick = loadScene;
+}
+// pro.onclick = function () {choice('pro')};
+// none.onclick = function () {choice('none')};
+// contra.onclick = function () {choice('contra')};
+// overslaan.onclick = function () {choice('')};
+// button.onclick = function () {choice(answerButton)};
 //alles in html genereren
 function start() {
     // titleDescription.innerHTML = 'Tweede kamer verkiezingen 2021';
@@ -28,7 +36,6 @@ function start() {
     answerButtons.classList.add('buttonshidden');
     stemwijzer.classList.add('stemwijzer');
     stemwijzer.classList.remove('scenePagina');
-    buttonStart.onclick = prepareScene;
     // for (amount = 0; amount <= 29; amount++) {
     //     var buttonPartijen = document.createElement("LI");
     //     buttonsPartijen.push(buttonPartijen);
@@ -76,7 +83,8 @@ function calculateAnswers() {
 
 }
 
-function prepareScene() {
+function prepareScene(mouseEvent) {
+    subjects[sceneIndex].answer = mouseEvent.target.id;
     loadScene();
     // const buttonText = ['Eens', 'Geen van beide', 'Oneens', 'Overslaan'];
     // const buttonAnswers = ['Pro', 'None', 'Contra', ''];
@@ -104,16 +112,16 @@ function makeButtons() {
     // 	buttonBack.classList.remove('buttonBackHidden');
     // 	buttonBack.classList.add('buttonBackVisible');
     // }
-    for (let index = 0; index <= 3; index++) {
-        const button = document.createElement("BUTTON");
-        buttons.push(button);
-        scenePagina.appendChild(button);
-        button.classList.add('button' + index);
-        button.innerHTML = buttonText[index];
-        let answerButton = buttonAnswers[index];
-        console.log(answerButton);
-        button.onclick = function () {choice(answerButton)};
-    }
+    // for (let index = 0; index <= 3; index++) {
+    //     const button = document.createElement("BUTTON");
+    //     buttons.push(button);
+    //     scenePagina.appendChild(button);
+    //     button.classList.add('button' + index);
+    //     button.innerHTML = buttonText[index];
+    //     let answerButton = buttonAnswers[index];
+    //     console.log(answerButton);
+    //     button.onclick = function () {choice(answerButton)};
+    // }
 }
 
 function loadScene() {

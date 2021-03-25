@@ -124,7 +124,7 @@ body {
 	height: 1000px;
 }
 
-.button0 {
+#pro {
 	margin-top: 280px;		
 	width: 125px;
 	height: 69px;
@@ -136,7 +136,7 @@ body {
 	font-weight: 700;
 }
 
-.button1 {
+#none {
 	margin-top: 280px;	
 	margin-left: 20px;
 	width: 250px;
@@ -149,7 +149,7 @@ body {
 	font-weight: 700;
 }
 
-.button2 {
+#contra {
 	margin-top: 280px;
 	margin-left: 20px;
 	width: 125px;
@@ -162,11 +162,18 @@ body {
 	font-weight: 700;
 }
 
-.button3 {
+#skip {
 	margin-left: 20px;
+	display: none;
+}
+label {
+	display: none;
+}
+input {
+	display: none;
 }
 
-.button4 {
+#button5 {
 	color: blue;
 }
 

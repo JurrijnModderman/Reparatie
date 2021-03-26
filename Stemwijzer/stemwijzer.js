@@ -11,17 +11,21 @@ const sceneDescriptionTitle = document.getElementById('sceneDescriptionTitle');
 const sceneDescription = document.getElementById('sceneDescription');
 const answerButtons = document.getElementById("answer-buttons");
 const answerSection = document.getElementsByClassName("answerSection");
+const section = document.getElementById("section");
+const background = document.getElementById("background");
 var buttons = [];
 var buttonsPartijen = [];
 var answerQuestion = [];
 var points = 0;
-start();
-
+// start();
+background.classList.add('background');
 var sceneIndex = 0;
-buttonStart.onclick = prepareScene;
-for (const answerButtons of answerSection) {
-	answerButtons.onclick = loadScene;
-}
+buttonStart.onclick = start;
+
+// for (const answerButtons of answerSection) {
+// 	answerButtons.onclick = loadScene;
+// }
+
 // pro.onclick = function () {choice('pro')};
 // none.onclick = function () {choice('none')};
 // contra.onclick = function () {choice('contra')};
@@ -29,13 +33,16 @@ for (const answerButtons of answerSection) {
 // button.onclick = function () {choice(answerButton)};
 //alles in html genereren
 function start() {
-    // titleDescription.innerHTML = 'Tweede kamer verkiezingen 2021';
-    // description.innerHTML = 'Test je politieke voorkeur aan de hand van 30 stellingen';
-    // buttonStart.innerHTML = 'Start';
+	stemwijzer.style.display = 'none';
+	partijen.style.display = 'none';
+	section.style.display = 'none';
     answerButtons.classList.remove('buttonsblock');
     answerButtons.classList.add('buttonshidden');
     stemwijzer.classList.add('stemwijzer');
     stemwijzer.classList.remove('scenePagina');
+    answerButtons.style.display = 'block';
+    background.style.display = 'none';
+    prepareScene();
     // for (amount = 0; amount <= 29; amount++) {
     //     var buttonPartijen = document.createElement("LI");
     //     buttonsPartijen.push(buttonPartijen);
@@ -83,8 +90,7 @@ function calculateAnswers() {
 
 }
 
-function prepareScene(mouseEvent) {
-    subjects[sceneIndex].answer = mouseEvent.target.id;
+function prepareScene() {
     loadScene();
     // const buttonText = ['Eens', 'Geen van beide', 'Oneens', 'Overslaan'];
     // const buttonAnswers = ['Pro', 'None', 'Contra', ''];
@@ -93,17 +99,17 @@ function prepareScene(mouseEvent) {
     // partijen.style.display = 'none';
     // stemwijzerIMG.style.display = 'none';
     // scenePagina.style.backgroundColor = 'white';
-    answerButtons.classList.remove('buttonshidden');
-    answerButtons.classList.add('buttonsblock');
-    stemwijzer.classList.remove('stemwijzer');
-    scenePagina.classList.add('scenePagina');
+    // answerButtons.classList.remove('buttonshidden');
+    // answerButtons.classList.add('buttonsblock');
+    // stemwijzer.classList.remove('stemwijzer');
+    // scenePagina.classList.add('scenePagina');
 }
 
 function makeButtons() {
-	const buttonBack = document.createElement("BUTTON");
-    scenePagina.appendChild(buttonBack);
-    buttonBack.innerHTML = 'Back';
-    buttonBack.classList.add('buttonBack');
+	// const buttonBack = document.createElement("BUTTON");
+ //    scenePagina.appendChild(buttonBack);
+ //    buttonBack.innerHTML = 'Back';
+ //    buttonBack.classList.add('buttonBack');
     buttonBack.onclick = goBack;
     // if (sceneIndex == 0) {
     // 	buttonBack.classList.add('buttonBackHidden');

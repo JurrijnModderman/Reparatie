@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body>	
+	<img src="Images/background.jpg" id="background">
 <div id="stemwijzer">
     <img id="stemwijzerIMG" src="Images/votematch_applogo.svg">
     <div id="title"><h1>Tweede kamer verkiezingen 2021</h1></div>
@@ -210,29 +211,26 @@
             </div>
         </div>
     </section>
-	<div id="disclaimer-text">Bij StemWijzer nemen we privacy en het kiesrecht zeer serieus. Je krijgt straks eerst alle stellingen te zien. Daarna vragen we je toestemming om bepaalde gegevens te delen. Dat is niet verplicht. Ook zonder akkoord te gaan, kun je de uitslag bekijken. Verder gebruiken we Google Analytics om de StemWijzer te verbeteren. We hebben Google Analytics op een privacyvriendelijke manier ingesteld.<div id="leesmeer">Lees meer in ons volledige privacy- en cookiestatement:</div></div>
+	<div id="disclaimer-text">Bij StemWijzer nemen we privacy en het kiesrecht zeer serieus. Je krijgt straks eerst alle stellingen te zien. Daarna vragen we je toestemming om bepaalde gegevens te delen. Dat is niet verplicht. Ook zonder akkoord te gaan, kun je de uitslag bekijken. Verder gebruiken we Google Analytics om de StemWijzer te verbeteren. We hebben Google Analytics op een privacyvriendelijke manier ingesteld.<span id="leesmeer">Lees meer in ons volledige privacy- en cookiestatement:</span></div>
 </div>
 <div class="section" id="section">
-            <div class="statement_wrapper">
-                <h3 id="sceneDescriptionTitle"></h3>
-                <p id="sceneDescription"></p>
-            </div>
-            <div class="w3-container checkboxContainer">
-                <label class="partyCheckbox" for="importantCheckbox">Laat dit onderwerp zwaarder meetellen</label>
-                <input class="checkboxInput" id="importantCheckbox" type="checkbox">
-            </div>
-            <!-- Hier maak ik de knoppen aan waar je op moet klikken en geef ik een onclick functie eraan mee -->
-            <div id="answer-buttons" class="w3-left ">
-                <button class="w3-button w3-round answerSection" id="pro">Eens
-                </button>
-                <button class="w3-button w3-round answerSection" id="none">Geen van beide
-                </button>
-                <button class="w3-button w3-round answerSection" id="contra">Oneens
-                </button>
-            </div>
-            <button id="skip" class="skip_btn ">Overslaan<i
-                    class="fa fa-arrow-right" id="icon"></i></button>
-
+	<div class="statement_wrapper">
+    	<h3 id="sceneDescriptionTitle"></h3>
+            <p id="sceneDescription"></p>
+    </div>
+    <div class="w3-container checkboxContainer">
+        <label class="partyCheckbox" for="importantCheckbox">Laat dit onderwerp zwaarder meetellen</label>
+        <input class="checkboxInput" id="importantCheckbox" type="checkbox">
+    </div>
+    <div id="answer-buttons" class="w3-left ">
+        <button class="w3-button w3-round answerSection" id="pro">Eens
+        </button>
+        <button class="w3-button w3-round answerSection" id="none">Geen van beide
+        </button>
+        <button class="w3-button w3-round answerSection" id="contra">Oneens
+        </button>
+    </div>
+    <button id="skip" class="skip_btn ">Overslaan<i class="fa fa-arrow-right" id="icon"></i></button>
 </div>
 </body>
 <script src="stemwijzer.js"></script>

@@ -1,9 +1,13 @@
+body{
+	margin: inherit;
+}
+
 #stemwijzer {
-	left: 350px;
-    bottom: 37%;
-	position: absolute;
-    width: 100%;
-    height: 400px;
+	left: 140px;
+    bottom: 34%;
+    position: absolute;
+    width: 200%;
+    height: 315px;
     max-width: 600px;
     border-radius: 12px;
     padding: 64px 50px 64px 64px;
@@ -13,9 +17,11 @@
 }
 
 #partijen {
-	margin: 100px auto auto;
-	border-radius: 0 12px 12px 0;
-    padding: 16px 36px 56px 48px;
+	position: absolute;
+    top: 89px;
+    left: 220px;
+    border-radius: 0 12px 12px 0;
+    padding-left: 20px;
     background: rgba(0,0,0,.85);
     width: 950px;
     height: 700px;
@@ -29,16 +35,20 @@
 }
 
 #disclaimer-text {
-	position: absolute;
-	top: 66vh;
-	width: 536px;
-	height: 154px;
-	color: white;
+	position: relative;
+    top: 64vh;
+    width: 536px;
+    height: 154px;
+    color: white;
 }
 
 #leesmeer {
-	position: absolute;
-	top: 13vh;
+	position: relative;
+    top: 5vh;
+}
+
+#answer-buttons {
+	display: none;
 }
 
 .parties {
@@ -69,8 +79,9 @@
     transform: scale(2);
 }
 
-body {
-	background-image: url("Images/background.jpg");
+.background {
+	height: 100%;
+	width: 100%;
 }
 
 #button {

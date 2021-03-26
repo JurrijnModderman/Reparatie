@@ -14,15 +14,6 @@
     <div id="title-description">Test je politieke voorkeur aan de hand van 30 stellingen</div>
     <button id="button">Start</button>
 </div>
-<div id="scenePagina">
-    <div id="sceneTitle"></div>
-    <br>
-    <div id="sceneDescriptionTitle"></div>
-    <br>
-    <div id="sceneDescription"></div>
-    <br>
-    <button id="button2"></button>
-</div>
 <div id="partijen">
 	<section class="partiesContainer">
         <div class="parties w3-mobile">
@@ -211,7 +202,7 @@
             </div>
         </div>
     </section>
-	<div id="disclaimer-text">Bij StemWijzer nemen we privacy en het kiesrecht zeer serieus. Je krijgt straks eerst alle stellingen te zien. Daarna vragen we je toestemming om bepaalde gegevens te delen. Dat is niet verplicht. Ook zonder akkoord te gaan, kun je de uitslag bekijken. Verder gebruiken we Google Analytics om de StemWijzer te verbeteren. We hebben Google Analytics op een privacyvriendelijke manier ingesteld.<span id="leesmeer">Lees meer in ons volledige privacy- en cookiestatement:</span></div>
+	<div id="disclaimer-text">Bij StemWijzer nemen we privacy en het kiesrecht zeer serieus. Je krijgt straks eerst alle stellingen te zien. Daarna vragen we je toestemming om bepaalde gegevens te delen. Dat is niet verplicht. Ook zonder akkoord te gaan, kun je de uitslag bekijken. Verder gebruiken we Google Analytics om de StemWijzer te verbeteren. We hebben Google Analytics op een privacyvriendelijke manier ingesteld.<div id="leesmeer">Lees meer in ons volledige privacy- en cookiestatement:</div></div>
 </div>
 <div class="section" id="section">
 	<div class="statement_wrapper">
@@ -222,6 +213,15 @@
         <label class="partyCheckbox" for="importantCheckbox">Laat dit onderwerp zwaarder meetellen</label>
         <input class="checkboxInput" id="importantCheckbox" type="checkbox">
     </div>
+    <div id="scenePagina">
+    	<div id="sceneTitle"></div>
+    	<br>
+    	<div id="sceneDescriptionTitle"></div>
+    	<br>
+    	<div id="sceneDescription"></div>
+    	<br>
+    	<button id="button2"></button>
+	</div>
     <div id="answer-buttons" class="w3-left ">
         <button class="w3-button w3-round answerSection" id="pro">Eens
         </button>
@@ -229,8 +229,9 @@
         </button>
         <button class="w3-button w3-round answerSection" id="contra">Oneens
         </button>
-    </div>
-    <button id="skip" class="skip_btn ">Overslaan<i class="fa fa-arrow-right" id="icon"></i></button>
+    	<button id="skip">Overslaan<i class="fa fa-arrow-right"></i></button>
+     	<button id="buttonBack">Back<i class="fa fa-arrow-right"></i></button>
+     	 </div>
 </div>
 </body>
 <script src="stemwijzer.js"></script>

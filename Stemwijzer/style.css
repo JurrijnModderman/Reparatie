@@ -1,10 +1,11 @@
 body{
 	margin: inherit;
+	overflow: hidden; 
 }
 
 #stemwijzer {
-	left: 140px;
-    bottom: 34%;
+	left: 300px;
+    bottom: 48%;
     position: absolute;
     width: 200%;
     height: 315px;
@@ -19,11 +20,11 @@ body{
 #partijen {
 	position: absolute;
     top: 89px;
-    left: 220px;
+    left: 360px;
     border-radius: 0 12px 12px 0;
     padding-left: 20px;
     background: rgba(0,0,0,.85);
-    width: 950px;
+    width: 1000px;
     height: 700px;
 }
 #start {
@@ -36,15 +37,15 @@ body{
 
 #disclaimer-text {
 	position: relative;
-    top: 64vh;
-    width: 536px;
+    top: 47vh;
+    width: 600px;
     height: 154px;
     color: white;
 }
 
 #leesmeer {
 	position: relative;
-    top: 5vh;
+    top: 1vh;
 }
 
 #answer-buttons {
@@ -175,7 +176,6 @@ body{
 
 #skip {
 	margin-left: 20px;
-	display: none;
 }
 label {
 	display: none;

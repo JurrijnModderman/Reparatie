@@ -13,6 +13,11 @@ const answerButtons = document.getElementById("answer-buttons");
 const answerSection = document.getElementsByClassName("answerSection");
 const section = document.getElementById("section");
 const background = document.getElementById("background");
+const buttonBack = document.getElementById("buttonBack");
+const pro = document.getElementById("pro");
+const none = document.getElementById("none");
+const contra = document.getElementById("contra");
+const skip = document.getElementById("skip");
 var buttons = [];
 var buttonsPartijen = [];
 var answerQuestion = [];
@@ -21,28 +26,30 @@ var points = 0;
 background.classList.add('background');
 var sceneIndex = 0;
 buttonStart.onclick = start;
+scenePagina.style.display = 'none';
 
 // for (const answerButtons of answerSection) {
 // 	answerButtons.onclick = loadScene;
 // }
 
-// pro.onclick = function () {choice('pro')};
-// none.onclick = function () {choice('none')};
-// contra.onclick = function () {choice('contra')};
-// overslaan.onclick = function () {choice('')};
-// button.onclick = function () {choice(answerButton)};
+
 //alles in html genereren
 function start() {
 	stemwijzer.style.display = 'none';
 	partijen.style.display = 'none';
-	section.style.display = 'none';
-    answerButtons.classList.remove('buttonsblock');
-    answerButtons.classList.add('buttonshidden');
-    stemwijzer.classList.add('stemwijzer');
-    stemwijzer.classList.remove('scenePagina');
+	// section.style.display = 'none';
+    // answerButtons.classList.remove('buttonsblock');
+    // answerButtons.classList.add('buttonshidden');
+    // stemwijzer.classList.add('stemwijzer');
+    // stemwijzer.classList.remove('scenePagina');
     answerButtons.style.display = 'block';
     background.style.display = 'none';
-    prepareScene();
+    pro.onclick = function () {choice('pro')};
+	none.onclick = function () {choice('none')};
+	contra.onclick = function () {choice('contra')};
+	skip.onclick = function () {choice('')};
+    buttonBack.onclick = goBack;
+    loadScene();
     // for (amount = 0; amount <= 29; amount++) {
     //     var buttonPartijen = document.createElement("LI");
     //     buttonsPartijen.push(buttonPartijen);
@@ -90,45 +97,45 @@ function calculateAnswers() {
 
 }
 
-function prepareScene() {
-    loadScene();
-    // const buttonText = ['Eens', 'Geen van beide', 'Oneens', 'Overslaan'];
-    // const buttonAnswers = ['Pro', 'None', 'Contra', ''];
-    // stemwijzer.style.display = 'none';
-    // scenePagina.style.display = 'block';
-    // partijen.style.display = 'none';
-    // stemwijzerIMG.style.display = 'none';
-    // scenePagina.style.backgroundColor = 'white';
-    // answerButtons.classList.remove('buttonshidden');
-    // answerButtons.classList.add('buttonsblock');
-    // stemwijzer.classList.remove('stemwijzer');
-    // scenePagina.classList.add('scenePagina');
-}
+// function prepareScene() {
+//     loadScene();
+//     // const buttonText = ['Eens', 'Geen van beide', 'Oneens', 'Overslaan'];
+//     // const buttonAnswers = ['Pro', 'None', 'Contra', ''];
+//     // stemwijzer.style.display = 'none';
+//     // scenePagina.style.display = 'block';
+//     // partijen.style.display = 'none';
+//     // stemwijzerIMG.style.display = 'none';
+//     // scenePagina.style.backgroundColor = 'white';
+//     // answerButtons.classList.remove('buttonshidden');
+//     // answerButtons.classList.add('buttonsblock');
+//     // stemwijzer.classList.remove('stemwijzer');
+//     // scenePagina.classList.add('scenePagina');
+// }
 
-function makeButtons() {
-	// const buttonBack = document.createElement("BUTTON");
- //    scenePagina.appendChild(buttonBack);
- //    buttonBack.innerHTML = 'Back';
- //    buttonBack.classList.add('buttonBack');
-    buttonBack.onclick = goBack;
-    // if (sceneIndex == 0) {
-    // 	buttonBack.classList.add('buttonBackHidden');
-    // 	buttonBack.classList.remove('buttonBackVisible');
-    // } else {
-    // 	buttonBack.classList.remove('buttonBackHidden');
-    // 	buttonBack.classList.add('buttonBackVisible');
-    // }
-    // for (let index = 0; index <= 3; index++) {
-    //     const button = document.createElement("BUTTON");
-    //     buttons.push(button);
-    //     scenePagina.appendChild(button);
-    //     button.classList.add('button' + index);
-    //     button.innerHTML = buttonText[index];
-    //     let answerButton = buttonAnswers[index];
-    //     console.log(answerButton);
-    //     button.onclick = function () {choice(answerButton)};
-    // }
-}
+// function makeButtons() {
+// 	// const buttonBack = document.createElement("BUTTON");
+//  //    scenePagina.appendChild(buttonBack);
+//  //    buttonBack.innerHTML = 'Back';
+//  //    buttonBack.classList.add('buttonBack');
+    
+//     // if (sceneIndex == 0) {
+//     // 	buttonBack.classList.add('buttonBackHidden');
+//     // 	buttonBack.classList.remove('buttonBackVisible');
+//     // } else {
+//     // 	buttonBack.classList.remove('buttonBackHidden');
+//     // 	buttonBack.classList.add('buttonBackVisible');
+//     // }
+//     // for (let index = 0; index <= 3; index++) {
+//     //     const button = document.createElement("BUTTON");
+//     //     buttons.push(button);
+//     //     scenePagina.appendChild(button);
+//     //     button.classList.add('button' + index);
+//     //     button.innerHTML = buttonText[index];
+//     //     let answerButton = buttonAnswers[index];
+//     //     console.log(answerButton);
+//     //     button.onclick = function () {choice(answerButton)};
+//     // }
+// }
 
 function loadScene() {
     console.log(sceneIndex);

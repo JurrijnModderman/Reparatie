@@ -1,17 +1,11 @@
 const stemwijzer = document.getElementById("stemwijzer");
 const partijen = document.getElementById("partijen");
-const title = document.getElementById("title");
-const titleDescription = document.getElementById("title-description");
-const description = document.getElementById("description");
 const buttonStart = document.getElementById("button");
 const stemwijzerIMG = document.getElementById("stemwijzerIMG");
 const scenePagina = document.getElementById("scenePagina");
-const sceneTitle = document.getElementById('sceneTitle');
 const sceneDescriptionTitle = document.getElementById('sceneDescriptionTitle');
 const sceneDescription = document.getElementById('sceneDescription');
 const answerButtons = document.getElementById("answer-buttons");
-const answerSection = document.getElementsByClassName("answerSection");
-const section = document.getElementById("section");
 const background = document.getElementById("background");
 const buttonBack = document.getElementById("buttonBack");
 const pro = document.getElementById("pro");
@@ -22,14 +16,9 @@ var buttons = [];
 var buttonsPartijen = [];
 var answerQuestion = [];
 var points = 0;
-// start();
-background.classList.add('background');
 var sceneIndex = 0;
 buttonStart.onclick = start;
-scenePagina.style.display = 'none';
 
-
-//alles in html genereren
 function start() {
 	stemwijzer.style.display = 'none';
 	partijen.style.display = 'none';
@@ -69,9 +58,12 @@ function goBack() {
 
 function calculateAnswers() {
     console.log(subjects);
-    for (index = 0; index <= subjects.length; index++) {
-        for (partiesIndex = 0; partiesIndex < subjects.length; partiesIndex++) {
-
+    for (index = 0; index < subjects.length; index++) {
+        for (partiesIndex = 0; partiesIndex < parties.length; partiesIndex++) {
+        	if (answerQuestion[index] == subjects[index].parties[partiesIndex].position) {
+        		points++;
+        		console.log(points);
+        	}
         }
         // if (answerQuestion[index] == subjects.parties[partiesIndex].position) {
         // 	points++;
@@ -79,6 +71,10 @@ function calculateAnswers() {
         // 	// stemwijzer.innerHTML = subjects[index].name;
         // }
     }
+    showAnswers();
+}
+
+function showAnswers() {
 
 }
 

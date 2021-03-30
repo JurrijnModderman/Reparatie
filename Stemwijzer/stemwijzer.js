@@ -61,6 +61,8 @@ function goBack() {
         stemwijzerIMG.style.display = 'block';
         buttonStart.style.display = 'block';
         scenePagina.style.display = 'none';
+        partijen.style.display = 'block';
+        background.style.display = 'block';
     }
     loadScene();
 }

@@ -20,10 +20,14 @@ var sceneIndex = 0;
 buttonStart.onclick = start;
 
 function start() {
-	stemwijzer.style.display = 'none';
-	partijen.style.display = 'none';
-    answerButtons.style.display = 'block';
-    background.style.display = 'none';
+	stemwijzer.classList.remove('block');
+	stemwijzer.classList.add('none');
+	partijen.classList.remove('block');
+	partijen.classList.add('none');
+	answerButtons.classList.remove('none');
+    answerButtons.classList.add('block');
+    background.classList.remove('block');
+    background.classList.add('none');
     pro.onclick = function () {choice('pro')};
 	none.onclick = function () {choice('none')};
 	contra.onclick = function () {choice('contra')};
@@ -46,12 +50,18 @@ function goBack() {
         sceneIndex--;
     }
     else {
-        stemwijzer.style.display = 'block';
-        stemwijzerIMG.style.display = 'block';
-        buttonStart.style.display = 'block';
-        scenePagina.style.display = 'none';
-        partijen.style.display = 'block';
-        background.style.display = 'block';
+    	stemwijzer.classList.remove('none');
+        stemwijzer.classList.add('block');
+        stemwijzerIMG.classList.remove('none');
+        stemwijzerIMG.classList.add('block');
+        buttonStart.classList.remove('none');
+        buttonStart.classList.add('block');
+        scenePagina.classList.remove('block');
+        scenePagina.classList.add('none');
+        partijen.classList.remove('none');
+        partijen.classList.add('block');
+        background.classList.remove('none');
+        background.classList.add('block');
     }
     loadScene();
 }

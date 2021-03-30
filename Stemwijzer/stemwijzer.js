@@ -28,20 +28,11 @@ var sceneIndex = 0;
 buttonStart.onclick = start;
 scenePagina.style.display = 'none';
 
-// for (const answerButtons of answerSection) {
-// 	answerButtons.onclick = loadScene;
-// }
-
 
 //alles in html genereren
 function start() {
 	stemwijzer.style.display = 'none';
 	partijen.style.display = 'none';
-	// section.style.display = 'none';
-    // answerButtons.classList.remove('buttonsblock');
-    // answerButtons.classList.add('buttonshidden');
-    // stemwijzer.classList.add('stemwijzer');
-    // stemwijzer.classList.remove('scenePagina');
     answerButtons.style.display = 'block';
     background.style.display = 'none';
     pro.onclick = function () {choice('pro')};
@@ -50,14 +41,6 @@ function start() {
 	skip.onclick = function () {choice('')};
     buttonBack.onclick = goBack;
     loadScene();
-    // for (amount = 0; amount <= 29; amount++) {
-    //     var buttonPartijen = document.createElement("LI");
-    //     buttonsPartijen.push(buttonPartijen);
-    //     partijen.appendChild(buttonPartijen);
-    //     // console.log(buttonPartijen);
-    // }
-    // partijen.classList.add('partyLogo');
-
 }
 
 function choice(answer) {
@@ -70,7 +53,7 @@ function choice(answer) {
 }
 
 function goBack() {
-    if (sceneIndex !== 0) {
+    if (sceneIndex != 0) {
         sceneIndex--;
     }
     else {
@@ -96,46 +79,6 @@ function calculateAnswers() {
     }
 
 }
-
-// function prepareScene() {
-//     loadScene();
-//     // const buttonText = ['Eens', 'Geen van beide', 'Oneens', 'Overslaan'];
-//     // const buttonAnswers = ['Pro', 'None', 'Contra', ''];
-//     // stemwijzer.style.display = 'none';
-//     // scenePagina.style.display = 'block';
-//     // partijen.style.display = 'none';
-//     // stemwijzerIMG.style.display = 'none';
-//     // scenePagina.style.backgroundColor = 'white';
-//     // answerButtons.classList.remove('buttonshidden');
-//     // answerButtons.classList.add('buttonsblock');
-//     // stemwijzer.classList.remove('stemwijzer');
-//     // scenePagina.classList.add('scenePagina');
-// }
-
-// function makeButtons() {
-// 	// const buttonBack = document.createElement("BUTTON");
-//  //    scenePagina.appendChild(buttonBack);
-//  //    buttonBack.innerHTML = 'Back';
-//  //    buttonBack.classList.add('buttonBack');
-    
-//     // if (sceneIndex == 0) {
-//     // 	buttonBack.classList.add('buttonBackHidden');
-//     // 	buttonBack.classList.remove('buttonBackVisible');
-//     // } else {
-//     // 	buttonBack.classList.remove('buttonBackHidden');
-//     // 	buttonBack.classList.add('buttonBackVisible');
-//     // }
-//     // for (let index = 0; index <= 3; index++) {
-//     //     const button = document.createElement("BUTTON");
-//     //     buttons.push(button);
-//     //     scenePagina.appendChild(button);
-//     //     button.classList.add('button' + index);
-//     //     button.innerHTML = buttonText[index];
-//     //     let answerButton = buttonAnswers[index];
-//     //     console.log(answerButton);
-//     //     button.onclick = function () {choice(answerButton)};
-//     // }
-// }
 
 function loadScene() {
     console.log(sceneIndex);

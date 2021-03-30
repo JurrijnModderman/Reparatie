@@ -71,6 +71,7 @@ function calculateAnswers() {
     for (index = 0; index < subjects.length; index++) {
         for (partiesIndex = 0; partiesIndex < parties.length; partiesIndex++) {
         	if (answerQuestion[index] == subjects[index].parties[partiesIndex].position) {
+        		//parties[index] = 
         		points++;
         		console.log(points);
         	}
@@ -85,7 +86,10 @@ function calculateAnswers() {
 }
 
 function showAnswers() {
-
+    answerButtons.classList.remove('block');
+    answerButtons.classList.add('none');
+    sceneDescription.classList.add('none');
+    sceneDescriptionTitle.classList.add('none');
 }
 
 function loadScene() {

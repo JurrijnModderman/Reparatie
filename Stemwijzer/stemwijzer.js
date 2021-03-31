@@ -70,7 +70,7 @@ function goBack() {
 
 function populatePoints() {
 	for (p = 0; p < parties.length; p++) {
-		points.push(0);
+		points.push({name: parties[p].name, value: 0});
 	}
 }
 
@@ -81,11 +81,9 @@ function calculateAnswers() {
         	if (answerQuestion[index] == subjects[index].parties[partiesIndex].position) {
         		//parties[index] = 
         		console.log(points);
-        		points[partiesIndex]++;
+        		points[partiesIndex].value++;
         	}
-        	var highestParties = points.sort(function(a, b){return b - a});
-    		highestParties = subjects[index].parties[partiesIndex].name;
-    		console.log(highestParties);
+    		//highestParties = subjects[index].parties[partiesIndex].name;
         }
         // if (answerQuestion[index] == subjects.parties[partiesIndex].position) {
         // 	points++;
@@ -95,7 +93,8 @@ function calculateAnswers() {
     }
     //sort;
     // var highestParties = Math.max(...points);
-    
+    var highestParties = points.sort(function(a, b){return b.value - a.value});
+    console.log(highestParties);
     showAnswers(highestParties);
 }
 
@@ -104,6 +103,7 @@ function showAnswers(partie) {
     answerButtons.classList.add('none');
     sceneDescription.classList.add('none');
     sceneDescriptionTitle.classList.add('none');
+    partie = points.name;
     partiePage.innerHTML = partie;
 }
 

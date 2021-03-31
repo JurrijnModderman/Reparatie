@@ -15,9 +15,10 @@ const skip = document.getElementById("skip");
 var buttons = [];
 var buttonsPartijen = [];
 var answerQuestion = [];
-var points = 0;
+var points = [];
 var sceneIndex = 0;
 buttonStart.onclick = start;
+populatePoints();
 
 function start() {
 	stemwijzer.classList.remove('block');
@@ -37,9 +38,9 @@ function start() {
 }
 
 function choice(answer) {
-    console.log(answer);
+    // console.log(answer);
     answerQuestion[sceneIndex] = answer;
-    console.log(answerQuestion);
+    // console.log(answerQuestion);
     //answerQuestion.splice(answerQuestion.indexOf(sceneIndex));
     sceneIndex++;
     loadScene();
@@ -66,14 +67,20 @@ function goBack() {
     loadScene();
 }
 
+function populatePoints() {
+	for (p = 0; p < parties.length; p++) {
+		points.push(0);
+	}
+}
+
 function calculateAnswers() {
-    console.log(subjects);
+    // console.log(subjects);
     for (index = 0; index < subjects.length; index++) {
         for (partiesIndex = 0; partiesIndex < parties.length; partiesIndex++) {
         	if (answerQuestion[index] == subjects[index].parties[partiesIndex].position) {
         		//parties[index] = 
-        		points++;
         		console.log(points);
+        		points[partiesIndex]++;
         	}
         }
         // if (answerQuestion[index] == subjects.parties[partiesIndex].position) {

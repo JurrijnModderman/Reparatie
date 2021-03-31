@@ -8,6 +8,7 @@ const sceneDescription = document.getElementById('sceneDescription');
 const answerButtons = document.getElementById("answer-buttons");
 const background = document.getElementById("background");
 const buttonBack = document.getElementById("buttonBack");
+const partiePage = document.getElementById("partie");
 const pro = document.getElementById("pro");
 const none = document.getElementById("none");
 const contra = document.getElementById("contra");
@@ -82,6 +83,9 @@ function calculateAnswers() {
         		console.log(points);
         		points[partiesIndex]++;
         	}
+        	var highestParties = points.sort(function(a, b){return b - a});
+    		highestParties = subjects[index].parties[partiesIndex].name;
+    		console.log(highestParties);
         }
         // if (answerQuestion[index] == subjects.parties[partiesIndex].position) {
         // 	points++;
@@ -89,14 +93,18 @@ function calculateAnswers() {
         // 	// stemwijzer.innerHTML = subjects[index].name;
         // }
     }
-    showAnswers();
+    //sort;
+    // var highestParties = Math.max(...points);
+    
+    showAnswers(highestParties);
 }
 
-function showAnswers() {
+function showAnswers(partie) {
     answerButtons.classList.remove('block');
     answerButtons.classList.add('none');
     sceneDescription.classList.add('none');
     sceneDescriptionTitle.classList.add('none');
+    partiePage.innerHTML = partie;
 }
 
 function loadScene() {

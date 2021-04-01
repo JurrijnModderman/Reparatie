@@ -105,9 +105,18 @@ function showAnswers() {
     sceneDescriptionTitle.classList.add('none');
     scenePagina.classList.add('none');
     for (let e = 0; e < parties.length; e++) {
-    	partiePage.innerHTML = points[e].name + '<br>';
+    	partiePage.innerHTML += points[e].name + '<br>';
+    	// alert(points[e].name);
     	console.log(points[e].name);
     }
+    // partiePage.innerHTML = points[0].name;
+    // console.log(points[0].name);
+    // partiePage.innerHTML = points[1].name;
+    // console.log(points[1].name);
+    // partiePage.innerHTML = points[2].name;
+    // console.log(points[2].name);
+    // partiePage.innerHTML = points[3].name;
+    // console.log(points[3].name);
 }
 
 function loadScene() {

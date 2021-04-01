@@ -93,20 +93,21 @@ function calculateAnswers() {
     }
     //sort;
     // var highestParties = Math.max(...points);
-    var highestParties = points.sort(function(a, b){return b.value - a.value});
-    console.log(highestParties);
-    showAnswers(highestParties);
+    points.sort(function(a, b){return b.value - a.value});
+    // console.log(highestParties);
+    showAnswers();
 }
 
-function showAnswers(partie) {
+function showAnswers() {
     answerButtons.classList.remove('block');
     answerButtons.classList.add('none');
     sceneDescription.classList.add('none');
     sceneDescriptionTitle.classList.add('none');
-    for (e = 0; e < parties.length; e++) {
+    scenePagina.classList.add('none');
+    for (let e = 0; e < parties.length; e++) {
     	partiePage.innerHTML = points[e].name + '<br>';
+    	console.log(points[e].name);
     }
-    // partiePage.innerHTML = partie;
 }
 
 function loadScene() {

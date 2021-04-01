@@ -103,8 +103,10 @@ function showAnswers(partie) {
     answerButtons.classList.add('none');
     sceneDescription.classList.add('none');
     sceneDescriptionTitle.classList.add('none');
-    partie = points.name;
-    partiePage.innerHTML = partie;
+    for (e = 0; e < parties.length; e++) {
+    	partiePage.innerHTML = points[e].name + '<br>';
+    }
+    // partiePage.innerHTML = partie;
 }
 
 function loadScene() {

@@ -79,22 +79,12 @@ function calculateAnswers() {
     for (index = 0; index < subjects.length; index++) {
         for (partiesIndex = 0; partiesIndex < parties.length; partiesIndex++) {
         	if (answerQuestion[index] == subjects[index].parties[partiesIndex].position) {
-        		//parties[index] = 
         		console.log(points);
         		points[partiesIndex].value++;
         	}
-    		//highestParties = subjects[index].parties[partiesIndex].name;
         }
-        // if (answerQuestion[index] == subjects.parties[partiesIndex].position) {
-        // 	points++;
-        // 	console.log(points);
-        // 	// stemwijzer.innerHTML = subjects[index].name;
-        // }
     }
-    //sort;
-    // var highestParties = Math.max(...points);
     points.sort(function(a, b){return b.value - a.value});
-    // console.log(highestParties);
     showAnswers();
 }
 
@@ -109,14 +99,6 @@ function showAnswers() {
     	// alert(points[e].name);
     	console.log(points[e].name);
     }
-    // partiePage.innerHTML = points[0].name;
-    // console.log(points[0].name);
-    // partiePage.innerHTML = points[1].name;
-    // console.log(points[1].name);
-    // partiePage.innerHTML = points[2].name;
-    // console.log(points[2].name);
-    // partiePage.innerHTML = points[3].name;
-    // console.log(points[3].name);
 }
 
 function loadScene() {

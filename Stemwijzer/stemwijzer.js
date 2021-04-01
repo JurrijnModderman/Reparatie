@@ -68,6 +68,16 @@ function goBack() {
     loadScene();
 }
 
+function importSubjects() {
+	//belangrijke partijen selecteren en laten zien
+	resultParties();
+}
+
+function resultParties() {
+	//partijen laten meenemen en laten zien
+	calculateAnswers();
+}
+
 function populatePoints() {
 	for (p = 0; p < parties.length; p++) {
 		points.push({name: parties[p].name, value: 0});
@@ -105,7 +115,7 @@ function loadScene() {
     console.log(sceneIndex);
     if (sceneIndex === subjects.length) {
         //berekenen antwoorden
-        calculateAnswers();
+        resultParties();
     }
     stemwijzer.classList.add('stemwijzerScene');
     stemwijzerIMG.classList.add('logo');

@@ -68,8 +68,15 @@ function goBack() {
     loadScene();
 }
 
-function importSubjects() {
+function importantSubjects() {
 	//belangrijke partijen selecteren en laten zien
+	console.log('function importantSubjects gets executed');
+	pro.classList.add('none');
+	none.classList.add('none');
+	contra.classList.add('none');
+	skip.classList.add('block');
+	buttonBack.classList.add('block');
+	sceneDescriptionTitle.innerHTML = 'Zijn er onderwerpen die je extra belangrijk vindt?';
 	resultParties();
 }
 
@@ -115,7 +122,7 @@ function loadScene() {
     console.log(sceneIndex);
     if (sceneIndex === subjects.length) {
         //berekenen antwoorden
-        resultParties();
+        importantSubjects();
     }
     stemwijzer.classList.add('stemwijzerScene');
     stemwijzerIMG.classList.add('logo');

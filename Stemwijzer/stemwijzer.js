@@ -71,17 +71,30 @@ function goBack() {
 function importantSubjects() {
 	//belangrijke partijen selecteren en laten zien
 	console.log('function importantSubjects gets executed');
+	sceneDescriptionTitle.innerHTML = 'Zijn er onderwerpen die je extra belangrijk vindt?';
+	sceneDescription.innerHTML = '0/30 stellingen geselecteerd';
 	pro.classList.add('none');
 	none.classList.add('none');
 	contra.classList.add('none');
 	skip.classList.add('block');
+	skip.innerHTML = 'Volgende stap';
+	skip.onclick = resultParties;
 	buttonBack.classList.add('block');
-	sceneDescriptionTitle.innerHTML = 'Zijn er onderwerpen die je extra belangrijk vindt?';
-	resultParties();
+	// resultParties();
 }
 
 function resultParties() {
 	//partijen laten meenemen en laten zien
+	console.log('function resultParties gets executed');
+	sceneDescriptionTitle.innerHTML = 'Welke partijen wil je meenemen in het resultaat?';
+	sceneDescription.innerHTML = 'Kies alle partijen, alleen de partijen die nu al in de Tweede Kamer zitten, of maak zelf een selectie. Selecteer minimaal 3 partijen.';
+	pro.classList.add('none');
+	none.classList.add('none');
+	contra.classList.add('none');
+	skip.classList.add('block');
+	skip.innerHTML = 'Volgende stap';
+	skip.onclick = calculateAnswers;
+	buttonBack.classList.add('block');
 	calculateAnswers();
 }
 

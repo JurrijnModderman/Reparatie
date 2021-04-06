@@ -81,7 +81,17 @@ function importantSubjects() {
 	skip.onclick = resultParties;
 	// buttonBack.onclick = 
 	buttonBack.classList.add('block');
-	var extraImportantSubjects = ['Vaccinatiebewijs', 'Defensiebudget', 'Gratis kinderopvang', 'Nederland uit EU', 'Rekeningrijden', 'Vuurwerk', 'Vleesbelasting', 'Publieke omroep', 'Zorgfonds', 'Gezichtsbedekkende kleding', 'Volkshuisvesting', 'Btw op kunst en cultuur', 'Kerncentrale', 'Woningen op landbouwgrond', 'Belastingvoordeel huishoudens', 'Excuses slavenhandel', 'Correctief referendum', 'Inkomen leraren', 'Gevangenisstraffen', 'Vliegbelasting', 'Inburgering op locatie', 'Legalisering softdrugs', 'Nederlandstalig hoger onderwijs', 'Voltooid leven', 'Koppeling minimumloon en bijstand', 'Sociale huurwoningen', 'Boerenbedrijven', 'Middenschool', 'Vluchteling opnemen', 'Mondkapjesplicht'];
+	// var extraImportantSubjects = ['Vaccinatiebewijs', 'Defensiebudget', 'Gratis kinderopvang', 'Nederland uit EU', 'Rekeningrijden', 'Vuurwerk', 'Vleesbelasting', 'Publieke omroep', 'Zorgfonds', 'Gezichtsbedekkende kleding', 'Volkshuisvesting', 'Btw op kunst en cultuur', 'Kerncentrale', 'Woningen op landbouwgrond', 'Belastingvoordeel huishoudens', 'Excuses slavenhandel', 'Correctief referendum', 'Inkomen leraren', 'Gevangenisstraffen', 'Vliegbelasting', 'Inburgering op locatie', 'Legalisering softdrugs', 'Nederlandstalig hoger onderwijs', 'Voltooid leven', 'Koppeling minimumloon en bijstand', 'Sociale huurwoningen', 'Boerenbedrijven', 'Middenschool', 'Vluchteling opnemen', 'Mondkapjesplicht'];
+	for (extraImportantSubjects = 0; extraImportantSubjects < subjects.length; extraImportantSubjects++) {
+		var checkbox = document.createElement('input');
+		checkbox.type = 'checkbox';
+		checkbox.id = subjects[extraImportantSubjects];
+		checkbox.value = subjects[extraImportantSubjects];
+		var label = document.createElement('label');
+		scenePagina.appendChild(label);
+		scenePagina.appendChild(checkbox);
+		scenePagina.innerHTML += subjects[extraImportantSubjects].title + '<br>';
+	}
 	// resultParties();
 }
 

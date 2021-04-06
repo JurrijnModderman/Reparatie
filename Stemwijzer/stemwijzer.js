@@ -132,7 +132,9 @@ function populatePoints() {
 function calculateAnswers() {
     // console.log(subjects);
     for (index = 0; index < subjects.length; index++) {
-        for (partiesIndex = 0; partiesIndex < parties.length; partiesIndex++) {
+        for (partiesIndex = 0; partiesIndex < subjects[index].parties.length; partiesIndex++) {
+        	console.log(index);
+        	console.log(partiesIndex);
         	if (answerQuestion[index] == subjects[index].parties[partiesIndex].position) {
         		console.log(points);
         		points[partiesIndex].value++;

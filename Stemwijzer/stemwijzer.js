@@ -18,6 +18,8 @@ var buttonsPartijen = [];
 var answerQuestion = [];
 var points = [];
 var sceneIndex = 0;
+var checkboxArray = [];
+checked = false;
 buttonStart.onclick = start;
 populatePoints();
 
@@ -86,12 +88,17 @@ function importantSubjects() {
 	for (extraImportantSubjects = 0; extraImportantSubjects < subjects.length; extraImportantSubjects++) {
 		var checkbox = document.createElement('INPUT');
 		checkbox.setAttribute("type", "checkbox");
+		checkboxArray.push(checkbox);
 		// checkbox.id = subjects[extraImportantSubjects];
 		// checkbox.value = subjects[extraImportantSubjects];
 		var label = document.createElement('label');
 		scenePagina.appendChild(label);
 		scenePagina.appendChild(checkbox);
 		scenePagina.innerHTML += subjects[extraImportantSubjects].title + '<br>';
+		if (checkboxArray[extraImportantSubjects].checked == true) {
+			console.log('puntje omhoog hutsie');
+			points[extraImportantSubjects].value++;
+		}
 	}
 	// resultParties();
 }
@@ -133,10 +140,10 @@ function calculateAnswers() {
     // console.log(subjects);
     for (index = 0; index < subjects.length; index++) {
         for (partiesIndex = 0; partiesIndex < subjects[index].parties.length; partiesIndex++) {
-        	console.log(index);
-        	console.log(partiesIndex);
+        	// console.log(index);
+        	// console.log(partiesIndex);
         	if (answerQuestion[index] == subjects[index].parties[partiesIndex].position) {
-        		console.log(points);
+        		// console.log(points);
         		points[partiesIndex].value++;
         	}
         }
@@ -155,7 +162,7 @@ function showAnswers() {
     for (let e = 0; e < parties.length; e++) {
     	partiePage.innerHTML += points[e].name + '<br>';
     	// alert(points[e].name);
-    	console.log(points[e].name);
+    	// console.log(points[e].name);
     }
 }
 

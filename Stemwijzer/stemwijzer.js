@@ -79,7 +79,9 @@ function importantSubjects() {
 	skip.classList.add('block');
 	skip.innerHTML = 'Volgende stap';
 	skip.onclick = resultParties;
+	// buttonBack.onclick = 
 	buttonBack.classList.add('block');
+	var extraImportantSubjects = ['Vaccinatiebewijs', 'Defensiebudget', 'Gratis kinderopvang', 'Nederland uit EU', 'Rekeningrijden', 'Vuurwerk', 'Vleesbelasting', 'Publieke omroep', 'Zorgfonds', 'Gezichtsbedekkende kleding', 'Volkshuisvesting', 'Btw op kunst en cultuur', 'Kerncentrale', 'Woningen op landbouwgrond', 'Belastingvoordeel huishoudens', 'Excuses slavenhandel', 'Correctief referendum', 'Inkomen leraren', 'Gevangenisstraffen', 'Vliegbelasting', 'Inburgering op locatie', 'Legalisering softdrugs', 'Nederlandstalig hoger onderwijs', 'Voltooid leven', 'Koppeling minimumloon en bijstand', 'Sociale huurwoningen', 'Boerenbedrijven', 'Middenschool', 'Vluchteling opnemen', 'Mondkapjesplicht'];
 	// resultParties();
 }
 
@@ -94,8 +96,9 @@ function resultParties() {
 	skip.classList.add('block');
 	skip.innerHTML = 'Volgende stap';
 	skip.onclick = calculateAnswers;
+	buttonBack.onclick = importantSubjects;
 	buttonBack.classList.add('block');
-	calculateAnswers();
+	// calculateAnswers();
 }
 
 function populatePoints() {

@@ -86,8 +86,8 @@ function importantSubjects() {
 	for (extraImportantSubjects = 0; extraImportantSubjects < subjects.length; extraImportantSubjects++) {
 		var checkbox = document.createElement('INPUT');
 		checkbox.setAttribute("type", "checkbox");
-		checkbox.id = subjects[extraImportantSubjects];
-		checkbox.value = subjects[extraImportantSubjects];
+		// checkbox.id = subjects[extraImportantSubjects];
+		// checkbox.value = subjects[extraImportantSubjects];
 		var label = document.createElement('label');
 		scenePagina.appendChild(label);
 		scenePagina.appendChild(checkbox);

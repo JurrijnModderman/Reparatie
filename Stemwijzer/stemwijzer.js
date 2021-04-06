@@ -148,7 +148,8 @@ function showAnswers() {
     answerButtons.classList.add('none');
     sceneDescription.classList.add('none');
     sceneDescriptionTitle.classList.add('none');
-    scenePagina.classList.add('none');
+    // scenePagina.classList.add('none');
+    scenePagina.innerHTML = 'Jouw antwoorden komen het meest overeen met deze partijen:';
     for (let e = 0; e < parties.length; e++) {
     	partiePage.innerHTML += points[e].name + '<br>';
     	// alert(points[e].name);

@@ -177,12 +177,12 @@ body{
 #skip {
 	margin-left: 20px;
 }
-label {
+/*label {
 	display: none;
 }
 input {
 	display: none;
-}
+}*/
 
 #button5 {
 	color: blue;

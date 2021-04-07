@@ -107,7 +107,6 @@ function checkCheckboxesResultParties() {
 	console.log(checkboxArrayResultParties);
 	for (checkboxInput = 0; checkboxInput < checkboxArrayResultParties.length; checkboxInput++) {
 		if (checkboxArrayResultParties[checkboxInput].checked == true) {
-			console.log('partiepage is ');
 			partiePage.innerHTML += points[checkboxInput].name + '<br>';
 			 // += checkboxArrayResultParties[checkboxArrayImportantSubjects];
 		}
@@ -147,7 +146,6 @@ function populatePoints() {
 
 function calculateAnswers() {
 	//calculating answers
-	// checkCheckboxes();
     // console.log(subjects);
     for (index = 0; index < subjects.length; index++) {
         for (partiesIndex = 0; partiesIndex < subjects[index].parties.length; partiesIndex++) {
@@ -160,7 +158,6 @@ function calculateAnswers() {
         }
     }
     showAnswers();
-    points.sort(function(a, b){return b.value - a.value});
     
 }
 
@@ -171,20 +168,16 @@ function showAnswers() {
     sceneDescription.classList.add('none');
     sceneDescriptionTitle.classList.add('none');
     scenePagina.classList.add('none');
-    // scenePagina.classList.add('none');
     resultPage.innerHTML = 'Jouw antwoorden komen het meest overeen met deze partijen(hoog naar laag):';
+    points.sort(function(a, b){return b.value - a.value});
     checkCheckboxesResultParties();
-    // for (let e = 0; e < parties.length; e++) {
-    // 	partiePage.innerHTML += points[e].name + '<br>';
-    // 	// console.log(points[e].name);
-    // }
+    console.log(points);
 }
 
 function loadScene() {
 	//displays the current scene
     console.log(sceneIndex);
     if (sceneIndex === subjects.length) {
-        //berekenen antwoorden
         importantSubjects();
     }
     stemwijzer.classList.add('stemwijzerScene');

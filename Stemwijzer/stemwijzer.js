@@ -15,7 +15,7 @@ const contra = document.getElementById("contra");
 const skip = document.getElementById("skip");
 var answerQuestion = [];
 var points = [];
-var checkboxArray = [];
+
 var sceneIndex = 0;
 buttonStart.onclick = start;
 populatePoints();
@@ -68,7 +68,7 @@ function goBack() {
 }
 
 function importantSubjects() {
-	//select parties that u find important and give them an extra point 
+	//select questions that u find important and give them an extra point 
 	console.log('function importantSubjects gets executed');
 	sceneDescriptionTitle.innerHTML = 'Zijn er onderwerpen die je extra belangrijk vindt?';
 	sceneDescription.innerHTML = '0/30 stellingen geselecteerd';
@@ -82,8 +82,8 @@ function importantSubjects() {
 	scenePagina.innerHTML = '';
 	for (extraImportantSubjects = 0; extraImportantSubjects < subjects.length; extraImportantSubjects++) {
 		var checkbox = document.createElement('INPUT');
+		checkbox.classList.add('checkbox');
 		checkbox.setAttribute("type", "checkbox");
-		checkboxArray.push(checkbox);
 		scenePagina.appendChild(checkbox);
 		scenePagina.innerHTML += subjects[extraImportantSubjects].title + '<br>';
 		// console.log(checkboxArray[extraImportantSubjects].checked);
@@ -96,11 +96,10 @@ function importantSubjects() {
 
 function resultParties() {
 	//select parties u want to see the result of
-	console.log('hallo');
+	var checkboxArray = [];
+	checkboxArray = document.getElementsByClassName('checkbox');
 	for (c = 0; c < subjects.length; c++) {
-		console.log("jodiejo");
 		if (checkboxArray[c].checked == true) {
-			console.log("in de if");
 			points[c].value++;
 			console.log(points[c].value);
 		}
@@ -140,7 +139,7 @@ function calculateAnswers() {
         	// console.log(index);
         	// console.log(partiesIndex);
         	if (answerQuestion[index] == subjects[index].parties[partiesIndex].position) {
-        		// console.log(points);
+        		console.log(points);
         		points[partiesIndex].value++;
         	}
         }

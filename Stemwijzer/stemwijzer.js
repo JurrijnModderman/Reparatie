@@ -86,15 +86,25 @@ function importantSubjects() {
 		checkboxArray.push(checkbox);
 		scenePagina.appendChild(checkbox);
 		scenePagina.innerHTML += subjects[extraImportantSubjects].title + '<br>';
-		if (checkboxArray[extraImportantSubjects].checked == true) {
-			console.log('puntje omhoog hutsie');
-			points[extraImportantSubjects].value++;
-		}
+		// console.log(checkboxArray[extraImportantSubjects].checked);
+		// if (checkboxArray[extraImportantSubjects].checked == true) {
+		// 	console.log('puntje omhoog hutsie');
+		// 	points[extraImportantSubjects].value++;
+		// }
 	}
 }
 
 function resultParties() {
 	//select parties u want to see the result of
+	console.log('hallo');
+	for (c = 0; c < subjects.length; c++) {
+		console.log("jodiejo");
+		if (checkboxArray[c].checked == true) {
+			console.log("in de if");
+			points[c].value++;
+			console.log(points[c].value);
+		}
+	}
 	console.log('function resultParties gets executed');
 	sceneDescriptionTitle.innerHTML = 'Welke partijen wil je meenemen in het resultaat?';
 	sceneDescription.innerHTML = 'Kies alle partijen, alleen de partijen die nu al in de Tweede Kamer zitten, of maak zelf een selectie. Selecteer minimaal 3 partijen.';
@@ -146,7 +156,7 @@ function showAnswers() {
     sceneDescription.classList.add('none');
     sceneDescriptionTitle.classList.add('none');
     // scenePagina.classList.add('none');
-    scenePagina.innerHTML = 'Jouw antwoorden komen het meest overeen met deze partijen:';
+    scenePagina.innerHTML = 'Jouw antwoorden komen het meest overeen met deze partijen(hoog naar laag):';
     for (let e = 0; e < parties.length; e++) {
     	partiePage.innerHTML += points[e].name + '<br>';
     	// console.log(points[e].name);

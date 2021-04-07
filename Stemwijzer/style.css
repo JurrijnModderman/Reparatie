@@ -98,7 +98,7 @@ body{
 }
 
 #button2 {
-	display: none;,
+	display: none;
 }
 
 #title {
@@ -177,24 +177,12 @@ body{
 #skip {
 	margin-left: 20px;
 }
-/*label {
-	display: none;
-}
-input {
-	display: none;
-}*/
-
-#button5 {
-	color: blue;
-}
 
 .partyLogo {
 	width: 20px;
     height: 20px;
     border-radius: 100%;
     color: white;
-    /*list-style-type: none; 
-*/
 }
 
 li {
@@ -205,13 +193,6 @@ li {
     background-image: url("Images/parties.png") 20%;
 }
 
-/*.buttonBackHidden {
-	display: none;
-}
-
-.buttonBackVisible {
-	display: block;
-}*/
 .buttonsblock {
 	display: block;
 }

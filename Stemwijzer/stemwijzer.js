@@ -19,7 +19,6 @@ var answerQuestion = [];
 var points = [];
 var sceneIndex = 0;
 var checkboxArray = [];
-checked = false;
 buttonStart.onclick = start;
 populatePoints();
 
@@ -71,7 +70,7 @@ function goBack() {
 }
 
 function importantSubjects() {
-	//belangrijke partijen selecteren en laten zien
+	//select parties that u find important and give them an extra point 
 	console.log('function importantSubjects gets executed');
 	sceneDescriptionTitle.innerHTML = 'Zijn er onderwerpen die je extra belangrijk vindt?';
 	sceneDescription.innerHTML = '0/30 stellingen geselecteerd';
@@ -81,18 +80,12 @@ function importantSubjects() {
 	skip.classList.add('block');
 	skip.innerHTML = 'Volgende stap';
 	skip.onclick = resultParties;
-	// buttonBack.onclick = 
 	buttonBack.classList.add('block');
 	scenePagina.innerHTML = '';
-	// var extraImportantSubjects = ['Vaccinatiebewijs', 'Defensiebudget', 'Gratis kinderopvang', 'Nederland uit EU', 'Rekeningrijden', 'Vuurwerk', 'Vleesbelasting', 'Publieke omroep', 'Zorgfonds', 'Gezichtsbedekkende kleding', 'Volkshuisvesting', 'Btw op kunst en cultuur', 'Kerncentrale', 'Woningen op landbouwgrond', 'Belastingvoordeel huishoudens', 'Excuses slavenhandel', 'Correctief referendum', 'Inkomen leraren', 'Gevangenisstraffen', 'Vliegbelasting', 'Inburgering op locatie', 'Legalisering softdrugs', 'Nederlandstalig hoger onderwijs', 'Voltooid leven', 'Koppeling minimumloon en bijstand', 'Sociale huurwoningen', 'Boerenbedrijven', 'Middenschool', 'Vluchteling opnemen', 'Mondkapjesplicht'];
 	for (extraImportantSubjects = 0; extraImportantSubjects < subjects.length; extraImportantSubjects++) {
 		var checkbox = document.createElement('INPUT');
 		checkbox.setAttribute("type", "checkbox");
 		checkboxArray.push(checkbox);
-		// checkbox.id = subjects[extraImportantSubjects];
-		// checkbox.value = subjects[extraImportantSubjects];
-		var label = document.createElement('label');
-		scenePagina.appendChild(label);
 		scenePagina.appendChild(checkbox);
 		scenePagina.innerHTML += subjects[extraImportantSubjects].title + '<br>';
 		if (checkboxArray[extraImportantSubjects].checked == true) {
@@ -100,11 +93,10 @@ function importantSubjects() {
 			points[extraImportantSubjects].value++;
 		}
 	}
-	// resultParties();
 }
 
 function resultParties() {
-	//partijen laten meenemen en laten zien
+	//select parties u want to see the result of
 	console.log('function resultParties gets executed');
 	sceneDescriptionTitle.innerHTML = 'Welke partijen wil je meenemen in het resultaat?';
 	sceneDescription.innerHTML = 'Kies alle partijen, alleen de partijen die nu al in de Tweede Kamer zitten, of maak zelf een selectie. Selecteer minimaal 3 partijen.';
@@ -120,23 +112,20 @@ function resultParties() {
 	for (extraImportantSubjects = 0; extraImportantSubjects < subjects.length; extraImportantSubjects++) {
 		var checkbox = document.createElement('INPUT');
 		checkbox.setAttribute("type", "checkbox");
-		checkbox.id = subjects[extraImportantSubjects];
-		checkbox.value = subjects[extraImportantSubjects];
-		var label = document.createElement('label');
-		scenePagina.appendChild(label);
 		scenePagina.appendChild(checkbox);
 		scenePagina.innerHTML += parties[extraImportantSubjects].name + '<br>';
 	}
-	// calculateAnswers();
 }
 
 function populatePoints() {
+	//push amount of parties.length in array to calculate later the points
 	for (p = 0; p < parties.length; p++) {
 		points.push({name: parties[p].name, value: 0});
 	}
 }
 
 function calculateAnswers() {
+	//calculating answers
     // console.log(subjects);
     for (index = 0; index < subjects.length; index++) {
         for (partiesIndex = 0; partiesIndex < subjects[index].parties.length; partiesIndex++) {
@@ -153,6 +142,7 @@ function calculateAnswers() {
 }
 
 function showAnswers() {
+	//show answers
     answerButtons.classList.remove('block');
     answerButtons.classList.add('none');
     sceneDescription.classList.add('none');
@@ -161,12 +151,12 @@ function showAnswers() {
     scenePagina.innerHTML = 'Jouw antwoorden komen het meest overeen met deze partijen:';
     for (let e = 0; e < parties.length; e++) {
     	partiePage.innerHTML += points[e].name + '<br>';
-    	// alert(points[e].name);
     	// console.log(points[e].name);
     }
 }
 
 function loadScene() {
+	//displays the current scene
     console.log(sceneIndex);
     if (sceneIndex === subjects.length) {
         //berekenen antwoorden

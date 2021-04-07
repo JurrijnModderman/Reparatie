@@ -13,12 +13,10 @@ const pro = document.getElementById("pro");
 const none = document.getElementById("none");
 const contra = document.getElementById("contra");
 const skip = document.getElementById("skip");
-var buttons = [];
-var buttonsPartijen = [];
 var answerQuestion = [];
 var points = [];
-var sceneIndex = 0;
 var checkboxArray = [];
+var sceneIndex = 0;
 buttonStart.onclick = start;
 populatePoints();
 

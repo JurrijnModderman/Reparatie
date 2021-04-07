@@ -13,6 +13,7 @@ const pro = document.getElementById("pro");
 const none = document.getElementById("none");
 const contra = document.getElementById("contra");
 const skip = document.getElementById("skip");
+const resultPage = document.getElementById("result");
 var answerQuestion = [];
 var points = [];
 
@@ -81,28 +82,38 @@ function importantSubjects() {
 	buttonBack.classList.add('block');
 	scenePagina.innerHTML = '';
 	for (extraImportantSubjects = 0; extraImportantSubjects < subjects.length; extraImportantSubjects++) {
-		var checkbox = document.createElement('INPUT');
-		checkbox.classList.add('checkbox');
-		checkbox.setAttribute("type", "checkbox");
-		scenePagina.appendChild(checkbox);
+		var checkboxEIS = document.createElement('INPUT');
+		checkboxEIS.classList.add('checkboxEIS');
+		checkboxEIS.setAttribute("type", "checkbox");
+		scenePagina.appendChild(checkboxEIS);
 		scenePagina.innerHTML += subjects[extraImportantSubjects].title + '<br>';
 	}
 }
 
-function checkCheckboxes() {
-	var checkboxArray = [];
-	checkboxArray = document.getElementsByClassName('checkbox');
-	for (checkboxInput = 0; checkboxInput < subjects.length; checkboxInput++) {
-		if (checkboxArray[checkboxInput].checked == true) {
+function checkCheckboxesImportantSubjects() {
+	var checkboxArrayImportantSubjects = [];
+	checkboxArrayImportantSubjects = document.getElementsByClassName('checkboxEIS');
+	for (checkboxInput = 0; checkboxInput < checkboxArrayImportantSubjects.length; checkboxInput++) {
+		if (checkboxArrayImportantSubjects[checkboxInput].checked == true) {
 			points[checkboxInput].value++;
 			console.log(points[checkboxInput].value);
 		}
 	}
 }
 
+// function checkCheckboxesResultParties(displayParties) {
+// 	var checkboxArrayResultParties = [];
+// 	checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
+// 	for (checkboxInput = 0; checkboxInput < subjects.length; checkboxInput++) {
+// 		if (checkboxArrayResultParties[checkboxInput].checked == true) {
+// 			displayParties += checkboxArrayResultParties[checkboxArrayImportantSubjects];
+// 		}
+// 	}
+// }
+
 function resultParties() {
 	//select parties u want to see the result of
-	checkCheckboxes();
+	checkCheckboxesImportantSubjects();
 	console.log('function resultParties gets executed');
 	sceneDescriptionTitle.innerHTML = 'Welke partijen wil je meenemen in het resultaat?';
 	sceneDescription.innerHTML = 'Kies alle partijen, alleen de partijen die nu al in de Tweede Kamer zitten, of maak zelf een selectie. Selecteer minimaal 3 partijen.';
@@ -116,9 +127,10 @@ function resultParties() {
 	buttonBack.classList.add('block');
 	scenePagina.innerHTML = '';
 	for (extraImportantSubjects = 0; extraImportantSubjects < subjects.length; extraImportantSubjects++) {
-		var checkbox = document.createElement('INPUT');
-		checkbox.setAttribute("type", "checkbox");
-		scenePagina.appendChild(checkbox);
+		var checkboxRP = document.createElement('INPUT');
+		checkboxRP.classList.add('checkboxRP');
+		checkboxRP.setAttribute("type", "checkbox");
+		scenePagina.appendChild(checkboxRP);
 		scenePagina.innerHTML += parties[extraImportantSubjects].name + '<br>';
 	}
 }
@@ -144,8 +156,22 @@ function calculateAnswers() {
         	}
         }
     }
-    points.sort(function(a, b){return b.value - a.value});
     showAnswers();
+    points.sort(function(a, b){return b.value - a.value});
+    
+}
+
+function checkCheckboxesResultParties() {
+	var checkboxArrayResultParties = [];
+	checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
+	console.log(checkboxArrayResultParties);
+	for (checkboxInput = 0; checkboxInput < checkboxArrayResultParties.length; checkboxInput++) {
+		if (checkboxArrayResultParties[checkboxInput].checked == true) {
+			console.log('partiepage is ');
+			partiePage.innerHTML += points[checkboxInput].name + '<br>';
+			 // += checkboxArrayResultParties[checkboxArrayImportantSubjects];
+		}
+	}
 }
 
 function showAnswers() {
@@ -154,12 +180,14 @@ function showAnswers() {
     answerButtons.classList.add('none');
     sceneDescription.classList.add('none');
     sceneDescriptionTitle.classList.add('none');
+    scenePagina.classList.add('none');
     // scenePagina.classList.add('none');
-    scenePagina.innerHTML = 'Jouw antwoorden komen het meest overeen met deze partijen(hoog naar laag):';
-    for (let e = 0; e < parties.length; e++) {
-    	partiePage.innerHTML += points[e].name + '<br>';
-    	// console.log(points[e].name);
-    }
+    resultPage.innerHTML = 'Jouw antwoorden komen het meest overeen met deze partijen(hoog naar laag):';
+    checkCheckboxesResultParties();
+    // for (let e = 0; e < parties.length; e++) {
+    // 	partiePage.innerHTML += points[e].name + '<br>';
+    // 	// console.log(points[e].name);
+    // }
 }
 
 function loadScene() {

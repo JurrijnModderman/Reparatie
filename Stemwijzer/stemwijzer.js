@@ -101,15 +101,18 @@ function checkCheckboxesImportantSubjects() {
 	}
 }
 
-// function checkCheckboxesResultParties(displayParties) {
-// 	var checkboxArrayResultParties = [];
-// 	checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
-// 	for (checkboxInput = 0; checkboxInput < subjects.length; checkboxInput++) {
-// 		if (checkboxArrayResultParties[checkboxInput].checked == true) {
-// 			displayParties += checkboxArrayResultParties[checkboxArrayImportantSubjects];
-// 		}
-// 	}
-// }
+function checkCheckboxesResultParties() {
+	var checkboxArrayResultParties = [];
+	checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
+	console.log(checkboxArrayResultParties);
+	for (checkboxInput = 0; checkboxInput < checkboxArrayResultParties.length; checkboxInput++) {
+		if (checkboxArrayResultParties[checkboxInput].checked == true) {
+			console.log('partiepage is ');
+			partiePage.innerHTML += points[checkboxInput].name + '<br>';
+			 // += checkboxArrayResultParties[checkboxArrayImportantSubjects];
+		}
+	}
+}
 
 function resultParties() {
 	//select parties u want to see the result of
@@ -159,19 +162,6 @@ function calculateAnswers() {
     showAnswers();
     points.sort(function(a, b){return b.value - a.value});
     
-}
-
-function checkCheckboxesResultParties() {
-	var checkboxArrayResultParties = [];
-	checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
-	console.log(checkboxArrayResultParties);
-	for (checkboxInput = 0; checkboxInput < checkboxArrayResultParties.length; checkboxInput++) {
-		if (checkboxArrayResultParties[checkboxInput].checked == true) {
-			console.log('partiepage is ');
-			partiePage.innerHTML += points[checkboxInput].name + '<br>';
-			 // += checkboxArrayResultParties[checkboxArrayImportantSubjects];
-		}
-	}
 }
 
 function showAnswers() {

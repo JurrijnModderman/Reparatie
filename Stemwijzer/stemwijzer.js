@@ -94,10 +94,12 @@ function importantSubjects() {
 function checkCheckboxesImportantSubjects() {
 	var checkboxArrayImportantSubjects = [];
 	checkboxArrayImportantSubjects = document.getElementsByClassName('checkboxEIS');
-	for (checkboxInput = 0; checkboxInput < checkboxArrayImportantSubjects.length; checkboxInput++) {
-		if (checkboxArrayImportantSubjects[checkboxInput].checked == true) {
-			points[checkboxInput].value++;
-			console.log(points[checkboxInput].value);
+	for (checkboxCheck = 0; checkboxCheck < checkboxArrayImportantSubjects.length; checkboxCheck++) {
+		for (checkboxInput = 0; checkboxInput < subjects[checkboxCheck].parties.length; checkboxInput++) {
+			if (checkboxArrayImportantSubjects[checkboxInput].checked == true) {
+				checkboxArrayImportantSubjects[checkboxInput].points[checkboxCheck].value++;
+				console.log(points[checkboxInput].value);
+			}
 		}
 	}
 }

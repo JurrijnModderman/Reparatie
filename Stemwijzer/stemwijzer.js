@@ -16,6 +16,7 @@ const skip = document.getElementById("skip");
 const resultPage = document.getElementById("result");
 var answerQuestion = [];
 var points = [];
+var check = false;
 
 var sceneIndex = 0;
 buttonStart.onclick = start;
@@ -137,16 +138,26 @@ function resultParties() {
 		scenePagina.appendChild(checkboxRP);
 		scenePagina.innerHTML += parties[extraImportantSubjects].name + '<br>';
 	}
-	const AllParties = document.createElement("BUTTON");
-	AllParties.classList.add('AllPartiesButton');
-	scenePagina.appendChild(AllParties);
-	AllParties.onclick = function() {
+	const allParties = document.createElement("BUTTON");
+	allParties.innerHTML = 'Selecteer alle Partijen';
+	allParties.classList.add('AllPartiesButton');
+	scenePagina.appendChild(allParties);
+	allParties.onclick = function() {
+		check = !check;
 		checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
 		for (selectAll = 0; selectAll < checkboxArrayResultParties.length; selectAll++) {
 			if (checkboxArrayResultParties[selectAll].type == 'checkbox') {
-				checkboxArrayResultParties[selectAll].checked = true;
+				checkboxArrayResultParties[selectAll].checked = check;
 			}
 		}
+		// allParties.onclick = function() {
+		// 	checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
+		// 	for (selectAll = 0; selectAll < checkboxArrayResultParties.length; selectAll++) {
+		// 		if (checkboxArrayResultParties[selectAll].type == 'checkbox') {
+		// 			checkboxArrayResultParties[selectAll].checked = false;
+		// 		}
+		// 	}
+		// }
 	}
 }
 

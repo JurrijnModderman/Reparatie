@@ -59,6 +59,15 @@ body{
     margin-left: 16vw !important;
 }
 
+#partie {
+	padding-left: 500px;
+}
+
+#result {
+	padding-left: 500px;
+    margin-top: 100px;
+}
+
 .text {
 	margin-left: 1vw;
 	color: white;

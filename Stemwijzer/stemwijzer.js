@@ -108,9 +108,11 @@ function checkCheckboxesResultParties() {
 	for (checkboxInput = 0; checkboxInput < checkboxArrayResultParties.length; checkboxInput++) {
 		if (checkboxArrayResultParties[checkboxInput].checked == true) {
 			partiePage.innerHTML += points[checkboxInput].name + '<br>';
+			console.log(points[checkboxInput].name);
 			 // += checkboxArrayResultParties[checkboxArrayImportantSubjects];
 		}
 	}
+	points.sort(function(a, b){return b.value - a.value});
 }
 
 function resultParties() {
@@ -178,7 +180,6 @@ function showAnswers() {
     sceneDescriptionTitle.classList.add('none');
     scenePagina.classList.add('none');
     resultPage.innerHTML = 'Jouw antwoorden komen het meest overeen met deze partijen(hoog naar laag):';
-    points.sort(function(a, b){return b.value - a.value});
     checkCheckboxesResultParties();
     console.log(points);
 }

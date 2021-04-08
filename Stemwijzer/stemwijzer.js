@@ -102,6 +102,7 @@ function checkCheckboxesImportantSubjects() {
 }
 
 function checkCheckboxesResultParties() {
+	points.sort(function(a, b){return b.value - a.value});
 	var checkboxArrayResultParties = [];
 	checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
 	console.log(checkboxArrayResultParties);
@@ -112,7 +113,6 @@ function checkCheckboxesResultParties() {
 			 // += checkboxArrayResultParties[checkboxArrayImportantSubjects];
 		}
 	}
-	points.sort(function(a, b){return b.value - a.value});
 }
 
 function resultParties() {

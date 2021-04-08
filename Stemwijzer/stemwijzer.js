@@ -135,10 +135,20 @@ function resultParties() {
 		scenePagina.appendChild(checkboxRP);
 		scenePagina.innerHTML += parties[extraImportantSubjects].name + '<br>';
 	}
+	const AllParties = document.createElement("BUTTON");
+	AllParties.classList.add('AllPartiesButton');
+	scenePagina.appendChild(AllParties);
+	AllParties.onclick = function() {
+		for (selectAll = 0; selectAll < checkboxArrayResultParties.length; selectAll++) {
+			if (checkboxArrayResultParties[selectAll].type == 'checkbox') {
+				checkboxArrayResultParties[selectAll].checked = true;
+			}
+		}
+	}
 }
 
 function populatePoints() {
-	//push amount of parties.length in array to calculate later the points
+	//push amount of parties.length in array to calculate the points later
 	for (p = 0; p < parties.length; p++) {
 		points.push({name: parties[p].name, value: 0});
 	}
@@ -158,7 +168,6 @@ function calculateAnswers() {
         }
     }
     showAnswers();
-    
 }
 
 function showAnswers() {

@@ -141,6 +141,7 @@ function resultParties() {
 	AllParties.classList.add('AllPartiesButton');
 	scenePagina.appendChild(AllParties);
 	AllParties.onclick = function() {
+		checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
 		for (selectAll = 0; selectAll < checkboxArrayResultParties.length; selectAll++) {
 			if (checkboxArrayResultParties[selectAll].type == 'checkbox') {
 				checkboxArrayResultParties[selectAll].checked = true;

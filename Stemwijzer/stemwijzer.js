@@ -109,14 +109,22 @@ function importantSubjects() {
 function checkCheckboxesImportantSubjects() {
 	var checkboxArrayImportantSubjects = [];
 	checkboxArrayImportantSubjects = document.getElementsByClassName('checkboxEIS');
-	for (checkboxCheck = 0; checkboxCheck < subjects.length; checkboxCheck++) {
-		for (checkboxInput = 0; checkboxInput < subjects[checkboxCheck].parties.length; checkboxInput++) {
+	for (pointsQuestions = 0; pointsQuestions < subjects.length; pointsQuestions++) {
+		for (checkboxInput = 0; checkboxInput < checkboxArrayImportantSubjects[pointsQuestions].length; checkboxInput++) {
 			if (checkboxArrayImportantSubjects[checkboxInput].checked == true) {
-				checkboxArrayImportantSubjects[checkboxCheck].points[checkboxInput].value++;
+				checkboxArrayImportantSubjects[pointsQuestions].points[checkboxInput].value++;
 				console.log(points[checkboxInput].value);
 			}
 		}
 	}
+	// for (checkboxCheck = 0; checkboxCheck < subjects.length; checkboxCheck++) {
+	// 	for (checkboxInput = 0; checkboxInput < checkboxArrayImportantSubjects[checkboxCheck].length; checkboxInput++) {
+	// 		if (checkboxArrayImportantSubjects[checkboxInput].checked == true) {
+	// 			checkboxArrayImportantSubjects[checkboxInput].points[checkboxCheck].value++;
+	// 			console.log(points[checkboxInput].value);
+	// 		}
+	// 	}
+	// }
 }
 
 function checkCheckboxesResultParties() {

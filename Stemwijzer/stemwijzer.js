@@ -16,7 +16,8 @@ const skip = document.getElementById("skip");
 const resultPage = document.getElementById("result");
 var answerQuestion = [];
 var points = [];
-var check = false;
+var checkParties = false;
+var checkSubjects = false;
 
 var sceneIndex = 0;
 buttonStart.onclick = start;
@@ -89,15 +90,29 @@ function importantSubjects() {
 		scenePagina.appendChild(checkboxEIS);
 		scenePagina.innerHTML += subjects[extraImportantSubjects].title + '<br>';
 	}
+	const allSubjects = document.createElement("BUTTON");
+	allSubjects.innerHTML = 'Selecteer alle onderwerpen';
+	allSubjects.classList.add('AllSubjectsButton');
+	scenePagina.appendChild(allSubjects);
+	console.log('allSubjects is geapppend');
+	allSubjects.onclick = function() {
+		checkSubjects = !checkSubjects;
+		extraImportantSubjects = document.getElementsByClassName('checkboxEIS');
+		for (selectAll = 0; selectAll < extraImportantSubjects.length; selectAll++) {
+			if (extraImportantSubjects[selectAll].type == 'checkbox') {
+				extraImportantSubjects[selectAll].checked = checkSubjects;
+			}
+		}
+	}
 }
 
 function checkCheckboxesImportantSubjects() {
 	var checkboxArrayImportantSubjects = [];
 	checkboxArrayImportantSubjects = document.getElementsByClassName('checkboxEIS');
-	for (checkboxCheck = 0; checkboxCheck < checkboxArrayImportantSubjects.length; checkboxCheck++) {
+	for (checkboxCheck = 0; checkboxCheck < subjects.length; checkboxCheck++) {
 		for (checkboxInput = 0; checkboxInput < subjects[checkboxCheck].parties.length; checkboxInput++) {
 			if (checkboxArrayImportantSubjects[checkboxInput].checked == true) {
-				checkboxArrayImportantSubjects[checkboxInput].points[checkboxCheck].value++;
+				checkboxArrayImportantSubjects[checkboxCheck].points[checkboxInput].value++;
 				console.log(points[checkboxInput].value);
 			}
 		}
@@ -133,23 +148,24 @@ function resultParties() {
 	buttonBack.onclick = importantSubjects;
 	buttonBack.classList.add('block');
 	scenePagina.innerHTML = '';
-	for (extraImportantSubjects = 0; extraImportantSubjects < subjects.length; extraImportantSubjects++) {
+	for (chosenParties = 0; chosenParties < parties.length; chosenParties++) {
 		var checkboxRP = document.createElement('INPUT');
 		checkboxRP.classList.add('checkboxRP');
 		checkboxRP.setAttribute("type", "checkbox");
 		scenePagina.appendChild(checkboxRP);
-		scenePagina.innerHTML += parties[extraImportantSubjects].name + '<br>';
+		scenePagina.innerHTML += parties[chosenParties].name + '<br>';
 	}
 	const allParties = document.createElement("BUTTON");
 	allParties.innerHTML = 'Selecteer alle Partijen';
 	allParties.classList.add('AllPartiesButton');
 	scenePagina.appendChild(allParties);
+	console.log('allParties is geapppend');
 	allParties.onclick = function() {
-		check = !check;
+		checkParties = !checkParties;
 		checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
 		for (selectAll = 0; selectAll < checkboxArrayResultParties.length; selectAll++) {
 			if (checkboxArrayResultParties[selectAll].type == 'checkbox') {
-				checkboxArrayResultParties[selectAll].checked = check;
+				checkboxArrayResultParties[selectAll].checked = checkParties;
 			}
 		}
 		// allParties.onclick = function() {

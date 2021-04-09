@@ -109,11 +109,14 @@ function importantSubjects() {
 function checkCheckboxesImportantSubjects() {
 	var checkboxArrayImportantSubjects = [];
 	checkboxArrayImportantSubjects = document.getElementsByClassName('checkboxEIS');
-	for (pointsQuestions = 0; pointsQuestions < subjects.length; pointsQuestions++) {
-		for (checkboxInput = 0; checkboxInput < checkboxArrayImportantSubjects[pointsQuestions].length; checkboxInput++) {
-			if (checkboxArrayImportantSubjects[checkboxInput].checked == true) {
-				checkboxArrayImportantSubjects[pointsQuestions].points[checkboxInput].value++;
-				console.log(points[checkboxInput].value);
+	for (checkIndex = 0; checkIndex < checkboxArrayImportantSubjects.length; checkIndex++) {
+		if (checkboxArrayImportantSubjects[checkIndex].checked == true) {
+			var correctAnswer = answerQuestion[checkIndex];
+			for (checkboxInput = 0; checkboxInput < subjects[checkIndex].parties.length; checkboxInput++) {
+				if (answerQuestion[checkIndex] == subjects[checkIndex].parties[checkboxInput].position) {
+					points[checkboxInput].value++;
+					console.log(points[checkboxInput].value);
+				}
 			}
 		}
 	}

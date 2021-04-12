@@ -113,6 +113,7 @@ function checkCheckboxesImportantSubjects() {
 		if (checkboxArrayImportantSubjects[checkIndex].checked == true) {
 			var correctAnswer = answerQuestion[checkIndex];
 			for (checkboxInput = 0; checkboxInput < subjects[checkIndex].parties.length; checkboxInput++) {
+				console.log(subjects[checkIndex].parties[checkIndex].name);
 				if (answerQuestion[checkIndex] == subjects[checkIndex].parties[checkboxInput].position) {
 					points[checkboxInput].value++;
 					console.log(points[checkboxInput].value);

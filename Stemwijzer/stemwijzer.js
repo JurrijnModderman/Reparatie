@@ -1,3 +1,4 @@
+// declareren variabelen
 const stemwijzer = document.getElementById("stemwijzer");
 const partijen = document.getElementById("partijen");
 const buttonStart = document.getElementById("button");
@@ -23,6 +24,7 @@ var sceneIndex = 0;
 buttonStart.onclick = start;
 populatePoints();
 
+// start functie om de hoofdpagina te stylen
 function start() {
 	stemwijzer.classList.remove('block');
 	stemwijzer.classList.add('none');
@@ -40,6 +42,7 @@ function start() {
     loadScene();
 }
 
+// choice functie om je antwoorden door te geven en dan naar de volgende vraag te gaan
 function choice(answer) {
     // console.log(answer);
     answerQuestion[sceneIndex] = answer;
@@ -49,6 +52,7 @@ function choice(answer) {
     loadScene();
 }
 
+// goback functie om terug te kunnen en dan de juiste styling daar aan toe te voegen mocht dat nodig zijn
 function goBack() {
     if (sceneIndex != 0) {
         sceneIndex--;
@@ -70,6 +74,7 @@ function goBack() {
     loadScene();
 }
 
+// importantSubjects functie om de pagina van de belangrijke onderwerpen te weergeven en te stylen
 function importantSubjects() {
 	//select questions that u find important and give them an extra point 
 	console.log('function importantSubjects gets executed');
@@ -128,6 +133,7 @@ function checkCheckboxesImportantSubjects() {
 	}
 }
 
+// functie om de checkboxes te checken om die partijen dan te weergeven op de laatste pagina
 function checkCheckboxesResultParties() {
 	points.sort(function(a, b){return b.value - a.value});
 	var checkboxArrayResultParties = [];
@@ -142,6 +148,7 @@ function checkCheckboxesResultParties() {
 	}
 }
 
+// functie om de resultaatparties pagina te weergeven en te stylen
 function resultParties() {
 	//select parties u want to see the result of
 	checkCheckboxesImportantSubjects();
@@ -177,17 +184,10 @@ function resultParties() {
 				checkboxArrayResultParties[selectAll].checked = checkParties;
 			}
 		}
-		// allParties.onclick = function() {
-		// 	checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
-		// 	for (selectAll = 0; selectAll < checkboxArrayResultParties.length; selectAll++) {
-		// 		if (checkboxArrayResultParties[selectAll].type == 'checkbox') {
-		// 			checkboxArrayResultParties[selectAll].checked = false;
-		// 		}
-		// 	}
-		// }
 	}
 }
 
+// functie om alvast een array aan te maken om later de punten daaraan toe te voegen 
 function populatePoints() {
 	//push amount of parties.length in array to calculate the points later
 	for (p = 0; p < parties.length; p++) {
@@ -195,6 +195,7 @@ function populatePoints() {
 	}
 }
 
+// functie om de antwoorden te berekenen
 function calculateAnswers() {
 	//calculating answers
     // console.log(subjects);
@@ -211,6 +212,7 @@ function calculateAnswers() {
     showAnswers();
 }
 
+// functie om de antwoorden te laten zien op de pagina
 function showAnswers() {
 	//show answers
     answerButtons.classList.remove('block');
@@ -223,6 +225,7 @@ function showAnswers() {
     console.log(points);
 }
 
+// functie om de scenepagina met de vragen te laten zien
 function loadScene() {
 	//displays the current scene
     console.log(sceneIndex);

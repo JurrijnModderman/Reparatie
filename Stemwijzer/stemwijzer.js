@@ -15,7 +15,7 @@ const contra = document.getElementById("contra");
 const skip = document.getElementById("skip");
 const resultPage = document.getElementById("result");
 var answerQuestion = [];
-var points = [];
+var points = []; // bevat scores per partij, vb ['vvd' =>8, 'cda' =>3]
 var checkParties = false;
 var checkSubjects = false;
 
@@ -106,14 +106,19 @@ function importantSubjects() {
 	}
 }
 
+// de gebruiker kan aangeven welke onderwerpen belangrijk zijn (deze checkboxen komen in checkboxarrayimportsubjects)
+// aangevinkte thema's moeten extra punten krijgen in de array waar alle punten per partij in zitten
 function checkCheckboxesImportantSubjects() {
 	var checkboxArrayImportantSubjects = [];
 	checkboxArrayImportantSubjects = document.getElementsByClassName('checkboxEIS');
+	// door mijn checkboxarray heen loopen om te kijken of die geklikt is
 	for (checkIndex = 0; checkIndex < checkboxArrayImportantSubjects.length; checkIndex++) {
 		if (checkboxArrayImportantSubjects[checkIndex].checked == true) {
 			var correctAnswer = answerQuestion[checkIndex];
+			// door de subjects heen loopen
 			for (checkboxInput = 0; checkboxInput < subjects[checkIndex].parties.length; checkboxInput++) {
 				console.log(subjects[checkIndex].parties[checkIndex].name);
+				//
 				if (answerQuestion[checkIndex] == subjects[checkIndex].parties[checkboxInput].position) {
 					points[checkboxInput].value++;
 					console.log(points[checkboxInput].value);
@@ -121,14 +126,6 @@ function checkCheckboxesImportantSubjects() {
 			}
 		}
 	}
-	// for (checkboxCheck = 0; checkboxCheck < subjects.length; checkboxCheck++) {
-	// 	for (checkboxInput = 0; checkboxInput < checkboxArrayImportantSubjects[checkboxCheck].length; checkboxInput++) {
-	// 		if (checkboxArrayImportantSubjects[checkboxInput].checked == true) {
-	// 			checkboxArrayImportantSubjects[checkboxInput].points[checkboxCheck].value++;
-	// 			console.log(points[checkboxInput].value);
-	// 		}
-	// 	}
-	// }
 }
 
 function checkCheckboxesResultParties() {

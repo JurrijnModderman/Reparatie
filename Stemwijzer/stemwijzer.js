@@ -74,6 +74,20 @@ function goBack() {
     loadScene();
 }
 
+// functie om de scenepagina met de vragen te laten zien
+function loadScene() {
+	//displays the current scene
+    console.log(sceneIndex);
+    if (sceneIndex === subjects.length) {
+        importantSubjects();
+    }
+    stemwijzer.classList.add('stemwijzerScene');
+    stemwijzerIMG.classList.add('logo');
+    buttonStart.classList.add('startButton');
+    sceneDescriptionTitle.innerHTML = subjects[sceneIndex].title;
+    sceneDescription.innerHTML = subjects[sceneIndex].statement;
+}
+
 // importantSubjects functie om de pagina van de belangrijke onderwerpen te weergeven en te stylen
 function importantSubjects() {
 	//select questions that u find important and give them an extra point 
@@ -99,7 +113,7 @@ function importantSubjects() {
 	allSubjects.innerHTML = 'Selecteer alle onderwerpen';
 	allSubjects.classList.add('AllSubjectsButton');
 	scenePagina.appendChild(allSubjects);
-	console.log('allSubjects is geapppend');
+	console.log('allSubjects is geappend');
 	allSubjects.onclick = function() {
 		checkSubjects = !checkSubjects;
 		extraImportantSubjects = document.getElementsByClassName('checkboxEIS');
@@ -223,18 +237,4 @@ function showAnswers() {
     resultPage.innerHTML = 'Jouw antwoorden komen het meest overeen met deze partijen(hoog naar laag):';
     checkCheckboxesResultParties();
     console.log(points);
-}
-
-// functie om de scenepagina met de vragen te laten zien
-function loadScene() {
-	//displays the current scene
-    console.log(sceneIndex);
-    if (sceneIndex === subjects.length) {
-        importantSubjects();
-    }
-    stemwijzer.classList.add('stemwijzerScene');
-    stemwijzerIMG.classList.add('logo');
-    buttonStart.classList.add('startButton');
-    sceneDescriptionTitle.innerHTML = subjects[sceneIndex].title;
-    sceneDescription.innerHTML = subjects[sceneIndex].statement;
 }

@@ -169,6 +169,13 @@ body{
 	height: 1000px;
 }
 
+#importantPage {
+	display: none;
+}
+
+#partieSelectPage {
+	display: none;
+}
 #pro {
 	margin-top: 280px;		
 	width: 125px;

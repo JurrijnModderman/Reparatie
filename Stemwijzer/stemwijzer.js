@@ -102,27 +102,46 @@ function importantSubjects() {
 	skip.onclick = resultParties;
 	buttonBack.classList.add('block');
 	scenePagina.innerHTML = '';
-	for (extraImportantSubjects = 0; extraImportantSubjects < subjects.length; extraImportantSubjects++) {
-		var checkboxEIS = document.createElement('INPUT');
+	//
+	subjects.forEach(extraImportantSubject => {
+		let checkboxEIS = document.createElement('INPUT');
 		checkboxEIS.classList.add('checkboxEIS');
 		checkboxEIS.setAttribute("type", "checkbox");
 		scenePagina.appendChild(checkboxEIS);
-		scenePagina.innerHTML += subjects[extraImportantSubjects].title + '<br>';
-	}
+		scenePagina.innerHTML += extraImportantSubject.title + '<br>';
+	});
+	// for (extraImportantSubjects = 0; extraImportantSubjects < subjects.length; extraImportantSubjects++) {
+	// 	var checkboxEIS = document.createElement('INPUT');
+	// 	checkboxEIS.classList.add('checkboxEIS');
+	// 	checkboxEIS.setAttribute("type", "checkbox");
+	// 	scenePagina.appendChild(checkboxEIS);
+	// 	scenePagina.innerHTML += subjects[extraImportantSubjects].title + '<br>';
+	// }
 	const allSubjects = document.createElement("BUTTON");
 	allSubjects.innerHTML = 'Selecteer alle onderwerpen';
 	allSubjects.classList.add('AllSubjectsButton');
 	scenePagina.appendChild(allSubjects);
 	console.log('allSubjects is geappend');
-	allSubjects.onclick = function() {
+	//arrow function
+	allSubjects.onclick = () => {
 		checkSubjects = !checkSubjects;
-		extraImportantSubjects = document.getElementsByClassName('checkboxEIS');
-		for (selectAll = 0; selectAll < extraImportantSubjects.length; selectAll++) {
-			if (extraImportantSubjects[selectAll].type == 'checkbox') {
-				extraImportantSubjects[selectAll].checked = checkSubjects;
+		extraImportantSubjects = document.querySelectorAll(".checkboxEIS");
+		console.log(extraImportantSubjects);
+		extraImportantSubjects.forEach(subject => {
+			if (subject.type == 'checkbox') {
+				subject.checked = checkSubjects;
 			}
-		}
+		});
 	}
+	// allSubjects.onclick = function() {
+	// 	checkSubjects = !checkSubjects;
+	// 	extraImportantSubjects = document.getElementsByClassName('checkboxEIS');
+	// 	for (selectAll = 0; selectAll < extraImportantSubjects.length; selectAll++) {
+	// 		if (extraImportantSubjects[selectAll].type == 'checkbox') {
+	// 			extraImportantSubjects[selectAll].checked = checkSubjects;
+	// 		}
+	// 	}
+	// }
 }
 
 // de gebruiker kan aangeven welke onderwerpen belangrijk zijn (deze checkboxen komen in checkboxarrayimportsubjects)
@@ -149,7 +168,10 @@ function checkCheckboxesImportantSubjects() {
 
 // functie om de checkboxes te checken om die partijen dan te weergeven op de laatste pagina
 function checkCheckboxesResultParties() {
-	points.sort(function(a, b){return b.value - a.value});
+	//arrow function
+	// points.sort(function(a, b){return b.value - a.value});
+	points.sort((a, b) => b.value - a.value);
+	//
 	var checkboxArrayResultParties = [];
 	checkboxArrayResultParties = document.getElementsByClassName('checkboxRP');
 	console.log(checkboxArrayResultParties);
